@@ -1,15 +1,13 @@
-import mongoose from "mongoose";
 import connectDB from "./config/db.js";
 
 import dotenv from "dotenv";
-import User from "./models/userModel.js";
 
+// models
+import User from "./models/userModel.js";
+import Product from "./models/product.model.js";
 // mocks
 import mockUsers from "./__mocks__/users.js";
-
-// import productData from "./data/mock-products";
-// import { mockUsers } from "./data/user";
-// import Order from "./model/order.model";
+import mockProducts from "./__mocks__/product.js";
 
 dotenv.config();
 
@@ -21,12 +19,14 @@ connectDB();
 const importData = async () => {
   try {
     // delete stuff before inserting new stuff
-
     await User.deleteMany();
+    await Product.deleteMany();
 
-    // insert mock uses
+    // insert mocks
     await User.insertMany(mockUsers);
+    await Product.insertMany(mockProducts);
 
+    // logging
     console.log("data imported");
 
     process.exit(0);

@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const descriptionSchema = new Schema({
+const descriptionSchema = new mongoose.Schema({
   keyFeatures: [
     {
       type: String,
@@ -19,7 +19,7 @@ const descriptionSchema = new Schema({
   },
 });
 
-const ReviewSchema = new Schema(
+const ReviewSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -37,28 +37,19 @@ const ReviewSchema = new Schema(
   { timestamps: true }
 );
 
-const ProductSchema = new Schema(
+const ProductSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
     },
     description: descriptionSchema,
-    category: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
     images: [
       {
         type: String,
         required: true,
       },
     ],
-    brand: {
-      type: String,
-    },
     price: {
       type: Number,
       required: true,

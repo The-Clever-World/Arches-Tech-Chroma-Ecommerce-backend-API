@@ -6,8 +6,7 @@ import morgan from "morgan";
 import dbConnection from "./config/db.js";
 
 import { NotFound, errorhandler } from "./middlewares/errorHandling.js";
-import UserRoutes from "./routes/userRouter.js";
-
+import { categoryRouter, userRouter } from "./routes/index.js";
 dotenv.config();
 dbConnection();
 
@@ -17,7 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 ///    Routes      ///
-app.use("/user", UserRoutes);
+app.use("/user", userRouter);
+app.use("/categories", categoryRouter);
 
 ///    For error handling   ///
 app.use(NotFound);

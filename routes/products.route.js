@@ -1,9 +1,13 @@
 import express from "express";
 
-import { getProduct } from "../controllers/product.controller.js";
+import {
+  getProductFromSearch,
+  getProductsFromId,
+} from "../controllers/products.controller.js";
 
 const router = express.Router();
 
-router.get("/:id", getProduct);
+router.get("/search/", getProductFromSearch);
+router.get("/:id", getProductsFromId);
 
 export { router as productRouter };

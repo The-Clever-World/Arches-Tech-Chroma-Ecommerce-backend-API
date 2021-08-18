@@ -30,6 +30,7 @@ const importData = async () => {
 
     // insert _id of 1st product into products array.
     mockCategories[0].products.push(insertedProducts[0]._id);
+    mockCategories[0].products.push(insertedProducts[1]._id);
     await Category.insertMany(mockCategories);
 
     // logging

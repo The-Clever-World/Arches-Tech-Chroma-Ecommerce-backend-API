@@ -33,13 +33,13 @@ app.set("view engine", "ejs");
 
 // navigation
 
-app.get("", (req, res) => {
-  res.render("index");
-});
+// app.get("", (req, res) => {
+//   res.render("index");
+// });
 
 ///    Routes      ///
+app.use("/", categoryRouter);
 app.use("/user", userRouter);
-app.use("/categories", categoryRouter);
 
 ///    For error handling   ///
 app.use(NotFound);

@@ -18,4 +18,9 @@ export default [
     email: "test.email@gmail.com",
     password: hashSync("frost1234", 10),
   },
+  {
+    name: "Shubham",
+    email: "shubham.email@gmail.com",
+    password: hashSync("frost1234", 10),
+  },
 ];

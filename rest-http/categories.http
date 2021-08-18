@@ -1,0 +1,10 @@
+#### GET All categories with their corresponding products
+GET http://localhost:5000/categories/
+
+
+#### Get Particular category products
+GET http://localhost:5000/categories/611d3124c11c2e3a188c42d9
+
+
+#### Search products
+GET http://localhost:5000/categories/search?searched=windows

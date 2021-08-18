@@ -7,7 +7,7 @@ import Product from "../models/product.model.js";
  */
 
 export const getAllCategories = async (req, res, next) => {
-  const categories = await Category.find();
+  const categories = await Category.find().populate("products");
   if (!categories) {
     res.status(404);
     const error = new Error("No categories found");

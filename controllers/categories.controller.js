@@ -13,7 +13,8 @@ export const getAllCategories = async (req, res, next) => {
     const error = new Error("No categories found");
     next(error);
   }
-  res.status(200).send(categories);
+  res.status(200)
+  res.render("index", { categories: categories });
 };
 
 /**

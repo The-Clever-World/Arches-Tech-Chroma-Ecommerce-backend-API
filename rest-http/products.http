@@ -1,0 +1,8 @@
+
+
+#### Search products
+GET http://localhost:5000/products/search?searched=windows
+
+
+#### Get Product By ID
+GET http://localhost:5000/products/611d511c4439a93e20ad6061

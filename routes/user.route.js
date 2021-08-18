@@ -5,7 +5,7 @@ import {
   registerUser,
   getUserProfile,
   updateUserProfile,
-} from "../controllers/userController.js";
+} from "../controllers/user.controller.js";
 
 import { authProtect } from "../middlewares/authMiddleware.js";
 

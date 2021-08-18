@@ -4,7 +4,7 @@ const products = [
   {
     name: "HP 15s-dr3001TU (34W43PA#ACJ) Core i3 11th Gen Windows 10 Home Thin and Light Laptop (8GB RAM, 1TB HDD, Intel UHD Graphics, 39.6cm, Natural Silver)",
     images: [
-      "/images/laptop.jpg",
+      "/images/pro2.png",
       "/images/laptop-2.jpg",
       "/images/laptop-3.jpg",
     ],
@@ -37,7 +37,7 @@ const products = [
   {
     name: "DELL 138q7i 1TB HDD 256GB SSD I5 8th GEN, NVIDIA 110mx)",
     images: [
-      "/images/laptop-new.jpg",
+      "/images/pro1.png",
       "/images/laptop-new-2.jpg",
       "/images/laptop-new-3.jpg",
     ],

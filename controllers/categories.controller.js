@@ -13,7 +13,7 @@ export const getAllCategories = async (req, res, next) => {
     const error = new Error("No categories found");
     next(error);
   }
-  res.status(200)
+  res.status(200);
   res.render("index", { categories: categories });
 };
 
@@ -24,7 +24,9 @@ export const getAllCategories = async (req, res, next) => {
  */
 
 export const getProductsFromCategory = async (req, res, next) => {
-  const categoryProducts = await Category.findById(req.params.id).populate("products");
+  const categoryProducts = await Category.findById(req.params.id).populate(
+    "products"
+  );
 
   if (!categoryProducts) {
     res.status(404);
@@ -32,7 +34,11 @@ export const getProductsFromCategory = async (req, res, next) => {
     next(error);
   }
 
-  res.status(200).render("category.ejs", { "categoryProducts": categoryProducts });
+  console.log(categoryProducts);
+
+  res
+    .status(200)
+    .render("category.ejs", { categoryProducts: categoryProducts });
 };
 
 // place this in product controllers. just for tests

@@ -62,10 +62,12 @@
                               <!--  List of categories  -->
 
                               <% categories.forEach(function(category){ %>
-                                 <a href="/<%= category._id %>"><%= category.name %></a>
-                              <% }); %>
+                                 <a href="/<%= category._id %>">
+                                    <%= category.name %>
+                                 </a>
+                                 <% }); %>
 
-                              <!--
+                                    <!--
                                  <a href="Televisions & Accessories.html">Televisions & Accessories</a>
                                  <a href="Home Appliances.html">Home Appliances</a>
                                  <a href="Phones & Wearables.html">Phones & Wearables</a>

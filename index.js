@@ -23,19 +23,14 @@ app.use(cors());
 app.use(express.json());
 
 // view engine
-
-app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "public/css"));
-app.use("/images", express.static(__dirname + "public/images"));
-app.use("/js", express.static(__dirname + "public/js"));
+app.use(["/css", "/products/css"], express.static(__dirname + "/public/css"));
+app.use(
+  ["/images", "/products/images"],
+  express.static(__dirname + "/public/images")
+);
+app.use(["/js", "/products/js"], express.static(__dirname + "/public/js"));
 
 app.set("view engine", "ejs");
-
-// navigation
-
-// app.get("", (req, res) => {
-//   res.render("index");
-// });
 
 ///    Routes      ///
 app.use("/", categoryRouter);

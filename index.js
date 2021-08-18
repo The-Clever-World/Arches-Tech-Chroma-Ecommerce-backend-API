@@ -6,7 +6,13 @@ import morgan from "morgan";
 import dbConnection from "./config/db.js";
 
 import { NotFound, errorhandler } from "./middlewares/errorHandling.js";
-import UserRoutes from "./routes/userRouter.js";
+import { categoryRouter, userRouter } from "./routes/index.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// emulating file path as they are not suppored in module imports
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 dbConnection();
@@ -16,8 +22,24 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
 
+// view engine
+
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use("/images", express.static(__dirname + "public/images"));
+app.use("/js", express.static(__dirname + "public/js"));
+
+app.set("view engine", "ejs");
+
+// navigation
+
+app.get("", (req, res) => {
+  res.render("index");
+});
+
 ///    Routes      ///
-app.use("/user", UserRoutes);
+app.use("/user", userRouter);
+app.use("/categories", categoryRouter);
 
 ///    For error handling   ///
 app.use(NotFound);

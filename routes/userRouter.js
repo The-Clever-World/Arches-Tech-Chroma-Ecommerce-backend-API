@@ -18,5 +18,4 @@ router
   .get(authProtect, getUserProfile)
   .put(authProtect, updateUserProfile);
 
-
-export default router;
+export { router as userRouter };

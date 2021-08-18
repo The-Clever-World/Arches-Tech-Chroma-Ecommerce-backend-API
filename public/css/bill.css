@@ -1,0 +1,10 @@
+hr{
+	border-top: 2px dotted black;
+}
+.vl {
+  border-left: 1px solid whitesmoke;
+  height: 70px;
+  position: static;
+}
+
+

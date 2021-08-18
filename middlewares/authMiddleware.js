@@ -37,7 +37,7 @@ const authProtect = async (req, res, next) => {
 };
 
 const adminCheck = (req, res, next) => {
-  if (req.user && req.user.isAdmin) {
+  if (req.user?.isAdmin) {
     next();
   } else {
     res.status(401);

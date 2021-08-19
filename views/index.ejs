@@ -7,19 +7,19 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Shop Now</title>
    <!----- LINKS ------->
-   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css" />
    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="/public/css/style.css">
 
 
-   <link rel="stylesheet" href="css/owl.carousel_.min.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/owl.carousel_.min.css" type="text/css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       type="text/css">
-   <link rel="stylesheet" href="css/style.css" type="text/css" />
-   <link rel="stylesheet" href="css/responsive.css" type="text/css" />
-   <link rel="stylesheet" href="css/index.css" type="text/css" />
-   <link rel="stylesheet" href="css/index_1.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/responsive.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/index.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/index_1.css" type="text/css" />
    <!----- LINKS ------->
    <script type="text/javascript">
       $('#myModal').on('shown.bs.modal', function () {
@@ -36,7 +36,7 @@
          <div class="row align-center">
             <div class="col-md-2" style=" top: -1.4rem; padding: 10px;">
                <div class="logo common-logo">
-                  <a href="/"><img src="images/logo_1.png" alt="Logo"></a>
+                  <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
                </div>
                <!----- for fixed header logo--->
 
@@ -62,10 +62,12 @@
                               <!--  List of categories  -->
 
                               <% categories.forEach(function(category){ %>
-                                 <a href="/<%= category._id %>"><%= category.name %></a>
-                              <% }); %>
+                                 <a href="/<%= category._id %>">
+                                    <%= category.name %>
+                                 </a>
+                                 <% }); %>
 
-                              <!--
+                                    <!--
                                  <a href="Televisions & Accessories.html">Televisions & Accessories</a>
                                  <a href="Home Appliances.html">Home Appliances</a>
                                  <a href="Phones & Wearables.html">Phones & Wearables</a>
@@ -131,22 +133,22 @@
       </ol>
       <div class="carousel-inner">
          <div class="carousel-item active">
-            <img class="d-block w-100" src="images/s1.jfif" alt="First slide">
+            <img class="d-block w-100" src="/public/images/s1.jfif" alt="First slide">
          </div>
          <div class="carousel-item">
-            <img class="d-block w-100" src="images/s2.jfif" alt="Second slide">
+            <img class="d-block w-100" src="/public/images/s2.jfif" alt="Second slide">
          </div>
          <div class="carousel-item">
-            <img class="d-block w-100" src="images/s3.jfif" alt="Third slide">
+            <img class="d-block w-100" src="/public/images/s3.jfif" alt="Third slide">
          </div>
          <div class="carousel-item">
-            <img class="d-block w-100" src="images/s4.jfif" alt="Third slide">
+            <img class="d-block w-100" src="/public/images/s4.jfif" alt="Third slide">
          </div>
          <div class="carousel-item">
-            <img class="d-block w-100" src="images/s5.jfif" alt="Third slide">
+            <img class="d-block w-100" src="/public/images/s5.jfif" alt="Third slide">
          </div>
          <div class="carousel-item">
-            <img class="d-block w-100" src="images/s6.jfif" alt="Third slide">
+            <img class="d-block w-100" src="/public/images/s6.jfif" alt="Third slide">
          </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -165,7 +167,7 @@
             <a href="mobile.html">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/phone.png"></figure>
+                     <figure> <img src="/public/images/phone.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Mobile</span></div>
                   </div>
                </div>
@@ -173,7 +175,7 @@
             <a href="#">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/headphone.png"></figure>
+                     <figure> <img src="/public/images/headphone.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Headphone </span></div>
                   </div>
                </div>
@@ -181,7 +183,7 @@
             <a href="#">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/laptop.png"></figure>
+                     <figure> <img src="/public/images/laptop.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Laptop </span></div>
                   </div>
                </div>
@@ -189,7 +191,7 @@
             <a href="#">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/phone.png"></figure>
+                     <figure> <img src="/public/images/phone.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Phone </span></div>
                   </div>
                </div>
@@ -197,7 +199,7 @@
             <a href="#">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/television.png"></figure>
+                     <figure> <img src="/public/images/television.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Television </span></div>
                   </div>
                </div>
@@ -205,7 +207,7 @@
             <a href="#">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/refrigerator.png"></figure>
+                     <figure> <img src="/public/images/refrigerator.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Refrigerators </span></div>
                   </div>
                </div>
@@ -213,7 +215,7 @@
             <a href="#">
                <div class="item">
                   <div class="new-slider-content">
-                     <figure> <img src="images/air-conditioning.png"></figure>
+                     <figure> <img src="/public/images/air-conditioning.png"></figure>
                      <div class="top-categories-slider-new-text"><span>Air Conditioners </span></div>
                   </div>
                </div>
@@ -235,11 +237,11 @@
             <div class="col-md-4">
                <div class="shop-safely-section-details">
                   <div class="shop-safely-section-icon">
-                     <img src="images/icon.png" alt="">
+                     <img src="/public/images/icon.png" alt="">
                   </div>
                   <div class="shop-safely-section-content-details">
                      <p class="think-title"><b>Store At Home</b></p>
-                     <p class="think-title"><span><a href="otp/number.html" class="think-link">Start a Video
+                     <p class="think-title"><span><a href="/public/otp/number.html" class="think-link">Start a Video
                               Call</a></span></p>
                   </div>
                </div>
@@ -247,7 +249,7 @@
             <div class="col-md-4">
                <div class="shop-safely-section-details">
                   <div class="shop-safely-section-icon">
-                     <img src="images/icon.png" alt="">
+                     <img src="/public/images/icon.png" alt="">
                   </div>
                   <div class="shop-safely-section-content-details">
                      <p class="think-title"><b>Zip Delivery</b></p>
@@ -258,7 +260,7 @@
             <div class="col-md-4">
                <div class="shop-safely-section-details">
                   <div class="shop-safely-section-icon">
-                     <img src="images/icon.png" alt="">
+                     <img src="/public/images/icon.png" alt="">
                   </div>
                   <div class="shop-safely-section-content-details">
                      <p class="think-title"><b>Connect to Store</b></p>
@@ -286,7 +288,8 @@
                <div class="card-body">
                   <div class="row no-gutters">
                      <div class="col-md-4">
-                        <img src="images/02.jpeg" style="border-radius: 100%; width:70%; height: 70%;" alt="...">
+                        <img src="/public/images/02.jpeg" style="border-radius: 100%; width:70%; height: 70%;"
+                           alt="...">
                      </div>
                      <div class="col-md-8">
                         <div class="card-body">
@@ -483,7 +486,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image1.png"></figure>
+                     <figure> <img src="/public/images/image1.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -504,7 +507,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image2.png"></figure>
+                     <figure> <img src="/public/images/image2.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -525,7 +528,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image3.png"></figure>
+                     <figure> <img src="/public/images/image3.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -546,7 +549,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image4.png"></figure>
+                     <figure> <img src="/public/images/image4.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -582,7 +585,7 @@
          <div class="owl-carousel owl-theme top-categories-slider">
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/02.jpeg"></figure>
+                  <figure> <img src="/public/images/02.jpeg"></figure>
                   <div class="slider-content">
                      <h3 class="category-title"> TOOTHPASTE </h3>
                      <span class="category-count"> 32 Products</span>
@@ -591,7 +594,7 @@
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/03.jpeg"></figure>
+                  <figure> <img src="/public/images/03.jpeg"></figure>
                   <div class="slider-content">
                      <h3 class="category-title"> TOOTHPASTE </h3>
                      <span class="category-count"> 32 Products</span>
@@ -600,7 +603,7 @@
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/02.jpeg"></figure>
+                  <figure> <img src="/public/images/02.jpeg"></figure>
                   <div class="slider-content">
                      <h3 class="category-title"> TOOTHPASTE </h3>
                      <span class="category-count"> 32 Products</span>
@@ -609,7 +612,7 @@
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/03.jpeg"></figure>
+                  <figure> <img src="/public/images/03.jpeg"></figure>
                   <div class="slider-content">
                      <h3 class="category-title"> TOOTHPASTE </h3>
                      <span class="category-count"> 32 Products</span>
@@ -629,22 +632,22 @@
          <div class="owl-carousel owl-theme home-offer-slider">
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image19.jpg"></figure>
+                  <figure> <img src="/public/images/image19.jpg"></figure>
                </div>
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image18.jpg"></figure>
+                  <figure> <img src="/public/images/image18.jpg"></figure>
                </div>
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image17.jpg"></figure>
+                  <figure> <img src="/public/images/image17.jpg"></figure>
                </div>
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image19.jpg"></figure>
+                  <figure> <img src="/public/images/image19.jpg"></figure>
                </div>
             </a>
          </div>
@@ -859,7 +862,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image5.png"></figure>
+                     <figure> <img src="/public/images/image5.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -880,7 +883,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image6.png"></figure>
+                     <figure> <img src="/public/images/image6.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -901,7 +904,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image7.png"></figure>
+                     <figure> <img src="/public/images/image7.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -922,7 +925,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image8.png"></figure>
+                     <figure> <img src="/public/images/image8.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -960,7 +963,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image9.png"></figure>
+                     <figure> <img src="/public/images/image9.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -981,7 +984,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image10.png"></figure>
+                     <figure> <img src="/public/images/image10.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1002,7 +1005,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image11.png"></figure>
+                     <figure> <img src="/public/images/image11.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1023,7 +1026,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image12.png"></figure>
+                     <figure> <img src="/public/images/image12.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1055,22 +1058,22 @@
          <div class="owl-carousel owl-theme home-offer-slider">
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image17.jpg"></figure>
+                  <figure> <img src="/public/images/image17.jpg"></figure>
                </div>
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image18.jpg"></figure>
+                  <figure> <img src="/public/images/image18.jpg"></figure>
                </div>
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image19.jpg"></figure>
+                  <figure> <img src="/public/images/image19.jpg"></figure>
                </div>
             </a>
             <a href="#">
                <div class="item">
-                  <figure> <img src="images/image17.jpg"></figure>
+                  <figure> <img src="/public/images/image17.jpg"></figure>
                </div>
             </a>
          </div>
@@ -1089,7 +1092,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image13.png"></figure>
+                     <figure> <img src="/public/images/image13.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1110,7 +1113,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image14.png"></figure>
+                     <figure> <img src="/public/images/image14.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1131,7 +1134,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image15.png"></figure>
+                     <figure> <img src="/public/images/image15.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1152,7 +1155,7 @@
             <a href="#">
                <div class="item">
                   <div class="home-product-image-slider">
-                     <figure> <img src="images/image16.png"></figure>
+                     <figure> <img src="/public/images/image16.png"></figure>
                   </div>
                   <div class="item-cart">
                      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -1328,12 +1331,12 @@
 
 
    <!---END  CONTENT MODULE ONE  --->
-   <script src="js/jquery.js"></script>
+   <script src="/public/js/jquery.js"></script>
    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/owl.carousel.min.js"></script>
-   <script src="js/custom.js"></script>
-   <script src="js/index.js"></script>
+   <script src="/public/js/bootstrap.min.js"></script>
+   <script src="/public/js/owl.carousel.min.js"></script>
+   <script src="/public/js/custom.js"></script>
+   <script src="/public/js/index.js"></script>
 
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -4,9 +4,10 @@ const products = [
   {
     name: "HP 15s-dr3001TU (34W43PA#ACJ) Core i3 11th Gen Windows 10 Home Thin and Light Laptop (8GB RAM, 1TB HDD, Intel UHD Graphics, 39.6cm, Natural Silver)",
     images: [
-      "/images/pro2.png",
-      "/images/laptop-2.jpg",
-      "/images/laptop-3.jpg",
+      "/images/pro1.png",
+      "/images/pro2.jfif",
+      "/images/pro3.png",
+      "/images/pro4.png",
     ],
     description: {
       keyFeatures: [
@@ -24,11 +25,13 @@ const products = [
       overview:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dolore!",
     },
-    reviews: {
-      name: "soumava Banerjee",
-      comment: "Hire me if you like my work",
-      rating: "4.5",
-    },
+    reviews: [
+      {
+        name: "soumava Banerjee",
+        comment: "Hire me if you like my work",
+        rating: "4.5",
+      },
+    ],
     price: 89111.99,
     countInStock: 10,
     rating: 4.5,

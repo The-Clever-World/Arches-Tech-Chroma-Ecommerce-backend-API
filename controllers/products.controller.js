@@ -1,5 +1,6 @@
 import Product from "../models/product.model.js";
 import mongoose from "mongoose";
+import Category from "../models/categories.model.js";
 /**
  * @purpose get all product from a search
  * @route GET /products/search/?searched="text-words"
@@ -31,13 +32,14 @@ export const getProductFromSearch = async (req, res, next) => {
 export const getProductsFromId = async (req, res, next) => {
   try {
     const product = await Product.findById(req.params.id);
+    const categories = await Category.find().populate("products");
     if (!product) {
       res.status(404);
       const error = new Error("No product found");
       next(error);
     }
 
-    res.status(200).render("product.ejs", { product: product });
+    res.status(200).render("product.ejs", { product, categories });
   } catch (error) {
     console.log(error);
   }

@@ -22,13 +22,15 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
 
+app.use("/public/", express.static(__dirname + "/public/"));
+
 // view engine
-app.use(["/css", "/products/css"], express.static(__dirname + "/public/css"));
-app.use(
-  ["/images", "/products/images"],
-  express.static(__dirname + "/public/images")
-);
-app.use(["/js", "/products/js"], express.static(__dirname + "/public/js"));
+// app.use(["/css", "/products/css"], express.static(__dirname + "/public/css"));
+// app.use(
+//   ["/images", "/products/images"],
+//   express.static(__dirname + "/public/images")
+// );
+// app.use(["/js", "/products/js"], express.static(__dirname + "/public/js"));
 
 app.set("view engine", "ejs");
 

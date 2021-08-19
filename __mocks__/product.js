@@ -1,6 +1,7 @@
 // basic products for prototyping
 
 const products = [
+  // Computers & Tablet 1
   {
     name: "HP 15s-dr3001TU (34W43PA#ACJ) Core i3 11th Gen Windows 10 Home Thin and Light Laptop (8GB RAM, 1TB HDD, Intel UHD Graphics, 39.6cm, Natural Silver)",
     images: [
@@ -37,6 +38,8 @@ const products = [
     rating: 4.5,
     numReviews: 12,
   },
+
+  // Computers & Tablet 2
   {
     name: "DELL 138q7i 1TB HDD 256GB SSD I5 8th GEN, NVIDIA 110mx)",
     images: [
@@ -67,6 +70,8 @@ const products = [
     rating: 4.0,
     numReviews: 10,
   },
+
+  // Computers & Tablet 3
   {
     name: "HP 138q7i 1TB HDD 256GB SSD I5 8th GEN, NVIDIA 110mx)",
     images: [
@@ -97,6 +102,8 @@ const products = [
     rating: 4.0,
     numReviews: 90,
   },
+
+  // Computers & Tablet 4
   {
     name: "ASUS vivobook 1TB HDD 256GB SSD I5 8th GEN, NVIDIA 110mx)",
     images: [
@@ -127,6 +134,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Computers & Tablet 5
   {
     name: "Lenovo 1TB HDD 256GB SSD I5 8th GEN, NVIDIA 110mx)",
     images: [
@@ -157,6 +166,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // TV 1
   {
     name: "LG TV",
     images: [
@@ -187,6 +198,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // TV 2
   {
     name: "SONY TV",
     images: [
@@ -217,6 +230,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // TV 3
   {
     name: "Parasonic TV",
     images: [
@@ -247,6 +262,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // TV 4
   {
     name: "TUSIBA TV",
     images: [
@@ -277,6 +294,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Home Applliances 1
   {
     name: "Samsung Airise 1.5 Ton 4 Star Inverter Split AC (Copper Condenser, AR18AY4ZAWK, Deco Wk (DA White))",
     images: [
@@ -305,6 +324,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Home Applliances 2
   {
     name: "Panasonic WU 1.5 Ton 4 Star Inverter Split AC (Air Purification Filter, Wi-Fi, Copper Condenser, CS/CU-WU18XKYXF, White)",
     images: [
@@ -333,6 +354,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Home Applliances 3
   {
     name: "Samsung Airise 0.5 Ton 2.5 Star Inverter Split AC (Copper Condenser,  Deco Wk (DA White))",
     images: [
@@ -361,6 +384,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Home Applliances 4
   {
     name: "Panasonic WU 3.5 Ton 5 Star Inverter Split AC (Air Purification Filter, CS/CU-WU18XKYXF, White)",
     images: [
@@ -389,6 +414,38 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Home Applliances 5
+  {
+    name: "Glen 4 Burner Glass Gas Stove (Multi Spark Auto Ignition, 1048 SQ GT AI Forged BB FFD, Black)",
+    images: [
+      "/images/headphone.png",
+    ],
+    description: {
+      keyFeatures: [
+        "Intel UHD Graphics",
+        "Windows 10 Home",
+        "Best Suited For: Home | Office Use | Students",
+      ],
+      specifications:
+        "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+      highlights:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe facilis dolorem, laborum culpa veniam sed id iusto non reiciendis ducimus!",
+      overview:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dolore!",
+    },
+    reviews: {
+      name: "Alex Chakroborti",
+      comment: "Great Product",
+      rating: "4.5",
+    },
+    price: 60000.99,
+    countInStock: 1500,
+    rating: 4.8,
+    numReviews: 90,
+  },
+
+  // Phone 1
   {
     name: "Realme GT Master Edition (128GB ROM, 8GB RAM, RMX3360, Lunar White)",
     images: [
@@ -417,6 +474,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Phone 2
   {
     name: "Vivo Y12G (32GB ROM, 3GB RAM, PD2060EF_IN, Glacier Blue)",
     images: [
@@ -445,6 +504,8 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Phone 3
   {
     name: "JBL Live 660NC Over-Ear Adaptive Noise Cancellation Wireless Headphone with Mic (Bluetooth 5.0, JBL Signature Sound, JBLLIVE660NCBLK, Black)",
     images: [
@@ -473,36 +534,10 @@ const products = [
     rating: 4.8,
     numReviews: 90,
   },
+
+  // Phone 4
   {
     name: "BOAT Live 660NC Over-Ear Adaptive Noise Cancellation Wireless Headphone with Mic (Bluetooth 5.0, JBL Signature Sound, JBLLIVE660NCBLK, Black)",
-    images: [
-      "/images/headphone.png",
-    ],
-    description: {
-      keyFeatures: [
-        "Intel UHD Graphics",
-        "Windows 10 Home",
-        "Best Suited For: Home | Office Use | Students",
-      ],
-      specifications:
-        "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
-      highlights:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe facilis dolorem, laborum culpa veniam sed id iusto non reiciendis ducimus!",
-      overview:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dolore!",
-    },
-    reviews: {
-      name: "Alex Chakroborti",
-      comment: "Great Product",
-      rating: "4.5",
-    },
-    price: 60000.99,
-    countInStock: 1500,
-    rating: 4.8,
-    numReviews: 90,
-  },
-  {
-    name: "Glen 4 Burner Glass Gas Stove (Multi Spark Auto Ignition, 1048 SQ GT AI Forged BB FFD, Black)",
     images: [
       "/images/headphone.png",
     ],

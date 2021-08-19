@@ -42,7 +42,7 @@
          <div class="row align-center">
             <div class="col-md-2" style=" top: -1.4rem; padding: 10px;">
                <div class="logo common-logo">
-                  <a href="/public/index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+                  <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
                </div>
                <!----- for fixed header logo--->
 
@@ -64,13 +64,25 @@
                         <div class="dropdown">
                            <span class="dropbtn"><b>Products</b></span>
                            <div class="dropdown-content">
-                              <a href="Televisions & Accessories.html">Televisions & Accessories</a>
-                              <a href="Home Appliances.html">Home Appliances</a>
-                              <a href="Phones & Wearables.html">Phones & Wearables</a>
-                              <a href="Computers & Tablets.html">Computers & Tablets</a>
-                              <a href="Kitchen Appliances.html">Kitchen Appliances</a>
-                              <a href="Audio & Video.html">Audio & Video</a>
-                              <a href="Health & Fitness.html">Health & Fitness</a>
+
+                              <!--  List of Categories -->
+
+                              <% categories.forEach(function(category){ %>
+                                 <a href="/<%= category._id %>">
+                                    <%= category.name %>
+                                 </a>
+                              <% }); %>
+
+                              <!--
+                                 <a href="Televisions & Accessories.html">Televisions & Accessories</a>
+                                 <a href="Home Appliances.html">Home Appliances</a>
+                                 <a href="Phones & Wearables.html">Phones & Wearables</a>
+                                 <a href="Computers & Tablets.html">Computers & Tablets</a>
+                                 <a href="Kitchen Appliances.html">Kitchen Appliances</a>
+                                 <a href="Audio & Video.html">Audio & Video</a>
+                                 <a href="Health & Fitness.html">Health & Fitness</a>
+                              -->
+
                            </div>
                            <i class="fa fa-angle-down" aria-hidden="true" style="color: white;"></i>
                         </div>
@@ -116,12 +128,12 @@
                   <div class="product col-md-2">
                      <ul>
                         <% product.images.forEach(image=> { %>
-                           <li><img src="/public<%= image %>" alt="" onclick="clickme(this)"></li>
-                           <% }) %>
+                        <li><img src="/public<%= image %>" alt="" onclick="clickme(this)"></li>
+                        <% }) %>
                      </ul>
                   </div>
                   <div class=" zoom preview col-md-10">
-                     <img src="/public/images/pro1.png" id="imagebox" alt="">
+                     <img src="/public<%= product.images[0] %>" id="imagebox" alt="">
                   </div>
                </div>
             </div>
@@ -146,23 +158,23 @@
                      <i class="fa fa-star-half-o"></i> -->
 
                      <% let integer=product.rating.toString().split(".")[0] %>
-                        <% let decimal=product.rating.toString().split(".")[1] %>
+                     <% let decimal=product.rating.toString().split(".")[1] %>
 
-                           <% for( let i=0; i < integer; i++ ) { %>
-                              <i class="fa fa-star"></i>
-                              <% } %>
+                     <% for( let i=0; i < integer; i++ ) { %>
+                     <i class="fa fa-star"></i>
+                     <% } %>
 
-                                 <% if (decimal && decimal>0) { %>
-                                    <i class="fa fa-star-half-o"></i>
-                                    <% } %>
-
-
+                     <% if (decimal && decimal>0) { %>
+                     <i class="fa fa-star-half-o"></i>
+                     <% } %>
 
 
 
 
-                                       &nbsp;&nbsp;
-                                       <p>(<%= product.numReviews %> Review)</p>
+
+
+                     &nbsp;&nbsp;
+                     <p>(<%= product.numReviews %> Review)</p>
                   </div><br>
                   <div class="category-price-div">
                      <span class="category-count"><b>₹<%= product.price %> </b></span>
@@ -295,10 +307,10 @@
                            <li>Best Suited For: Home | Office Use | Students</li> -->
 
                            <% product.description.keyFeatures.forEach((feature)=> { %>
-                              <li>
-                                 <%=feature%>
-                              </li>
-                              <% }) %>
+                           <li>
+                              <%=feature%>
+                           </li>
+                           <% }) %>
 
                         </div>
                      </div>
@@ -362,38 +374,38 @@
                   <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                      <div class="panel-body">
                         <% product.reviews.forEach(review=> { %>
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-12 comment">
-                                    <div class="card card-white post">
-                                       <div class="post-heading">
-                                          <div class="float-left image">
-                                             <img src="http://bootdey.com/img/Content/user_1.jpg"
-                                                class="img-circle avatar" alt="user profile image">
-                                          </div>
-                                          <div class="float-left meta">
-                                             <div class="title h5">
-                                                <a href="#"><b>
-                                                      <%= review.name %>
-                                                   </b></a>
-                                                made a post.
-                                             </div>
-                                             <h6 class="text-muted time">1 day ago</h6>
-                                          </div>
+                        <div class="container">
+                           <div class="row">
+                              <div class="col-12 comment">
+                                 <div class="card card-white post">
+                                    <div class="post-heading">
+                                       <div class="float-left image">
+                                          <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar"
+                                             alt="user profile image">
                                        </div>
-                                       <div class="post-description">
-                                          <p>
-                                             <%= review.comment %>
-                                          </p>
-
+                                       <div class="float-left meta">
+                                          <div class="title h5">
+                                             <a href="#"><b>
+                                                   <%= review.name %>
+                                                </b></a>
+                                             made a post.
+                                          </div>
+                                          <h6 class="text-muted time">1 day ago</h6>
                                        </div>
                                     </div>
+                                    <div class="post-description">
+                                       <p>
+                                          <%= review.comment %>
+                                       </p>
+
+                                    </div>
                                  </div>
-
                               </div>
-                           </div>
 
-                           <% }) %>
+                           </div>
+                        </div>
+
+                        <% }) %>
                      </div>
                   </div>
                </div>

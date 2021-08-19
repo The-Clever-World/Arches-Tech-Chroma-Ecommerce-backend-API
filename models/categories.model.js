@@ -5,6 +5,9 @@ const CategorySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+  },
   products: [
     {
       type: mongoose.Types.ObjectId,

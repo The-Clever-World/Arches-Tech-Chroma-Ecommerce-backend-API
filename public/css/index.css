@@ -17,9 +17,9 @@
   background-color: lightcyan;
   min-width: 250px;
   min-height: 300px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  }
+}
 
 .dropdown-content a {
   color: black;
@@ -28,57 +28,67 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: ;}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-  line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
-*{
-  margin:0;
-  padding:0;
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: ;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-.container{
+.container {
   max-width: 1170px;
-  margin:auto;
+  margin: auto;
 }
-.row{
+
+.fa {
+  margin-right: 10px;
+}
+
+.row {
   display: flex;
   flex-wrap: wrap;
 }
-ul{
+ul {
   list-style: none;
 }
-li{
+li {
   text-align: justify;
 }
-.footer{
-  background-color: #F5F5F5;
-    padding: 70px 0;
+.footer {
+  background-color: #f5f5f5;
+  padding: 70px 0;
 }
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
 }
-.footer-col h4{
+.footer-col h4 {
   font-size: 15px;
   color: gray;
   text-transform: capitalize;
   margin-bottom: 35px;
   font-weight: 500;
   position: relative;
-} 
-.footer-col ul li:not(:last-child){
+}
+.footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
 }
-.footer-col ul li a{
+.footer-col ul li a {
   font-size: 16px;
   text-transform: capitalize;
   color: #ffffff;
@@ -88,61 +98,53 @@ li{
   display: block;
   transition: all 0.3s ease;
 }
-.footer-col ul li a:hover{
+.footer-col ul li a:hover {
   color: black;
   padding-left: 8px;
 }
-.footer-col .social-links a{
+.footer-col .social-links a {
   display: inline-block;
   font-size: 20px;
   height: 40px;
   width: 40px;
-  background-color: rgba(255,255,255,0.2);
-  margin:0 10px 10px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
   color: black;
   transition: all 0.5s ease;
 }
-.footer-col .social-links a:hover{
-  color: darkred ;
+.footer-col .social-links a:hover {
+  color: darkred;
   background-color: black;
 }
 
-@media(max-width: 767px){
-  .footer-col{
+@media (max-width: 767px) {
+  .footer-col {
     width: 50%;
     margin-bottom: 30px;
+  }
 }
-}
-@media(max-width: 574px){
-  .footer-col{
+@media (max-width: 574px) {
+  .footer-col {
     width: 100%;
+  }
 }
+
+.imge {
+  vertical-align: middle !important;
+  width: 100%;
+  height: auto;
+  width: calc(17px + 6 * ((100vw - 320px) / 680));
 }
 
-
-
-
- .imge {
-     vertical-align: middle !important;
-     width: 100%;
-     height: auto;
-     width: calc(17px + 6 * ((100vw - 320px) / 680))
- }
-
-
- .container-fluid p{
+.container-fluid p {
   font-size: 14px;
- }
-
+}
 
 .vl {
   border-left: 1px solid cyan;
   height: 30rem;
   position: static;
 }
-
-
-

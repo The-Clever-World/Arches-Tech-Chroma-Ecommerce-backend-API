@@ -37,7 +37,7 @@ export const getProductsFromId = async (req, res, next) => {
       next(error);
     }
 
-    res.status(200).render("product.ejs", { product: product });
+    res.status(200).render("product.ejs", { product });
   } catch (error) {
     console.log(error);
   }

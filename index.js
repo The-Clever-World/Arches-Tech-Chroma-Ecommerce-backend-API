@@ -6,7 +6,12 @@ import morgan from "morgan";
 import dbConnection from "./config/db.js";
 
 import { NotFound, errorhandler } from "./middlewares/errorHandling.js";
-import { categoryRouter, userRouter, productRouter } from "./routes/index.js";
+import {
+  categoryRouter,
+  userRouter,
+  productRouter,
+  CartRouter,
+} from "./routes/index.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -38,6 +43,7 @@ app.set("view engine", "ejs");
 app.use("/", categoryRouter);
 app.use("/products", productRouter);
 app.use("/user", userRouter);
+app.use("/cart", CartRouter);
 
 ///    For error handling   ///
 app.use(NotFound);

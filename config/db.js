@@ -19,8 +19,7 @@ const dbConnect = async () => {
     );
   } catch (error) {
     console.log(
-      `Error while connecting to DB: ${error.message}`.brightRed.underline
-        .italic
+      `Error while connecting to DB: ${error.message}`
     );
     process.exit(1);
   }

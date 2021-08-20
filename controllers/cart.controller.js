@@ -8,6 +8,7 @@ import Product from "../models/product.model.js";
  */
 
 export const getAllProductsFromCart = async (req, res, next) => {
+  // TODO: get userId and fetch particular cart of that user
   const products = await Cart.find().populate("products");
 
   // res.status(200).render("cart", { cartItems: products });
@@ -21,15 +22,31 @@ export const getAllProductsFromCart = async (req, res, next) => {
  */
 
 export const InsertProductIntoCart = async (req, res, next) => {
+  // TODO: get userId from query
   const productId = req.params.id;
-  const cartItems = await Cart.find();
+  // TODO: fetch cart by userId
+  const cartItem = await Cart.findOne();
+  let newCartItem;
 
-  if (cartItems.products.includes(productId)) next();
+  if (cartItem) {
+    if (cartItem.products.includes(productId)) {
+      const err = new Error("product already exist")
+      next(err);
+    } else {
+      cartItem.products.push(productId);
+      await cartItem.save();
+      res.status(200).send(cartItem);
+    }
+  } else {
+    newCartItem = new Cart({
+      // TODO: add userId to new cart
+      products: [productId]
+    })
+    const cart = await newCartItem.save();
+    res.status(200).send(cart);
+  }
 
-  cartItems[0].products.push(productId);
-  await cartItems.save();
   // res.status(204).render("cart.ejs", { cartItems });
-  res.status(204).send(cartItems);
 };
 
 /**
@@ -40,13 +57,16 @@ export const InsertProductIntoCart = async (req, res, next) => {
 
 export const DeleteProductFromCart = async (req, res, next) => {
   const productId = req.params.id;
-
   // TODO find cart by user and update
+  const cartItem = await Cart.findOne();
 
-  const cartItems = await Cart.find();
+  const modifiedCart = cartItem.products.filter((value, index, arr) => value != productId);
+  cartItem.products = [];
+  cartItem.products.push(modifiedCart);
 
-  // [{products: [...]}]
+  console.log(cartItem);
+  await cartItem.save();
 
   // res.status(204).render("cart.ejs", { cartItems });
-  res.status(200).send(cartItems);
+  res.status(200).send(cartItem);
 };

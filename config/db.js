@@ -15,7 +15,7 @@ const dbConnect = async () => {
     });
 
     console.log(
-      `MongoDb Connected Successfully: ${connect.connection.host}`
+      `MongoDb Connected Successfully: ${process.env.MONGO_URI}`
     );
   } catch (error) {
     console.log(

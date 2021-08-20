@@ -71,9 +71,9 @@
                                  <a href="/<%= category._id %>">
                                     <%= category.name %>
                                  </a>
-                              <% }); %>
+                                 <% }); %>
 
-                              <!--
+                                    <!--
                                  <a href="Televisions & Accessories.html">Televisions & Accessories</a>
                                  <a href="Home Appliances.html">Home Appliances</a>
                                  <a href="Phones & Wearables.html">Phones & Wearables</a>
@@ -98,7 +98,7 @@
                <ul>
                   <li><a href="#"><i class="fa fa-user"></i></a></li>
                   <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                  <li><a href="#"><i class="fa fa-shopping-cart"></i> </a></li>
+                  <li><a href="/cart/"><i class="fa fa-shopping-cart"></i> </a></li>
                   <li><a href="#"> Login / Register </a></li>
                </ul>
             </div>
@@ -128,8 +128,8 @@
                   <div class="product col-md-2">
                      <ul>
                         <% product.images.forEach(image=> { %>
-                        <li><img src="/public<%= image %>" alt="" onclick="clickme(this)"></li>
-                        <% }) %>
+                           <li><img src="/public<%= image %>" alt="" onclick="clickme(this)"></li>
+                           <% }) %>
                      </ul>
                   </div>
                   <div class=" zoom preview col-md-10">
@@ -156,18 +156,18 @@
                      <i class="fa fa-star-half-o"></i> -->
 
                      <% let integer=product.rating.toString().split(".")[0] %>
-                     <% let decimal=product.rating.toString().split(".")[1] %>
+                        <% let decimal=product.rating.toString().split(".")[1] %>
 
-                     <% for( let i=0; i < integer; i++ ) { %>
-                     <i class="fa fa-star"></i>
-                     <% } %>
+                           <% for( let i=0; i < integer; i++ ) { %>
+                              <i class="fa fa-star"></i>
+                              <% } %>
 
-                     <% if (decimal && decimal>0) { %>
-                     <i class="fa fa-star-half-o"></i>
-                     <% } %>
+                                 <% if (decimal && decimal>0) { %>
+                                    <i class="fa fa-star-half-o"></i>
+                                    <% } %>
 
-                     &nbsp;&nbsp;
-                     <p>(<%= product.numReviews %> Review)</p>
+                                       &nbsp;&nbsp;
+                                       <p>(<%= product.numReviews %> Review)</p>
                   </div><br>
                   <div class="category-price-div">
                      <span class="category-count"><b>₹<%= product.price %> </b></span>
@@ -265,7 +265,7 @@
             <div class=" mt-4 mb-4">
 
                <div class="buttons mb-4">
-                  <button class="cart-button page-btn">
+                  <button value="<%= product._id %> " class="cart-button page-btn">
                      <span class="add-to-cart">Add to cart</span>
                      <span class="added">Item added</span>
                      <i class="fa fa-shopping-cart"></i> <i class="fa fa-square"></i>
@@ -300,10 +300,10 @@
                            <li>Best Suited For: Home | Office Use | Students</li> -->
 
                            <% product.description.keyFeatures.forEach((feature)=> { %>
-                           <li>
-                              <%=feature%>
-                           </li>
-                           <% }) %>
+                              <li>
+                                 <%=feature%>
+                              </li>
+                              <% }) %>
 
                         </div>
                      </div>
@@ -367,38 +367,38 @@
                   <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                      <div class="panel-body">
                         <% product.reviews.forEach(review=> { %>
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-12 comment">
-                                 <div class="card card-white post">
-                                    <div class="post-heading">
-                                       <div class="float-left image">
-                                          <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar"
-                                             alt="user profile image">
-                                       </div>
-                                       <div class="float-left meta">
-                                          <div class="title h5">
-                                             <a href="#"><b>
-                                                   <%= review.name %>
-                                                </b></a>
-                                             made a post.
+                           <div class="container">
+                              <div class="row">
+                                 <div class="col-12 comment">
+                                    <div class="card card-white post">
+                                       <div class="post-heading">
+                                          <div class="float-left image">
+                                             <img src="http://bootdey.com/img/Content/user_1.jpg"
+                                                class="img-circle avatar" alt="user profile image">
                                           </div>
-                                          <h6 class="text-muted time">1 day ago</h6>
+                                          <div class="float-left meta">
+                                             <div class="title h5">
+                                                <a href="#"><b>
+                                                      <%= review.name %>
+                                                   </b></a>
+                                                made a post.
+                                             </div>
+                                             <h6 class="text-muted time">1 day ago</h6>
+                                          </div>
                                        </div>
-                                    </div>
-                                    <div class="post-description">
-                                       <p>
-                                          <%= review.comment %>
-                                       </p>
+                                       <div class="post-description">
+                                          <p>
+                                             <%= review.comment %>
+                                          </p>
 
+                                       </div>
                                     </div>
                                  </div>
+
                               </div>
-
                            </div>
-                        </div>
 
-                        <% }) %>
+                           <% }) %>
                      </div>
                   </div>
                </div>
@@ -727,19 +727,23 @@
       <div class="container">
          <div class="owl-carousel owl-theme top-categories-slider">
 
-            <% categories.forEach((category) => { %>
+            <% categories.forEach((category)=> { %>
                <a href="<%= category._id %>">
                   <div class="item">
                      <figure>
                         <img src="/public/<%= category.image %>" />
                      </figure>
                      <div class="slider-content">
-                        <h3 class="category-title"> <%= category.name %> </h3>
-                        <span class="category-count"> <%= category.products.length %> Products</span>
+                        <h3 class="category-title">
+                           <%= category.name %>
+                        </h3>
+                        <span class="category-count">
+                           <%= category.products.length %> Products
+                        </span>
                      </div>
                   </div>
                </a>
-            <% }) %>
+               <% }) %>
          </div>
       </div>
    </section>
@@ -780,10 +784,12 @@
 
    <!-- Shop PRODUCT DETAILS --->
 
-   <% categories.forEach((category) => { %>
+   <% categories.forEach((category)=> { %>
       <div class="heading-taxt pt-60 pb-30">
          <div class="container fl-flex-property">
-            <h2 class="heading"><%= category.name %></h2>
+            <h2 class="heading">
+               <%= category.name %>
+            </h2>
             <a href="#" class="page-btn">View More </a>
          </div>
       </div>
@@ -793,7 +799,7 @@
 
                <!-- List of Products of particular category -->
 
-               <% category.products.forEach((product) => { %>
+               <% category.products.forEach((product)=> { %>
 
                   <a href="/products/<%= product._id %>">
                      <div class="item">
@@ -807,7 +813,9 @@
                         </div>
                         <div class="home-product-content-slider">
                            <div class="slider-content">
-                              <p class="category-title"><%= product.name %> </p>
+                              <p class="category-title">
+                                 <%= product.name %>
+                              </p>
                               <div class="category-price-div">
                                  <span class="category-count">
                                     <b> ₹<%= product.price %> </b>
@@ -818,234 +826,263 @@
                               </div>
                               <div class="home-slider-star">
                                  <% let integer=product.rating.toString().split(".")[0] %>
-                                 <% let decimal=product.rating.toString().split(".")[1] %>
+                                    <% let decimal=product.rating.toString().split(".")[1] %>
 
-                                 <% for( let i=0; i < integer; i++ ) { %>
-                                 <i style="float: left" class="fa fa-star"></i>
-                                 <% } %>
+                                       <% for( let i=0; i < integer; i++ ) { %>
+                                          <i style="float: left" class="fa fa-star"></i>
+                                          <% } %>
 
-                                 <% if (decimal && decimal>0) { %>
-                                 <i class="fa fa-star-half-o"></i>
-                                 <% } %>
+                                             <% if (decimal && decimal>0) { %>
+                                                <i class="fa fa-star-half-o"></i>
+                                                <% } %>
 
-                                 <p>(<%= product.numReviews %> Review)</p>
+                                                   <p>(<%= product.numReviews %> Review)</p>
                               </div>
                            </div>
                         </div>
                      </div>
                   </a>
 
-               <% }) %>
+                  <% }) %>
 
             </div>
          </div>
       </section>
 
-   <% }) %>
+      <% }) %>
 
-   <!--END PRODUCT CONTENT SECTION--->
-
-
-
-   <!---IMAGE OFFER SECTION--->
-
-   <section id="" class="home-offer-section p-60">
-      <div class="container">
-         <div class="owl-carousel owl-theme home-offer-slider">
-            <a href="#">
-               <div class="item">
-                  <figure> <img src="/public/images/image17.jpg"></figure>
-               </div>
-            </a>
-            <a href="#">
-               <div class="item">
-                  <figure> <img src="/public/images/image18.jpg"></figure>
-               </div>
-            </a>
-            <a href="#">
-               <div class="item">
-                  <figure> <img src="/public/images/image19.jpg"></figure>
-               </div>
-            </a>
-            <a href="#">
-               <div class="item">
-                  <figure> <img src="/public/images/image17.jpg"></figure>
-               </div>
-            </a>
-         </div>
-      </div>
-   </section>
+         <!--END PRODUCT CONTENT SECTION--->
 
 
 
+         <!---IMAGE OFFER SECTION--->
 
-
-
-   <!-- Shop Safely with --->
-   <div class="container-fluid">
-      <p>Launched in 2006, first one-of-its kind large format specialist retail electronics store, Croma, caters to over
-         12 Million happy customers for all of their multi-brand digital gadgets and home electronics. Since its
-         inception, Croma has become synonymous for all electronics needs, both online & in-store, with a wide product
-         range and tech-savvy staff with a will to help customers throughout their buying journeys.</p>
-      <br>
-      <p>With a promise of a ‘#Brighter Every Day’ to its customers, Croma offers a world-class ambience and seamless
-         ‘omni-channel’ shopping experience to enjoy the best of both, the online shopping & the offline worlds. By
-         availing Croma’s omni-channel services, as a customer, one can enjoy online shopping and have the product
-         delivered at their doorstep or can avail the pick-up from a Croma store near me service. Customers can also opt
-         for Zip Express delivery service that makes sure to deliver the product at their doorstep within 3 hours in
-         select cities.</p>
-      <br>
-      <p>With over 200 brands and 190+ stores across 40+ major cities of India, Croma ensures fulfilling electronic
-         needs of each customer, and that there is something for everyone.</p>
-      <br>
-
-      <p>Whether you're setting up a new home or simply looking for an upgrade, Croma offers an eclectic range of
-         electronics to suit your needs. Browse through an array of Home & Kitchen Appliances such as Air Conditioners,
-         Refrigerators, Washing Machines, Vacuum Cleaners, Microwave, Air Fryers, Soup Makers, Cooktops, Dishwashers,
-         Water Heaters and many more such product categories.</p>
-      <br>
-      <p>You can also make upgrading easy with an all-inclusive collection of LED TV, Speakers & Sound Systems. So,
-         whether you're looking at rekindling your lost hobby with a Digital Camera, or hoping to surprise your loved
-         ones with the latest Mobile, Laptop, or Desktop, Croma is a one-stop shop solution for all your needs.</p>
-      <br>
-      <p>If that's not all, Croma also offers an assortment of various other product categories to simplify your life
-         including Home Safety Security, Wired & Wireless Headphones, Earphones, Smart Wearable Devices and all kinds of
-         Accessories.</p>
-      <br>
-      <p>With an attempt to become a go-to destination for all electronic goods, Croma has set up a platform called
-         Gadgets of Desire that showcases all the New@Croma, quick-pick & latest technology products. This section is
-         specially curated to match expectations of every innovative gadget lover, tech-savvy customer or for those
-         looking for unique gifting ideas. Gadgets of Desire focuses to satiate every fitness freak, travel lover,
-         in-house DJ or a computer geek. Croma assures your #BrighterTomorrow begins today!</p>
-      <br>
-      <p>To delight customers all along, Croma also launched its own label products in 2008. Brand Croma stands for Life
-         More Beautiful; a promise based not just on the beauty in the way they look, but mainly as a value they offer
-         to a customer’s life. This range is a perfect fit, especially for those who desire a completely feature-packed
-         and quality product in a pocket friendly price range. Additionally, to ensure that customers enjoy their
-         product to the fullest, Croma encourages purchase of Annual Maintenance Plans and Extended Warranty to
-         safeguard their product against mishaps and accidental damages during or beyond brand warranty.</p>
-      <br>
-      <p>Croma also rewards customers with cashbacks and discounts as a part of Privileges Programme to get more for
-         their money and exceptional after sales service. Members in this programme enjoy Loyalty Discounts,
-         Pre-qualified Credit, Exchange & Upgrade Benefits, Assured Lifetime Service and 14 Day Fix/Replace Assurance on
-         select Home Appliances and LEDs. To register, give a missed call on 1800-22-6699, and redeem exclusive benefits
-         at the nearest Croma store or on www.croma.com! This programme also includes Gift Card, a solution that gives
-         customers the freedom of choice between physical Gift Cards or e-Gift Vouchers of multiple denominations.</p>
-      <br>
-      <p>Croma offers multiple payment gateways to select preferred payment option. A customer can choose from various
-         payment modes like credit or debit cards, payment wallets and cash-on-delivery. Croma allows its customers to
-         avail Easy EMI options on credit & debit cards or through available consumer finance options.</p>
-      <br>
-      <p>Croma is a brand of Infiniti Retail Ltd., which is a wholly-owned subsidiary of Tata Sons, holding company of
-         the Tata Group.</p>
-      <br>
-   </div>
-
-   <!---- END CONTENT THREE---->
-
-
-
-
-   <footer class="footer">
-      <div class="container">
-         <div class="row">
-            <div class="footer-col col-md-3">
-               <h4>CONNECT WITH US</h4>
-               <ul>
-                  <div class="input-group-lg input-group">
-                     <input type="text" class="form-control mb-5" style="height:5rem; width: 20rem;"
-                        placeholder="Enter your e-mail address" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                     <div class="input-group-append">
-                        <button class="btn btn-light think-link" style="height:5rem;" data-toggle="modal"
-                           data-target="#staticBackdrop_2" type="button" id="button-addon2">
-                           <span>&#8594;</span>
-                        </button>
+         <section id="" class="home-offer-section p-60">
+            <div class="container">
+               <div class="owl-carousel owl-theme home-offer-slider">
+                  <a href="#">
+                     <div class="item">
+                        <figure> <img src="/public/images/image17.jpg"></figure>
                      </div>
-
-
-                     <div class="social-links">
-                        <a href="#"><i class="fa fa-google"></i></a>
-                        <a href="#"><i class="fa fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
+                  </a>
+                  <a href="#">
+                     <div class="item">
+                        <figure> <img src="/public/images/image18.jpg"></figure>
                      </div>
-                  </div>
-                  <div class="container mt-5">
-                     <p>© Copyright 2021 Croma. All rights reserved</p>
-                  </div>
+                  </a>
+                  <a href="#">
+                     <div class="item">
+                        <figure> <img src="/public/images/image19.jpg"></figure>
+                     </div>
+                  </a>
+                  <a href="#">
+                     <div class="item">
+                        <figure> <img src="/public/images/image17.jpg"></figure>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </section>
 
-               </ul>
-            </div>
-            <div class="vl footer-col col">
-               <h4>USEFUL LINKS</h4>
-               <ul>
-                  <li><a href="#">About Croma</a></li>
-                  <li><a href="#">Help And Support</a></li>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Order Support</a></li>
-                  <li><a href="#">Bulk Enquiry</a></li>
-                  <li><a href="#">Store Locator</a></li>
-                  <li><a href="#">Delightful Programmes</a></li>
-               </ul>
-            </div>
-            <div class="footer-col mt-4 col">
-               <h4></h4>
-               <ul class="mt-4">
-                  <li><a href="#">E-Care</a></li>
-                  <li><a href="#">Franchise Opportunity</a></li>
-                  <li><a href="#">Site Map</a></li>
-                  <li><a href="#">Careers At Croma</a></li>
-                  <li><a href="#">Terms Of Use</a></li>
-                  <li><a href="#">Disclaimer</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-               </ul>
-            </div>
 
-            <div class="vl footer-col col">
-               <h4>PRODUCT</h4>
-               <ul>
-                  <li><a href="#">Televisions & Accessories</a></li>
-                  <li><a href="#">Home Appliances</a></li>
-                  <li><a href="#">Phones & Wearables</a></li>
-                  <li><a href="#">Computers & Tablets</a></li>
-                  <li><a href="#">Kitchen Appliances</a></li>
-                  <li><a href="#">Audio & Video</a></li>
-                  <li><a href="#">Health & Fitness</a></li>
-               </ul>
-            </div>
-            <div class="footer-col mt-4 col">
-               <h4></h4>
-               <ul class="mt-4">
-                  <li><a href="#">Grooming & Personal Care</a></li>
-                  <li><a href="#">Cameras & Accessories</a></li>
-                  <li><a href="#">Smart Devices</a></li>
-                  <li><a href="#">Gaming</a></li>
-                  <li><a href="#">Zip Services</a></li>
-                  <li><a href="#">Accessories</a></li>
-                  <li><a href="#">Top Brands</a></li>
-               </ul>
-            </div>
 
+
+
+
+         <!-- Shop Safely with --->
+         <div class="container-fluid">
+            <p>Launched in 2006, first one-of-its kind large format specialist retail electronics store, Croma, caters
+               to over
+               12 Million happy customers for all of their multi-brand digital gadgets and home electronics. Since its
+               inception, Croma has become synonymous for all electronics needs, both online & in-store, with a wide
+               product
+               range and tech-savvy staff with a will to help customers throughout their buying journeys.</p>
+            <br>
+            <p>With a promise of a ‘#Brighter Every Day’ to its customers, Croma offers a world-class ambience and
+               seamless
+               ‘omni-channel’ shopping experience to enjoy the best of both, the online shopping & the offline worlds.
+               By
+               availing Croma’s omni-channel services, as a customer, one can enjoy online shopping and have the product
+               delivered at their doorstep or can avail the pick-up from a Croma store near me service. Customers can
+               also opt
+               for Zip Express delivery service that makes sure to deliver the product at their doorstep within 3 hours
+               in
+               select cities.</p>
+            <br>
+            <p>With over 200 brands and 190+ stores across 40+ major cities of India, Croma ensures fulfilling
+               electronic
+               needs of each customer, and that there is something for everyone.</p>
+            <br>
+
+            <p>Whether you're setting up a new home or simply looking for an upgrade, Croma offers an eclectic range of
+               electronics to suit your needs. Browse through an array of Home & Kitchen Appliances such as Air
+               Conditioners,
+               Refrigerators, Washing Machines, Vacuum Cleaners, Microwave, Air Fryers, Soup Makers, Cooktops,
+               Dishwashers,
+               Water Heaters and many more such product categories.</p>
+            <br>
+            <p>You can also make upgrading easy with an all-inclusive collection of LED TV, Speakers & Sound Systems.
+               So,
+               whether you're looking at rekindling your lost hobby with a Digital Camera, or hoping to surprise your
+               loved
+               ones with the latest Mobile, Laptop, or Desktop, Croma is a one-stop shop solution for all your needs.
+            </p>
+            <br>
+            <p>If that's not all, Croma also offers an assortment of various other product categories to simplify your
+               life
+               including Home Safety Security, Wired & Wireless Headphones, Earphones, Smart Wearable Devices and all
+               kinds of
+               Accessories.</p>
+            <br>
+            <p>With an attempt to become a go-to destination for all electronic goods, Croma has set up a platform
+               called
+               Gadgets of Desire that showcases all the New@Croma, quick-pick & latest technology products. This section
+               is
+               specially curated to match expectations of every innovative gadget lover, tech-savvy customer or for
+               those
+               looking for unique gifting ideas. Gadgets of Desire focuses to satiate every fitness freak, travel lover,
+               in-house DJ or a computer geek. Croma assures your #BrighterTomorrow begins today!</p>
+            <br>
+            <p>To delight customers all along, Croma also launched its own label products in 2008. Brand Croma stands
+               for Life
+               More Beautiful; a promise based not just on the beauty in the way they look, but mainly as a value they
+               offer
+               to a customer’s life. This range is a perfect fit, especially for those who desire a completely
+               feature-packed
+               and quality product in a pocket friendly price range. Additionally, to ensure that customers enjoy their
+               product to the fullest, Croma encourages purchase of Annual Maintenance Plans and Extended Warranty to
+               safeguard their product against mishaps and accidental damages during or beyond brand warranty.</p>
+            <br>
+            <p>Croma also rewards customers with cashbacks and discounts as a part of Privileges Programme to get more
+               for
+               their money and exceptional after sales service. Members in this programme enjoy Loyalty Discounts,
+               Pre-qualified Credit, Exchange & Upgrade Benefits, Assured Lifetime Service and 14 Day Fix/Replace
+               Assurance on
+               select Home Appliances and LEDs. To register, give a missed call on 1800-22-6699, and redeem exclusive
+               benefits
+               at the nearest Croma store or on www.croma.com! This programme also includes Gift Card, a solution that
+               gives
+               customers the freedom of choice between physical Gift Cards or e-Gift Vouchers of multiple denominations.
+            </p>
+            <br>
+            <p>Croma offers multiple payment gateways to select preferred payment option. A customer can choose from
+               various
+               payment modes like credit or debit cards, payment wallets and cash-on-delivery. Croma allows its
+               customers to
+               avail Easy EMI options on credit & debit cards or through available consumer finance options.</p>
+            <br>
+            <p>Croma is a brand of Infiniti Retail Ltd., which is a wholly-owned subsidiary of Tata Sons, holding
+               company of
+               the Tata Group.</p>
+            <br>
          </div>
-      </div>
-   </footer>
+
+         <!---- END CONTENT THREE---->
 
 
 
 
-   <!---END  CONTENT MODULE ONE  --->
-   <script src="/public/js/jquery.js"></script>
-   <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
-   <script src="/public/js/bootstrap.min.js"></script>
-   <script src="/public/js/owl.carousel.min.js"></script>
-   <script src="/public/js/custom.js"></script>
-   <script src="/public/js/index.js"></script>
-   <script src="/public/js/product.js"></script>
-   <script src="/public/js/jquery.elevateZoom-3.0.8.min.js"></script>
+         <footer class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="footer-col col-md-3">
+                     <h4>CONNECT WITH US</h4>
+                     <ul>
+                        <div class="input-group-lg input-group">
+                           <input type="text" class="form-control mb-5" style="height:5rem; width: 20rem;"
+                              placeholder="Enter your e-mail address" aria-label="Recipient's username"
+                              aria-describedby="button-addon2">
+                           <div class="input-group-append">
+                              <button class="btn btn-light think-link" style="height:5rem;" data-toggle="modal"
+                                 data-target="#staticBackdrop_2" type="button" id="button-addon2">
+                                 <span>&#8594;</span>
+                              </button>
+                           </div>
 
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+                           <div class="social-links">
+                              <a href="#"><i class="fa fa-google"></i></a>
+                              <a href="#"><i class="fa fa-facebook-f"></i></a>
+                              <a href="#"><i class="fa fa-instagram"></i></a>
+                              <a href="#"><i class="fa fa-twitter"></i></a>
+                           </div>
+                        </div>
+                        <div class="container mt-5">
+                           <p>© Copyright 2021 Croma. All rights reserved</p>
+                        </div>
+
+                     </ul>
+                  </div>
+                  <div class="vl footer-col col">
+                     <h4>USEFUL LINKS</h4>
+                     <ul>
+                        <li><a href="#">About Croma</a></li>
+                        <li><a href="#">Help And Support</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Order Support</a></li>
+                        <li><a href="#">Bulk Enquiry</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="#">Delightful Programmes</a></li>
+                     </ul>
+                  </div>
+                  <div class="footer-col mt-4 col">
+                     <h4></h4>
+                     <ul class="mt-4">
+                        <li><a href="#">E-Care</a></li>
+                        <li><a href="#">Franchise Opportunity</a></li>
+                        <li><a href="#">Site Map</a></li>
+                        <li><a href="#">Careers At Croma</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                     </ul>
+                  </div>
+
+                  <div class="vl footer-col col">
+                     <h4>PRODUCT</h4>
+                     <ul>
+                        <li><a href="#">Televisions & Accessories</a></li>
+                        <li><a href="#">Home Appliances</a></li>
+                        <li><a href="#">Phones & Wearables</a></li>
+                        <li><a href="#">Computers & Tablets</a></li>
+                        <li><a href="#">Kitchen Appliances</a></li>
+                        <li><a href="#">Audio & Video</a></li>
+                        <li><a href="#">Health & Fitness</a></li>
+                     </ul>
+                  </div>
+                  <div class="footer-col mt-4 col">
+                     <h4></h4>
+                     <ul class="mt-4">
+                        <li><a href="#">Grooming & Personal Care</a></li>
+                        <li><a href="#">Cameras & Accessories</a></li>
+                        <li><a href="#">Smart Devices</a></li>
+                        <li><a href="#">Gaming</a></li>
+                        <li><a href="#">Zip Services</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Top Brands</a></li>
+                     </ul>
+                  </div>
+
+               </div>
+            </div>
+         </footer>
+
+
+
+
+         <!---END  CONTENT MODULE ONE  --->
+         <script src="/public/js/jquery.js"></script>
+         <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+         <script src="/public/js/bootstrap.min.js"></script>
+         <script src="/public/js/owl.carousel.min.js"></script>
+         <script src="/public/js/custom.js"></script>
+         <script src="/public/js/index.js"></script>
+         <script src="/public/js/product.js"></script>
+         <script src="/public/js/jquery.elevateZoom-3.0.8.min.js"></script>
+         <script src="/public/js/integrations/addToCart.js"></script>
+
+         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
 </body>

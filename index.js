@@ -25,6 +25,7 @@ dbConnection();
 const app = express();
 app.use(morgan("dev"));
 app.use(cors());
+app.options("*", cors());
 app.use(express.json());
 
 app.use("/public/", express.static(__dirname + "/public/"));

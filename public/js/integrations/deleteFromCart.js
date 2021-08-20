@@ -3,7 +3,7 @@ const allCartDeleteButtons = document.querySelectorAll(".cart-delete");
 allCartDeleteButtons.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     productId = this.value;
-    fetch(`http://localhost:5000/cart/${productId}`, {
+    fetch(`https://chroma-commerce.herokuapp.com/cart/${productId}`, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

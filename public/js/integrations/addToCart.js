@@ -3,7 +3,7 @@ const allCartButtons = document.querySelectorAll(".cart-button");
 allCartButtons.forEach((button) => {
   button.addEventListener("click", function (e) {
     let productId = this.value;
-    fetch(`http://localhost:5000/cart/${productId}`, {
+    fetch(`https://chroma-commerce.herokuapp.com/cart/${productId}`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

@@ -11,6 +11,7 @@ import {
   userRouter,
   productRouter,
   CartRouter,
+  orderRouter
 } from "./routes/index.js";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -41,6 +42,7 @@ app.use("/public/", express.static(__dirname + "/public/"));
 app.set("view engine", "ejs");
 
 ///    Routes      ///
+app.use("/order", orderRouter);
 app.use("/cart", CartRouter);
 app.use("/", categoryRouter);
 app.use("/products", productRouter);

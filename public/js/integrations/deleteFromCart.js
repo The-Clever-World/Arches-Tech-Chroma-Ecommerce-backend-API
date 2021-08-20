@@ -14,9 +14,6 @@ allCartDeleteButtons.forEach((btn) => {
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify({
-        id: productId,
-      }), // body data type must match "Content-Type" header
     }).then((response) => document.location.reload());
   });
 });

@@ -28,11 +28,11 @@
          <div class="row align-center">
             <div class="col-md-2">
                <div class="logo common-logo">
-                  <a href="index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+                  <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
                </div>
                <!----- for fixed header logo--->
                <div class="logo fixed-header-logo">
-                  <a href="index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+                  <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
                </div>
             </div>
             <!--LOGO--->
@@ -57,7 +57,7 @@
                <ul>
                   <li><a href="#"><i class="fa fa-user"></i></a></li>
                   <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                  <li><a href="#"><i class="fa fa-shopping-cart"></i> </a></li>
+                  <li><a href="/cart"><i class="fa fa-shopping-cart"></i> </a></li>
                   <li><a href="#"> Login / Register </a></li>
                </ul>
             </div>
@@ -78,7 +78,7 @@
    <div class="container">
       <div class="row mt-1 d-flex justify-content-between">
          <div class="">CartTray</div>
-         <div class=""><a href="index.html"> Back</a></div>
+         <div class=""><a href="/"> Back</a></div>
       </div>
    </div>
 
@@ -106,8 +106,10 @@
                <div class="card container mt-3" style="min-width: 100%; border-radius: 10px;">
                   <div class="row g-0">
                      <div class="col-md-4">
-                        <img src="/public/<%= item.images[0] %>" class="img-fluid rounded-start" alt="...">
-                     </div>
+                        <a href="/products/<%= item._id %>">
+                           <img src="/public/<%= item.images[0] %>" class="img-fluid rounded-start" alt="...">
+                        </a>
+                        </div>
                      <div class="col-md-8">
                         <div class="card-body">
                            <div class="item-cart" style="text-align: right;">
@@ -185,14 +187,6 @@
                      </div>
                      <p class="mx-4 mt-3">Delivery options are not available for this pincode.</p>
                   </div>
-                  <div class=" card container mt-4" style="max-width: 100%; border-radius: 10px; height: 33%;">
-                     <div class="d-flex justify-content-between mt-4">
-
-                        <input type="text_1" class="form-control mt-4"
-                           style="border: none; background-color: whitesmoke;" placeholder="Enter Coupon Code ">
-                        <p class="mt-4" style="color: lightgray;"><a href="#">Apply</a></p>
-                     </div>
-                  </div>
                </div>
       </div>
 
@@ -218,7 +212,9 @@
                <hr>
                <div class="d-flex justify-content-between mt-4">
                   <p>Total Price</p>
-                  <b>₹42,250.00</b>
+                  <b>₹<%= Number(cartItems.reduce((acc, item)=> {
+                     return (acc + item.price)
+                     },0)).toFixed(2) %></b>
                </div>
                <div class="checkbox checkbox-1 mt-3 mb-4">
                   <input type="checkbox" id="checkbox-1" />

@@ -63,12 +63,12 @@ export const DeleteProductFromCart = async (req, res, next) => {
   const modifiedCart = cartItem.products.filter(
     (value, index, arr) => value != productId
   );
-  cartItem.products = [];
-  cartItem.products.push(modifiedCart);
+  console.log(modifiedCart);
+  cartItem.products = modifiedCart;
 
   console.log(cartItem);
   await cartItem.save();
 
-  res.status(200).render("cart.ejs", { cartItems: cartItem[0].products });
-  // res.status(200).send(cartItem);
+  // res.status(200).render("cart.ejs", { cartItems: cartItem[0].products });
+  res.status(200).send(cartItem);
 };

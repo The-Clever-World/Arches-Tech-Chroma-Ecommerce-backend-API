@@ -1,0 +1,22 @@
+
+POST http://localhost:5000/order/new
+Content-Type: application/json
+
+{
+    "userId": "611ec41d3a06813e10332344",
+    "products": [
+        "611ec41d3a06813e10332349",
+        "611ec41d3a06813e1033234c"
+    ],
+    "shippingAddress": {
+        "address": "Park Street",
+        "city": "Kolkata",
+        "postalCode": "713331",
+        "country": "India"
+    }
+}
+
+
+
+#######  GET all orders
+GET http://localhost:5000/order/

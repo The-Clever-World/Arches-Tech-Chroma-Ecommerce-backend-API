@@ -57,7 +57,7 @@
           <ul>
             <li><a href="#"><i class="fa fa-user"></i></a></li>
             <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-            <li><a href="#"><i class="fa fa-shopping-cart"></i> </a></li>
+            <li><a href="/cart/"><i class="fa fa-shopping-cart"></i> </a></li>
             <li><a href="#"> Login / Register </a></li>
           </ul>
         </div>
@@ -698,7 +698,7 @@
                       <div class="">
 
                         <div class="buttons mb-4">
-                          <button class="cart-button page-btn">
+                          <button value="<%=categoryProduct._id%>" class="cart-button page-btn">
                             <span class="add-to-cart">Add to cart</span>
                             <span class="added">Item added</span>
                             <i class="fa fa-shopping-cart"></i> <i class="fa fa-square"></i>
@@ -1656,7 +1656,7 @@
               <script src="/public/js/custom.js"></script>
               <script src="/public/js/head.js"></script>
               <script src="/public/js/tel.js"></script>
-
+              <script src="/public/js/integrations/addToCart.js"></script>
 
 </body>
 

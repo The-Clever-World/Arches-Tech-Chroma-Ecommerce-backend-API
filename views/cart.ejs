@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Shop Now</title>
+   <!----- LINKS ------->
+   <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+   <link rel="stylesheet" href="/public/css/owl.carousel_.min.css" type="text/css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css">
+   <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/responsive.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/tel.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/head.css" type="text/css" />
+   <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+</head>
+
+<body class="body">
+
+   <!---HEADER --->
+   <header class="nav navbar sticky-top" style="background-color:#ff3399">
+      <div class="container">
+         <div class="row align-center">
+            <div class="col-md-2">
+               <div class="logo common-logo">
+                  <a href="index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+               </div>
+               <!----- for fixed header logo--->
+               <div class="logo fixed-header-logo">
+                  <a href="index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+               </div>
+            </div>
+            <!--LOGO--->
+            <div class="col-md-6 search-row">
+               <div class="top-search-bar">
+                  <form>
+                     <div class="input-group">
+                        <input type="text_1" class="form-control" placeholder="Search this blog">
+                        <div class="input-group-append">
+                           <button class="btn btn-secondary" type="button" style="font-size: 20px;">
+                              <i class="fa fa-search"></i>
+                           </button>
+                        </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!--SEARCH--->
+
+         <div class="col-md-4">
+            <div class="header-right">
+               <ul>
+                  <li><a href="#"><i class="fa fa-user"></i></a></li>
+                  <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                  <li><a href="#"><i class="fa fa-shopping-cart"></i> </a></li>
+                  <li><a href="#"> Login / Register </a></li>
+               </ul>
+            </div>
+
+         </div>
+         <!--RIGHT HEADER--->
+
+
+      </div>
+      </div>
+   </header>
+
+   <!---END HEADER --->
+
+
+   <!---TOP CATEGORY NEW --->
+
+   <div class="container">
+      <div class="row mt-1 d-flex justify-content-between">
+         <div class="">CartTray</div>
+         <div class=""><a href="index.html"> Back</a></div>
+      </div>
+   </div>
+
+   <div class="container-fluid">
+      <div class="row">
+         <div class=" card col-sm-12" style="font-size:20px; border-radius:10px;">
+            <div class="row d-flex justify-content-around">
+               <div class="mt-3">Your Cart</div>
+               <div class="mt-3">[<%= cartItems.length %> Item]</div>
+               <div class="mt-3">₹<%= Number(cartItems.reduce((acc, item)=> {
+                     return (acc + item.price)
+                     },0)).toFixed(2) %>
+               </div>
+               <button class="cart-button btn-warning " style="width:15%;">
+                  <span style="font-size:20px;">CHECKOUT</span></button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="container">
+      <div class="row">
+         <% cartItems.forEach(item=> { %>
+            <div class="col-md-8">
+               <div class="card container mt-3" style="min-width: 100%; border-radius: 10px;">
+                  <div class="row g-0">
+                     <div class="col-md-4">
+                        <img src="/public/<%= item.images[0] %>" class="img-fluid rounded-start" alt="...">
+                     </div>
+                     <div class="col-md-8">
+                        <div class="card-body">
+                           <div class="item-cart" style="text-align: right;">
+                              <button value="<%= item._id %> " class="cart-delete"
+                                 style="border: 0; background-color: transparent;">
+                                 <i class="far fa-trash-alt" aria-hidden="true"></i>
+                              </button>
+                           </div>
+                           <h3 class="card-title">
+                              <%= item.name %>
+                           </h3>
+                           <div class=" d-flex justify-content-between">
+                              <p class="card-text">Product Id: <%= item._id %>
+                              </p>
+
+                              <p class="card-text">QTY: 1</p>
+                           </div>
+                           <div class="category-price-div">
+                              <span class="category-count"><b>₹<%= item.price %> </b></span>
+                              <span class="old-price">
+                                 <del>₹<%= Number(item.price * 1.3).toFixed(2) %> </del>
+                                 <ins style="background-color: lightblue; border-radius:6px;">30% Off</ins>!</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col card mb-3">
+                     <p style="font-size: 18px; color: gray; background-color: whitesmoke; padding: 15px;">Product is
+                        unavailable for the delivery mode selected. Remove product or change delivery mode</p>
+                  </div>
+               </div>
+            </div>
+            <% }) %>
+
+               <!-- <div class="col-md-8">
+            <div class="card container mt-3" style="min-width: 100%; border-radius: 10px;">
+               <div class="row g-0">
+                  <div class="col-md-4">
+                     <img src="/public/images/a9.png" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                     <div class="card-body">
+                        <div class="item-cart" style="text-align: right;">
+                           <i class="far fa-trash-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="card-title">HP 15s-dr3001TU (34W43PA#ACJ) Core i3 11th Gen Windows 10 Home Thin and
+                           Light Laptop (8GB RAM, 1TB HDD, Intel UHD Graphics, 39.6cm, Natural Silver)</h3>
+                        <div class=" d-flex justify-content-between">
+                           <p class="card-text">Product Id: 233849</p>
+
+                           <p class="card-text">QTY: 1</p>
+                        </div>
+                        <div class="category-price-div">
+                           <span class="category-count"><b>₹42,250.00</b></span>
+                           <span class="old-price">
+                              <del>₹50,508.00</del>
+                              <ins style="background-color: lightblue; border-radius:6px;">16% Off</ins>!</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col card mb-3">
+                  <p style="font-size: 18px; color: gray; background-color: whitesmoke; padding: 15px;">Product is
+                     unavailable for the delivery mode selected. Remove product or change delivery mode</p>
+               </div>
+            </div>
+         </div> -->
+               <div class="col-md-4 mt-3">
+                  <div class=" card container" style="max-width: 100%; border-radius: 10px; height: 45%;">
+                     <div class="d-flex justify-content-between mt-4">
+                        <p>
+                        <h3>Delivery options for 700102</h3>
+                        </p>
+                        <p style="color: lightgray;"><a href="#">change</a></p>
+                     </div>
+                     <p class="mx-4 mt-3">Delivery options are not available for this pincode.</p>
+                  </div>
+                  <div class=" card container mt-4" style="max-width: 100%; border-radius: 10px; height: 33%;">
+                     <div class="d-flex justify-content-between mt-4">
+
+                        <input type="text_1" class="form-control mt-4"
+                           style="border: none; background-color: whitesmoke;" placeholder="Enter Coupon Code ">
+                        <p class="mt-4" style="color: lightgray;"><a href="#">Apply</a></p>
+                     </div>
+                  </div>
+               </div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-4 ml-md-auto mb-4">
+            <div class=" card container mt-3" style="max-width: 100%; border-radius: 10px;">
+               <div class="d-flex justify-content-start mt-4">
+                  <p>
+                  <h1>Payment Deatils</h1>
+                  </p>
+               </div>
+               <br>
+               <div class="d-flex justify-content-between mt-4">
+                  <p>item total</p>
+                  <b>₹<%= Number(cartItems.reduce((acc, item)=> {
+                        return (acc + item.price)
+                        },0)).toFixed(2) %> </b>
+               </div>
+               <div class="d-flex justify-content-between mt-4">
+                  <p>Delivery cost at 700102</p>
+                  <b>Free</b>
+               </div>
+               <hr>
+               <div class="d-flex justify-content-between mt-4">
+                  <p>Total Price</p>
+                  <b>₹42,250.00</b>
+               </div>
+               <div class="checkbox checkbox-1 mt-3 mb-4">
+                  <input type="checkbox" id="checkbox-1" />
+                  <label for="checkbox-1"><i class="fas fa-gift"></i> Is this a gift item?</label>
+               </div>
+               <div class="checkbox checkbox-1 mt-3">
+                  <input type="checkbox" id="checkbox-1" />
+                  <label for="checkbox-1"><i class="fas fa-hand-holding-heart"></i>Towards Donation for the
+                     underprivileged</label>
+               </div>
+               <button class="cart-button btn-warning" style="">
+                  <span style="font-size:15px;">CHECKOUT</span></button>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+
+   <!---- END CONTENT THREE---->
+
+
+
+   <footer class="footer mb-4">
+      <div class="container">
+         <div class="row">
+            <div class="footer-col">
+               <h4>CONNECT WITH US</h4>
+               <ul>
+                  <div class="input-group-lg input-group">
+                     <input type="text" class="form-control mb-5" style="height:5rem; width: 20rem;"
+                        placeholder="Enter your e-mail address" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                     <div class="input-group-append">
+                        <button class="btn btn-light think-link" style="height:5rem;" data-toggle="modal"
+                           data-target="#staticBackdrop_2" type="button" id="button-addon2">
+                           <span>&#8594;</span>
+                        </button>
+                     </div>
+
+
+                     <div class="social-links">
+                        <a href="#"><i class="fa fa-google"></i></a>
+                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                     </div>
+                  </div>
+                  <div class="container mt-5">
+                     <p>© Copyright 2021 Croma. All rights reserved</p>
+                  </div>
+
+               </ul>
+            </div>
+            <div class="vl footer-col col">
+               <h4>USEFUL LINKS</h4>
+               <ul>
+                  <li><a href="#">About Croma</a></li>
+                  <li><a href="#">Help And Support</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Order Support</a></li>
+                  <li><a href="#">Bulk Enquiry</a></li>
+                  <li><a href="#">Store Locator</a></li>
+                  <li><a href="#">Delightful Programmes</a></li>
+               </ul>
+            </div>
+            <div class="footer-col mt-4 col">
+               <h4></h4>
+               <ul class="mt-4">
+                  <li><a href="#">E-Care</a></li>
+                  <li><a href="#">Franchise Opportunity</a></li>
+                  <li><a href="#">Site Map</a></li>
+                  <li><a href="#">Careers At Croma</a></li>
+                  <li><a href="#">Terms Of Use</a></li>
+                  <li><a href="#">Disclaimer</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+               </ul>
+            </div>
+
+            <div class="vl footer-col col">
+               <h4>PRODUCT</h4>
+               <ul>
+                  <li><a href="#">Televisions & Accessories</a></li>
+                  <li><a href="#">Home Appliances</a></li>
+                  <li><a href="#">Phones & Wearables</a></li>
+                  <li><a href="#">Computers & Tablets</a></li>
+                  <li><a href="#">Kitchen Appliances</a></li>
+                  <li><a href="#">Audio & Video</a></li>
+                  <li><a href="#">Health & Fitness</a></li>
+               </ul>
+            </div>
+            <div class="footer-col mt-4 col">
+               <h4></h4>
+               <ul class="mt-4">
+                  <li><a href="#">Grooming & Personal Care</a></li>
+                  <li><a href="#">Cameras & Accessories</a></li>
+                  <li><a href="#">Smart Devices</a></li>
+                  <li><a href="#">Gaming</a></li>
+                  <li><a href="#">Zip Services</a></li>
+                  <li><a href="#">Accessories</a></li>
+                  <li><a href="#">Top Brands</a></li>
+               </ul>
+            </div>
+
+         </div>
+      </div>
+   </footer>
+
+
+
+
+   <!---- END CONTENT THREE---->
+   <!---END  CONTENT MODULE ONE  --->
+   <script src="/public/js/jquery.js"></script>
+   <script src='/public/https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+   <script src="/public/js/bootstrap.min.js"></script>
+   <script src="/public/js/owl.carousel.min.js"></script>
+   <script src="/public/js/custom.js"></script>
+   <script src="/public/js/head.js"></script>
+   <script src="/public/js/tel.js"></script>
+   <script src="/public/js/integrations/deleteFromCart.js"></script>
+
+</body>
+
+</html>

@@ -10,9 +10,9 @@ import Product from "../models/product.model.js";
 export const getAllProductsFromCart = async (req, res, next) => {
   // TODO: get userId and fetch particular cart of that user
   const products = await Cart.find().populate("products");
-
-  // res.status(200).render("cart", { cartItems: products });
-  res.status(200).send(products);
+  console.log(products);
+  res.status(200).render("cart", { cartItems: products[0].products });
+  //res.status(200).send(products);
 };
 
 /**
@@ -30,7 +30,7 @@ export const InsertProductIntoCart = async (req, res, next) => {
 
   if (cartItem) {
     if (cartItem.products.includes(productId)) {
-      const err = new Error("product already exist")
+      const err = new Error("product already exist");
       next(err);
     } else {
       cartItem.products.push(productId);
@@ -40,8 +40,8 @@ export const InsertProductIntoCart = async (req, res, next) => {
   } else {
     newCartItem = new Cart({
       // TODO: add userId to new cart
-      products: [productId]
-    })
+      products: [productId],
+    });
     const cart = await newCartItem.save();
     res.status(200).send(cart);
   }
@@ -60,13 +60,15 @@ export const DeleteProductFromCart = async (req, res, next) => {
   // TODO find cart by user and update
   const cartItem = await Cart.findOne();
 
-  const modifiedCart = cartItem.products.filter((value, index, arr) => value != productId);
+  const modifiedCart = cartItem.products.filter(
+    (value, index, arr) => value != productId
+  );
   cartItem.products = [];
   cartItem.products.push(modifiedCart);
 
   console.log(cartItem);
   await cartItem.save();
 
-  // res.status(204).render("cart.ejs", { cartItems });
-  res.status(200).send(cartItem);
+  res.status(200).render("cart.ejs", { cartItems: cartItem[0].products });
+  // res.status(200).send(cartItem);
 };

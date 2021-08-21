@@ -11,7 +11,7 @@ import {
   userRouter,
   productRouter,
   CartRouter,
-  orderRouter
+  orderRouter,
 } from "./routes/index.js";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -42,9 +42,12 @@ app.use("/public/", express.static(__dirname + "/public/"));
 app.set("view engine", "ejs");
 
 ///    Routes      ///
+app.use("/dashboard", (req, res) => {
+  res.status(200).render("dashboard.ejs");
+});
+app.use("/", categoryRouter);
 app.use("/order", orderRouter);
 app.use("/cart", CartRouter);
-app.use("/", categoryRouter);
 app.use("/products", productRouter);
 app.use("/user", userRouter);
 

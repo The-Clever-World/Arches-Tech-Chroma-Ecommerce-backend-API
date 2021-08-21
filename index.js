@@ -42,14 +42,15 @@ app.use("/public/", express.static(__dirname + "/public/"));
 app.set("view engine", "ejs");
 
 ///    Routes      ///
+
+app.use("/cart", CartRouter);
 app.use("/dashboard", (req, res) => {
   res.status(200).render("dashboard.ejs");
 });
-app.use("/", categoryRouter);
 app.use("/order", orderRouter);
-app.use("/cart", CartRouter);
 app.use("/products", productRouter);
 app.use("/user", userRouter);
+app.use("/", categoryRouter);
 
 ///    For error handling   ///
 app.use(NotFound);

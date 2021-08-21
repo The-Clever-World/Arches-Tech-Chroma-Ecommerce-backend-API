@@ -67,16 +67,6 @@
                                  </a>
                                  <% }); %>
 
-                                    <!--
-                                 <a href="Televisions & Accessories.html">Televisions & Accessories</a>
-                                 <a href="Home Appliances.html">Home Appliances</a>
-                                 <a href="Phones & Wearables.html">Phones & Wearables</a>
-                                 <a href="Computers & Tablets.html">Computers & Tablets</a>
-                                 <a href="Kitchen Appliances.html">Kitchen Appliances</a>
-                                 <a href="Audio & Video.html">Audio & Video</a>
-                                 <a href="Health & Fitness.html">Health & Fitness</a>
-                              -->
-
                            </div>
                            <i class="fa fa-angle-down" aria-hidden="true" style="color: white;"></i>
                         </div>
@@ -327,7 +317,7 @@
                   <br>
 
                   <body>
-                     <form action="#" class="form">
+                     <form class="form">
                         <h1 class="text-center">Registration Form</h1>
                         <!-- Progress bar -->
                         <div class="progressbar">
@@ -392,9 +382,9 @@
                            </div>
                            <div class="btns-group">
                               <a href="#" class="btn btn-prev">Previous</a>
-                              <form action="wellcome.html">
-                                 <a href="wellcome.html" class="btn btn-primary">Submit</a>
-                              </form>
+                              <div>
+                                 <button class="btn btn-primary" id="register">Submit</button>
+                              </div>
                            </div>
                         </div>
                      </form>
@@ -422,7 +412,7 @@
             <div class="modal-dialog modal-lg">
                <div class="modal-content" style="background-color: LightGray;">
                   <div class="modal-header">
-                     <h2 class="modal-title" id="staticBackdropLabel">Sign in to Cart.com</h2>
+                     <h2 class="modal-title" id="staticBackdropLabel">Sign in to Cart</h2>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                      </button>
@@ -431,24 +421,24 @@
 
                   <body>
                      <div class="signup-form">
-                        <form method="POST">
+                        <div>
                            <h2>Login</h2>
-                           <p class="hint-text">Well Come To Cart.com</p>
+                           <p class="hint-text">Well Come To Cart</p>
 
                            <div class="form-group">
-                              <input type="email" class="form-control" name="username" placeholder="Enter your Username"
+                              <input type="email" class="form-control" name="username" placeholder="Enter your Username" id="loginEmail"
                                  required="true">
                            </div>
                            <div class="form-group">
-                              <input type="password" class="form-control" name="contactno"
+                              <input type="password" class="form-control" name="contactno" id="loginPassword"
                                  placeholder="Enter your Password" required="true" maxlength="10">
                            </div>
 
                            <div class="form-group">
-                              <button type="submit" class="btn btn-success btn-lg btn-block"
+                              <button class="btn btn-success btn-lg btn-block" id="login"
                                  name="submit">Submit</button>
                            </div>
-                        </form>
+                        </div>
                         <div class="text-center think-link" data-toggle="modal" data-target="#staticBackdrop_1">Click
                            here for New User<a href="#" style="color:blue;">Registration</a>Click Close Button</div>
                      </div>
@@ -824,6 +814,9 @@
 
          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+         <script src="/public/js/integrations/login.js"></script>
+         <script src="/public/js/integrations/register.js"></script>
 
 
 </body>

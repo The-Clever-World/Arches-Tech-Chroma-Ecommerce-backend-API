@@ -10,7 +10,7 @@ import Product from "../models/product.model.js";
 export const getAllProductsFromCart = async (req, res, next) => {
   // TODO: get userId and fetch particular cart of that user
   const products = await Cart.find().populate("products");
-  console.log(products);
+  console.log(products[0]);
   res.status(200).render("cart", { cartItems: products[0].products });
   //res.status(200).send(products);
 };

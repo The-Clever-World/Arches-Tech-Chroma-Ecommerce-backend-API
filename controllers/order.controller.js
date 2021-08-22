@@ -51,3 +51,47 @@ export const myOrderList = async (req, res, next) => {
     // res.status(200).render("cart", { orders: orders});
     res.status(200).send(orders);
 };
+
+
+
+// ADMIN //
+
+
+/**
+ * @purpose update order to paid
+ * @route   PUT /order/update/paid/:_id
+ * @access  ADMIN
+ */
+
+export const updateOrderToPaid = async (req, res, next) => {
+    // get orderId from parameters
+    const orderId = req.params.id;
+
+    const order = await Order.findById(orderId);
+    order.isPaid = !order.isPaid;
+    await order.save();
+
+    // res.status(200).render("cart", { orders: orders});
+    res.status(200).send(order);
+};
+
+
+
+/**
+ * @purpose update order to delivered
+ * @route   PUT /order/update/delivered/:_id
+ * @access  ADMIN
+ */
+
+export const updateOrderToDelivered = async (req, res, next) => {
+    // get orderId from parameters
+    const orderId = req.params.id;
+
+    const order = await Order.findById(orderId);
+    order.isDelivered = !order.isDelivered;
+    await order.save();
+
+    // res.status(200).render("cart", { orders: orders});
+    res.status(200).send(order);
+};
+

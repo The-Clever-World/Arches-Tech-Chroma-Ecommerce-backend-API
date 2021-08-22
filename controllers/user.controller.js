@@ -21,7 +21,8 @@ const registerUser = (async (req, res, next) => {
       password,
     });
     if (user) {
-      res.json({
+      res.status(200);
+      res.send({
         _id: user._id,
         name: user.name,
         email: user.email,
@@ -31,6 +32,7 @@ const registerUser = (async (req, res, next) => {
     } else {
       res.status(404);
       const err = new Error("Invaid User data");
+      res.render("index.ejs", { err: err })
       next(err);
     }
   } catch (error) {

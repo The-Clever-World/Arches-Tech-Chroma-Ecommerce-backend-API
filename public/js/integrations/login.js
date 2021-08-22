@@ -24,8 +24,13 @@ loginButton.addEventListener("click", function (e) {
     return response.json();
   }).then(res => {
     console.log(res);
-    window.localStorage.setItem('userDetails', JSON.stringify(res));
-    document.location.reload();
+    if (res.message) {
+      alert(res.message)
+    } else {
+      window.localStorage.setItem('userDetails', JSON.stringify(res));
+      document.location.reload();
+    }
+
   });
 });
 

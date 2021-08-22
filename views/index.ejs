@@ -20,6 +20,8 @@
    <link rel="stylesheet" href="/public/css/responsive.css" type="text/css" />
    <link rel="stylesheet" href="/public/css/index.css" type="text/css" />
    <link rel="stylesheet" href="/public/css/index_1.css" type="text/css" />
+   <script src="/public/js/integrations/storage.js"></script>
+
    <!----- LINKS ------->
    <script type="text/javascript">
       $('#myModal').on('shown.bs.modal', function () {
@@ -90,12 +92,27 @@
          <div class="col-md-4" style=" top: -2rem;">
             <div class="header-right">
                <ul>
-                  <li><a href="#"><i class="fa fa-user"></i></a></li>
-                  <li><a href="#" class="think-link" data-toggle="modal" data-target="#staticBackdrop_2"><i
-                           class="fa fa-heart-o"></i></a></li>
-                  <li><a href="/cart/"><i class="fa fa-shopping-cart"></i> </a></li>
-                  <li><a href="#" style="color:white;" class="think-link" data-toggle="modal"
-                        data-target="#staticBackdrop_1"> Login / Register </a></li>
+                  <li>
+                     <a href="#">
+                        <i class="fa fa-user"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="think-link" data-toggle="modal" data-target="#staticBackdrop_2">
+                        <i class="fa fa-heart-o"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="/cart/">
+                        <i class="fa fa-shopping-cart"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" style="color:white;" class="think-link" data-toggle="modal"
+                        data-target="#staticBackdrop_1">
+                        <%= storage() ? "Login / Register"  : "Hello" %>
+                     </a>
+                  </li>
                </ul>
             </div>
 
@@ -423,29 +440,29 @@
                   </div>
                   <br>
 
-                     <div class="signup-form">
-                           <h2>Login</h2>
-                           <p class="hint-text">WelCome To Cart.com</p>
+                  <div class="signup-form">
+                     <h2>Login</h2>
+                     <p class="hint-text">WelCome To Cart.com</p>
 
-                           <div class="form-group">
-                              <input type="email" id="loginEmail" class="form-control" name="username" placeholder="Enter your Email"
-                                 required="true" />
-                           </div>
-                           <div class="form-group">
-                              <input type="password" id="loginPass" class="form-control" name="contactno"
-                                 placeholder="Enter your Password" required="true" maxlength="10" />
-                           </div>
+                     <div class="form-group">
+                        <input type="email" id="loginEmail" class="form-control" name="username"
+                           placeholder="Enter your Email" required="true" />
+                     </div>
+                     <div class="form-group">
+                        <input type="password" id="loginPass" class="form-control" name="contactno"
+                           placeholder="Enter your Password" required="true" maxlength="10" />
+                     </div>
 
-                           <div class="form-group">
-                              <button type="submit" class="btn btn-success btn-lg btn-block" id="login"
-                                 name="submit">Submit</button>
-                           </div>
-                        <div class="text-center think-link" data-toggle="modal" data-target="#staticBackdrop_1">Click
-                           here for New User<a href="#" style="color:blue;">Registration</a>Click Close Button</div>
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-lg btn-block" id="login"
+                           name="submit">Submit</button>
                      </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     </div>
+                     <div class="text-center think-link" data-toggle="modal" data-target="#staticBackdrop_1">Click
+                        here for New User<a href="#" style="color:blue;">Registration</a>Click Close Button</div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                </div>
             </div>
          </div>

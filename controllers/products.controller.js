@@ -45,4 +45,3 @@ export const getProductsFromId = async (req, res, next) => {
   }
 };
 
-// $regex: /789$/

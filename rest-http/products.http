@@ -6,3 +6,23 @@ GET http://localhost:5000/products/search?searched=windows
 
 #### Get Product By ID
 GET http://localhost:5000/products/611d511c4439a93e20ad6061
+
+
+#### ADD Product
+POST http://localhost:5000/addProduct
+Content-Type: application/json
+
+{
+    "categoryName": "Computers & Tablets",
+    "categoryImage": "https://c.s-microsoft.com/en-us/CMSImages/1920_Panel01_FullWidthHero_Desktops.jpg?version=b34847cc-341d-a8c4-d3ce-3453f3e32e18",
+    "productName": "Dell Optiplex 17 inch (43.18 cm) All in One Desktop Set ( Intel i3 2330M, 8GB, 1TB HDD ,17 inches HD Monitor, Keyboard, Mouse, Wifi, Display Port) Windows 10 Pro, MS Office ",
+    "productPrice": 200,
+    "productImages": [ "https://m.media-amazon.com/images/I/418sroJx+hL._AC_SY780_.jpg", "https://m.media-amazon.com/images/I/518mU6Oi6XL._AC_.jpg" ],
+    "productCountInStock": 12,
+    "productRating": 4,
+    "productNumReviews": 20,
+    "productKeyFeatures": [ "39.62 cm (15.6),FHD", "intel Corei3 10th Gen", "RAM: 8GB DDR4, ROM: 1TB HDD", "Intel UHD Graphics", "Windows 10 Home", "Best Suited For: Home | Office Use | Students" ],
+    "productSpecifications": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+    "productHighlights": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe facilis dolorem, laborum culpa veniam sed id iusto non reiciendis ducimus!",
+    "productOverview": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, dolore!"
+}

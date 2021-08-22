@@ -20,3 +20,13 @@ Content-Type: application/json
 
 #######  GET all orders
 GET http://localhost:5000/order/
+
+
+####### UPDATE particular order to paid
+PUT http://localhost:5000/order/update/paid/6122829e51d62627d89a44ca
+
+
+
+
+####### UPDATE order to delivered
+PUT http://localhost:5000/order/update/delivered/6122829e51d62627d89a44ca

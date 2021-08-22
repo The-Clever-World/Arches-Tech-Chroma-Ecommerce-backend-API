@@ -1,11 +1,11 @@
-# POST http://localhost:5000/user/register
-# Content-Type: application/json
+POST http://localhost:5000/user/register
+Content-Type: application/json
 
-# {
-#     "name": "Shubham",
-#     "email": "shubham@gmail.com",
-#     "password": "user1234"
-# }
+{
+    "name": "Shubham",
+    "email": "shubham@gmail.com",
+    "password": "user1234"
+}
 
 
 POST http://localhost:5000/user/login

@@ -349,24 +349,44 @@
                                                             <th>Admin</th>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <h6 class="mb-1">#1</h6>
-                                                            </td>
-                                                            <td>
-                                                                <h6 class="mb-1">Frost Byte</h6>
-                                                            </td>
-                                                            <td>
-                                                                <h6 class="m-b-1">
-                                                                    <a href=" mailto:frost.byte@gmail.com">frost.byte@gmail.com
-                                                                    </a>
-                                                                </h6>
-                                                            </td>
-                                                            <td>
-                                                                <h6 class=" d-inline label theme-bg text-white ">False
-                                                                </h6>
-                                                            </td>
-                                                        </tr>
+                                                        <% userList.forEach(user=> { %>
+                                                            <tr>
+                                                                <td>
+                                                                    <h6 class="mb-1">
+                                                                        <%= user._id %>
+                                                                    </h6>
+                                                                </td>
+                                                                <td>
+                                                                    <h6 class="mb-1">
+                                                                        <%= user.name %>
+                                                                    </h6>
+                                                                </td>
+                                                                <td>
+                                                                    <h6 class="m-b-1">
+                                                                        <a href="mailto:<%= user.email %>">
+                                                                            <%= user.email %>
+                                                                        </a>
+                                                                    </h6>
+                                                                </td>
+                                                                <td>
+
+                                                                    <% if (user.isAdmin) { %>
+                                                                        <h6
+                                                                            class=" d-inline label theme-bg text-white ">
+                                                                            Admin
+                                                                        </h6>
+                                                                        <% } %>
+                                                                            <% if (!user.isAdmin) { %>
+                                                                                <h6
+                                                                                    class=" d-inline label theme-bg text-white ">
+                                                                                    Not Admin
+                                                                                </h6>
+                                                                                <% } %>
+
+                                                                </td>
+                                                            </tr>
+                                                            <% }) %>
+
                                                     </tbody>
                                                 </table>
                                             </div>

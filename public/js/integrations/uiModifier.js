@@ -20,26 +20,3 @@ if (userDetails) {
   loginContainer.appendChild(avatarDiv);
   loginContainer.appendChild(logoutDiv);
 }
-
-if (userDetails && userDetails.isAdmin) {
-  const adminBtn = document.getElementById("admin__link");
-  adminBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log(userDetails.token);
-    fetch("http://localhost:5000/admin/", {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      withCredentials: true,
-      credentials: "include",
-      mode: "cors", // no-cors, *cors, same-origin
-      headers: {
-        Authorization: `Bearer ${userDetails.token}`,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        window.history.pushState("admin", "admin", "/admin/");
-        document.appendChild(data);
-      });
-  });
-}

@@ -17,7 +17,7 @@ router.get("/", getUserList);
 router.post("/product/new", addProductWithCategory);
 router.get("/product/productlist", getAllProducts);
 router.get("/order/orderlist", orderList);
-router.post("/order/:id/update/paid", updateOrderToPaid);
-router.post("/order/:id/update/delivered", updateOrderToDelivered);
+router.put("/order/:id/update/paid", updateOrderToPaid);
+router.put("/order/:id/update/delivered", updateOrderToDelivered);
 
 export { router as adminRouter };

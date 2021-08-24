@@ -34,6 +34,16 @@
 
 </head>
 
+<style>
+    .payToggle:hover {
+        cursor: pointer;
+    }
+
+    .deliverToggle:hover {
+        cursor: pointer;
+    }
+</style>
+
 <body>
     <!-- [ Pre-loader ] start -->
     <!-- <div class="loader-bg">
@@ -68,7 +78,7 @@
                         <ul class="pcoded-submenu">
                             <li class=""><a href="#" class="">Statistics</a></li>
                             <li class=""><a href="#" class="">Add new Product</a></li>
-                            <li class=""><a href="#" class="">Product List</a></li>
+                            <li class=""><a href="/admin/product/productlist" class="">Product List</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -81,7 +91,7 @@
                         <a href="#!" class="nav-link"><span class="pcoded-micon"><i
                                     class="feather icon-package"></i></span><span class="pcoded-mtext">Orders</span></a>
                         <ul class="pcoded-submenu">
-                            <li class="active"><a href="/orderlist/" class="">Order List</a></li>
+                            <li class="active"><a href="/admin/order/orderlist/" class="">Order List</a></li>
                             <li class=""><a href="#" class="">Confirm Orders</a></li>
                         </ul>
                     </li>
@@ -306,16 +316,22 @@
                                                                 </td>
                                                                 <td>
                                                                     <h6 class="mb-1">
-                                                                        <%= order.user._id %>
+                                                                        Add later
+                                                                    </h6>
+                                                                </td>
+
+                                                                <td>
+                                                                    <h6 class="m-b-1">
+                                                                        <%= order.shippingAddress.address %>,
+                                                                            <%= order.shippingAddress.city %>,
+                                                                                <%= order.shippingAddress.country %>,
+                                                                                    <%= order.shippingAddress.postalCode
+                                                                                        %>
                                                                     </h6>
                                                                 </td>
                                                                 <td>
-                                                                    <h6 class="m-b-1">
-                                                                        <%= order.shippingAddress.address %>
-                                                                            <%= order.shippingAddress.city %>
-                                                                                <%= order.shippingAddress.country %>
-                                                                                    <%= order.shippingAddress.postalCode
-                                                                                        %>
+                                                                    <h6 class="mb-1">
+                                                                        <%= order.totalPrice %>
                                                                     </h6>
                                                                 </td>
                                                                 <td>
@@ -323,13 +339,16 @@
                                                                     <% if (order.isPaid) { %>
                                                                         <h6
                                                                             class=" d-inline label theme-bg text-white ">
-                                                                            Paid
+                                                                            <span data-id="<%= order._id %>"
+                                                                                class="payToggle">Paid</span>
                                                                         </h6>
                                                                         <% } %>
-                                                                            <% if (!user.isPaid) { %>
+                                                                            <% if (!order.isPaid) { %>
                                                                                 <h6
-                                                                                    class=" d-inline label theme-bg text-white ">
-                                                                                    Not Paid
+                                                                                    class=" d-inline label theme-bg2 text-white ">
+                                                                                    <span data-id="<%= order._id %>"
+                                                                                        class="payToggle">Not
+                                                                                        Paid</span>
                                                                                 </h6>
                                                                                 <% } %>
 
@@ -339,13 +358,16 @@
                                                                     <% if (order.isDelivered) { %>
                                                                         <h6
                                                                             class=" d-inline label theme-bg text-white ">
-                                                                            Delivered
+                                                                            <span data-id="<%= order._id %>"
+                                                                                class="deliverToggle">Delivered</span>
                                                                         </h6>
                                                                         <% } %>
-                                                                            <% if (!user.isDelivered) { %>
+                                                                            <% if (!order.isDelivered) { %>
                                                                                 <h6
-                                                                                    class=" d-inline label theme-bg text-white ">
-                                                                                    Not Delivered
+                                                                                    class=" d-inline label theme-bg2 text-white ">
+                                                                                    <span data-id="<%= order._id %>"
+                                                                                        class="deliverToggle">Not
+                                                                                        Delivered</span>
                                                                                 </h6>
                                                                                 <% } %>
 
@@ -437,6 +459,9 @@
 
     <!-- dashboard-custom js -->
     <script src="/public/dashboard/assets/js/pages/dashboard-ecommerce.js"></script>
+
+    <!-- dashboard ui modifiers -->
+    <script src="/public/js/integrations/uiDashboardModifier.js"></script>
 
 </body>
 

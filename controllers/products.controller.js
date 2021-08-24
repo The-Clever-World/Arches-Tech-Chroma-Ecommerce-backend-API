@@ -44,4 +44,25 @@ export const getProductsFromId = async (req, res, next) => {
     console.log(error);
   }
 };
+/**
+ * @purpose get all products
+ * @route GET /admin/product/productlist
+ * @access ADMIN
+ */
 
+export const getAllProducts = async (req, res, next) => {
+  try {
+    const products = await Product.find();
+    if (!products) {
+      res.status(404);
+      const error = new Error("No product found");
+      next(error);
+    }
+
+    res
+      .status(200)
+      .render("dashboard.productlist.ejs", { productlist: products });
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -46,7 +46,7 @@ app.set("view engine", "ejs");
 ///    Routes      ///
 
 
-app.get("/order/b", (req, res) => {
+app.get("/order/show", (req, res) => {
   res.render("order.ejs")
 });
 

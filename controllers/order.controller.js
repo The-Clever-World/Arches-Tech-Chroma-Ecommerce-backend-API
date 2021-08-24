@@ -1,15 +1,15 @@
 import Order from "../models/order.model.js";
 
 /**
- * @purpose get list of orders 
+ * @purpose get list of orders
  * @route   GET /order/
  * @access  ADMIN
  */
 
 export const orderList = async (req, res, next) => {
-    const orders = await Order.find().populate("products").populate("user");
-    // res.status(200).render("cart", { orders: orders});
-    res.status(200).send(orders);
+  const orders = await Order.find().populate("products").populate("user");
+  res.status(200).render("dashboard.orderlist.ejs", { orderlist: orders });
+  // res.status(200).send(orders);
 };
 
 /**
@@ -21,20 +21,18 @@ export const orderList = async (req, res, next) => {
  */
 
 export const createOrder = async (req, res, next) => {
-    // TODO: get userId from body
-    const { /* userId , */ products, shippingAddress } = req.body;
+  // TODO: get userId from body
+  const { /* userId , */ products, shippingAddress } = req.body;
 
-    const newOrder = new Order({
-        // userId: userId,
-        products: products,
-        shippingAddress: shippingAddress
-    })
-    await newOrder.save();
-    // res.status(204).render("order.ejs", { order: newOrder });
-    res.status(200).send(newOrder);
+  const newOrder = new Order({
+    // userId: userId,
+    products: products,
+    shippingAddress: shippingAddress,
+  });
+  await newOrder.save();
+  // res.status(204).render("order.ejs", { order: newOrder });
+  res.status(200).send(newOrder);
 };
-
-
 
 // TODO: add myOrders features when auth done
 /**
@@ -44,18 +42,17 @@ export const createOrder = async (req, res, next) => {
  */
 
 export const myOrderList = async (req, res, next) => {
-    // get userId from parameters
-    const userId = req.params.id;
+  // get userId from parameters
+  const userId = req.params.id;
 
-    const orders = await Order.find({ user: userId }).populate("products").populate("user");
-    // res.status(200).render("cart", { orders: orders});
-    res.status(200).send(orders);
+  const orders = await Order.find({ user: userId })
+    .populate("products")
+    .populate("user");
+  // res.status(200).render("cart", { orders: orders});
+  res.status(200).send(orders);
 };
 
-
-
 // ADMIN //
-
 
 /**
  * @purpose update order to paid
@@ -64,18 +61,16 @@ export const myOrderList = async (req, res, next) => {
  */
 
 export const updateOrderToPaid = async (req, res, next) => {
-    // get orderId from parameters
-    const orderId = req.params.id;
+  // get orderId from parameters
+  const orderId = req.params.id;
 
-    const order = await Order.findById(orderId);
-    order.isPaid = !order.isPaid;
-    await order.save();
+  const order = await Order.findById(orderId);
+  order.isPaid = !order.isPaid;
+  await order.save();
 
-    // res.status(200).render("cart", { orders: orders});
-    res.status(200).send(order);
+  // res.status(200).render("cart", { orders: orders});
+  res.status(200).send(order);
 };
-
-
 
 /**
  * @purpose update order to delivered
@@ -84,14 +79,13 @@ export const updateOrderToPaid = async (req, res, next) => {
  */
 
 export const updateOrderToDelivered = async (req, res, next) => {
-    // get orderId from parameters
-    const orderId = req.params.id;
+  // get orderId from parameters
+  const orderId = req.params.id;
 
-    const order = await Order.findById(orderId);
-    order.isDelivered = !order.isDelivered;
-    await order.save();
+  const order = await Order.findById(orderId);
+  order.isDelivered = !order.isDelivered;
+  await order.save();
 
-    // res.status(200).render("cart", { orders: orders});
-    res.status(200).send(order);
+  // res.status(200).render("cart", { orders: orders});
+  res.status(200).send(order);
 };
-

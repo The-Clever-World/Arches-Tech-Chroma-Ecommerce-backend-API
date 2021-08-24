@@ -10,7 +10,7 @@ loginButton.addEventListener("click", function (e) {
   console.log(password);
   console.log(email);
 
-  fetch(`https://chroma-commerce.herokuapp.com/user/login`, {
+  fetch(`http://localhost:5000/user/login`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     headers: {

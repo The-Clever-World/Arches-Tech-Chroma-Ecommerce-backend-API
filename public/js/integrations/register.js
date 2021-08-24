@@ -7,7 +7,7 @@ registerButton.addEventListener("click", function (e) {
   const userEmail = document.querySelector("#email").value;
   const userPassword = document.querySelector("#password").value;
 
-  fetch(`https://chroma-commerce.herokuapp.com/user/register`, {
+  fetch(`http://localhost:5000/user/register`, {
     method: "POST",
     body: JSON.stringify({
       name: userName,

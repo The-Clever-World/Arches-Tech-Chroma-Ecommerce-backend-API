@@ -12,7 +12,9 @@ import {
   productRouter,
   CartRouter,
   orderRouter,
+  adminRouter,
 } from "./routes/index.js";
+
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -44,9 +46,7 @@ app.set("view engine", "ejs");
 ///    Routes      ///
 
 app.use("/cart", CartRouter);
-app.use("/dashboard", (req, res) => {
-  res.status(200).render("dashboard.ejs");
-});
+app.use("/admin", adminRouter);
 app.use("/order", orderRouter);
 app.use("/products", productRouter);
 app.use("/user", userRouter);

@@ -6,7 +6,7 @@ import { generateAccessToken } from "../utils/tokenGeneration.js";
 // @route:  POST /user/register
 // @access  Public
 
-const registerUser = (async (req, res, next) => {
+const registerUser = async (req, res, next) => {
   const { name, email, password } = req.body;
   try {
     const userExists = await UserModel.findOne({ email: email });
@@ -32,20 +32,20 @@ const registerUser = (async (req, res, next) => {
     } else {
       res.status(404);
       const err = new Error("Invaid User data");
-      res.render("index.ejs", { err: err })
+      res.render("index.ejs", { err: err });
       next(err);
     }
   } catch (error) {
     res.status(404);
     next(error);
   }
-});
+};
 
 // @purpose:   Auth user and get access_token and refresh token
 // @route:  POST /user/login
 // @access  Public
 
-const authUser = (async (req, res, next) => {
+const authUser = async (req, res, next) => {
   const { email, password } = req.body;
   try {
     const user = await UserModel.findOne({ email: email });
@@ -66,13 +66,13 @@ const authUser = (async (req, res, next) => {
     res.status(404);
     next(error);
   }
-});
+};
 
 // @purpose:   Get User Profile
 // @route:  GET /user/profile
 // @access  Private
 
-const getUserProfile = (async (req, res, next) => {
+const getUserProfile = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.user._id);
     res.json(user);
@@ -80,13 +80,13 @@ const getUserProfile = (async (req, res, next) => {
     res.status(404);
     next(error);
   }
-});
+};
 
 // @purpose:   UPDATE User Profile
 // @route:  UPDATE /user/profile
 // @access  Private
 
-const updateUserProfile = (async (req, res, next) => {
+const updateUserProfile = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.user._id);
     if (user) {
@@ -112,12 +112,26 @@ const updateUserProfile = (async (req, res, next) => {
     res.status(404);
     next(error);
   }
-});
+};
 
+// @purpose:   GET  ALL Users
+// @route:  GET /admin/dashboard
+// @access  Admin
+
+const getUserList = async (req, res, next) => {
+  try {
+    const userList = await UserModel.find();
+    res.status(200).render("dashboard.ejs", { userList });
+  } catch (error) {
+    res.status(404);
+    next(error);
+  }
+};
 
 export {
   authUser,
   getUserProfile,
   registerUser,
   updateUserProfile,
+  getUserList,
 };

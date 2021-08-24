@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Now</title>
+    <!----- LINKS ------->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="/public/css/style.css">
+
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="/public/js/jquery.elevateZoom-3.0.8.min.js" type="text/javascript"></script>
+
+
+    <link rel="stylesheet" href="/public/css/owl.carousel_.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/index.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/index_1.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/product.css" type="text/css" />
+    <!----- LINKS ------->
+    <script type="text/javascript">
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
+</head>
+
+<body style="background-color: #f8f8f8;">
+
+    <!---HEADER --->
+    <header class="nav navbar sticky-top" style="background-color:#708090; height:10rem;">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-md-2" style=" top: -1.4rem; padding: 10px;">
+                    <div class="logo common-logo">
+                        <a href="index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+                    </div>
+                    <!----- for fixed header logo--->
+
+                </div>
+                <!--LOGO--->
+                <div class="col-md-6 search-row">
+                    <div class="top-search-bar">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" style="color:black;"
+                                    placeholder="Search this blog">
+                                <div class="input-group-append">
+                                    <button class="btn btn-warning bg-warning" type="button">
+                                        <i style="color:black;" class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                        </form>
+                        <div class="container" style="font-size:15px;">
+                            <div class="col-md-4 d-flex justify-content-center" style="left: -6rem;">
+                                <div class="dropdown">
+                                    <span class="dropbtn"><b>Products</b></span>
+                                    <div class="dropdown-content">
+                                        <a href="Televisions & Accessories.html">Televisions & Accessories</a>
+                                        <a href="Home Appliances.html">Home Appliances</a>
+                                        <a href="Phones & Wearables.html">Phones & Wearables</a>
+                                        <a href="Computers & Tablets.html">Computers & Tablets</a>
+                                        <a href="Kitchen Appliances.html">Kitchen Appliances</a>
+                                        <a href="Audio & Video.html">Audio & Video</a>
+                                        <a href="Health & Fitness.html">Health & Fitness</a>
+                                    </div>
+                                    <i class="fa fa-angle-down" aria-hidden="true" style="color: white;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--SEARCH--->
+
+            <div class="col-md-4" style=" top: -2rem;">
+                <div class="header-right">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-user"></i></a></li>
+                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i> </a></li>
+                        <li><a href="#"> Login / Register </a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--RIGHT HEADER--->
+
+
+        </div>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-7 mt-4">
+                <div class="d-flex justify-content-between mt-4">
+                    <b><span class="red">1</span> Contact Number</b>
+                    <button class="bg-light" style="color: black;">&plus; Update</button>
+                </div>
+                <div class="col-md-5 mt-5 mb-5">
+                    <input type="text" class="form-control" placeholder="123345778">
+                </div>
+            </div>
+
+
+            <div class="card col-md-7 mt-4">
+                <div class="d-flex justify-content-between mt-4">
+                    <b><span class="red">2</span> Billing Address</b>
+                    <button class="bg-light mb-5" style="color: black;">&plus; Add</button>
+                </div>
+                <div class="row d-flex align-content-md-around">
+                    <div class="card mb-5 col-md-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-5"><b>Shipping Address</b></h4>
+
+                            <p class="card-text">Salt Lake Sector-V Bidhannagar Kolkata 700102 </p>
+                        </div>
+                    </div>
+                    <div class="card mb-5 col-md-4 bg-light">
+                        <div class="card-body">
+                            <h4 class="card-title mb-5"><b>Billing Address</b></h4>
+
+                            <p class="card-text">Salt Lake Sector-V Bidhannagar Kolkata 700102 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card col-md-7 mt-4">
+                <div class="d-flex justify-content-between mt-4">
+                    <b><span class="red">3</span> Shipping Address</b>
+                    <button type="button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
+                        style="color: black;">&plus; Add</button>
+                </div>
+                <div class="card mb-5 col-md-4 bg-light">
+                    <div class="card-body">
+                        <h4 class="card-title mb-5"><b>Billing Address</b></h4>
+
+                        <p class="card-text">Salt Lake Sector-V Bidhannagar Kolkata 700102 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card col-md-7 mt-4">
+                <div class="d-flex justify-content-between mt-4">
+                    <b> <span class="red">4</span> Delivery Schedule</b>
+                    <button class="bg-light" style="color: black;">&plus; Add</button>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="card mb-5 col-md-4 mt-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1"><b>Exprress Delivery</b></h4>
+
+                            <p class="card-text" style="height:4rem; width: 25rem;">90 min express delivery</p>
+                        </div>
+                    </div>
+                    <div class="card mb-5 col-md-4 " style="border: none;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1"><b>Morning</b></h4>
+
+                            <p class="card-text" style="height:4rem; width: 25rem;">8:00AM - 11:00AM</p>
+                        </div>
+                    </div>
+                    <div class="card mb-5 col-md-4 bg-light" style="border: none;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1"><b>Noon</b></h4>
+
+                            <p class="card-text" style="height:4rem; width: 25rem;">11:00AM - 2:00PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card mb-5 col-md-4 bg-light" style="border: none;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1"><b>Afternoon</b></h4>
+
+                            <p class="card-text" style="height:4rem; width: 25rem;">11:00AM - 2:00PM</p>
+                        </div>
+                    </div>
+                    <div class="card mb-5 col-md-4 bg-light" style="border: none;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1"><b>Evening</b></h4>
+
+                            <p class="card-text" style="height:4rem; width: 25rem;">11:00AM - 2:00PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-text  col-md-5" style="top: -70rem;">
+                <div class="card-body ">
+                    <h3 class="card-title mb-5 d-flex justify-content-center mt-5"><b>Your Oder</b></h3>
+
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>1 X Computer Keyboard | 1 pes</span></span>
+                        <span class="old-price"> <b>₹2,999.00</b></span>
+                    </div>
+
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>1 X Computer Keyboard | 1 pes</span></span>
+                        <span class="old-price"> <b>₹2,999.00</b></span>
+                    </div>
+
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>1 X Computer Keyboard | 1 pes</span></span>
+                        <span class="old-price"> <b>₹2,999.00</b></span>
+                    </div>
+                    <hr>
+
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>Sub Total</span></span>
+                        <span class="old-price"> <b>₹8,997.00</b></span>
+                    </div>
+
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>Tax</span></span>
+                        <span class="old-price"> <span>Calculate at checkOut</span></span>
+                    </div>
+
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>Estimated Shiping</span></span>
+                        <span class="old-price"> <span>Calculate at checkout</span></span>
+                    </div>
+
+                    <button class="col mt-3">Check Avilability</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add New Address</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Type</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Billing</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Shipping</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label>Title</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Country</label>
+                                <input type="" class="form-control" id="" placeholder="Country">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">City</label>
+                                <input type="" class="form-control" id="" placeholder="City">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control" style="height:4rem;">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Zip</label>
+                                <input type="" class="form-control" id="" placeholder="City">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="textarea" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+
+
+
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-3">
+                    <h4>CONNECT WITH US</h4>
+                    <ul>
+                        <div class="input-group-lg input-group">
+                            <input type="text" class="form-control mb-5" style="height:5rem; width: 20rem;"
+                                placeholder="Enter your e-mail address" aria-label="Recipient's username"
+                                aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-light think-link" style="height:5rem;" data-toggle="modal"
+                                    data-target="#staticBackdrop_2" type="button" id="button-addon2">
+                                    <span>&#8594;</span>
+                                </button>
+                            </div>
+
+
+                            <div class="social-links">
+                                <a href="#"><i class="fa fa-google"></i></a>
+                                <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="container mt-5">
+                            <p>© Copyright 2021 Croma. All rights reserved</p>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="vl footer-col col">
+                    <h4>USEFUL LINKS</h4>
+                    <ul>
+                        <li><a href="#">About Croma</a></li>
+                        <li><a href="#">Help And Support</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Order Support</a></li>
+                        <li><a href="#">Bulk Enquiry</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="#">Delightful Programmes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col mt-4 col">
+                    <h4></h4>
+                    <ul class="mt-4">
+                        <li><a href="#">E-Care</a></li>
+                        <li><a href="#">Franchise Opportunity</a></li>
+                        <li><a href="#">Site Map</a></li>
+                        <li><a href="#">Careers At Croma</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="vl footer-col col">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="#">Televisions & Accessories</a></li>
+                        <li><a href="#">Home Appliances</a></li>
+                        <li><a href="#">Phones & Wearables</a></li>
+                        <li><a href="#">Computers & Tablets</a></li>
+                        <li><a href="#">Kitchen Appliances</a></li>
+                        <li><a href="#">Audio & Video</a></li>
+                        <li><a href="#">Health & Fitness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col mt-4 col">
+                    <h4></h4>
+                    <ul class="mt-4">
+                        <li><a href="#">Grooming & Personal Care</a></li>
+                        <li><a href="#">Cameras & Accessories</a></li>
+                        <li><a href="#">Smart Devices</a></li>
+                        <li><a href="#">Gaming</a></li>
+                        <li><a href="#">Zip Services</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Top Brands</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!---END  CONTENT MODULE ONE  --->
+    <script src="/public/js/jquery.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/owl.carousel.min.js"></script>
+    <script src="/public/js/custom.js"></script>
+    <script src="/public/js/index.js"></script>
+    <script src="/public/js/product.js"></script>
+    <script src="/public/js/jquery.elevateZoom-3.0.8.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>

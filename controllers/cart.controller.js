@@ -13,7 +13,7 @@ export const getAllProductsFromCart = async (req, res, next) => {
 
   const products = await Cart.findOne({ user: userId }).populate("products");
   console.log(products);
-  res.status(200).render("cart", { cartItems: products.products });
+  res.status(200).render("cart", { cartItems: products && products.products });
   //res.status(200).send(products);
 };
 
@@ -57,13 +57,13 @@ export const InsertProductIntoCart = async (req, res, next) => {
 
 /**
  * @purpose delete product from cart
- * @route   DELETE /cart/:id
+ * @route   DELETE /cart/delete/:productId/:userId
  * @access  Public
  */
 
 export const DeleteProductFromCart = async (req, res, next) => {
-  const productId = req.params.id;
-  const { userId } = req.body;
+  const productId = req.params.productId;
+  const userId = req.params.userId;
 
   // TODO find cart by user and update
   const cartItem = await Cart.findOne({ user: userId });

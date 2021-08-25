@@ -3,9 +3,8 @@ const allCartButtons = document.querySelectorAll(".cart-button");
 allCartButtons.forEach((button) => {
   button.addEventListener("click", function (e) {
     let productId = this.value;
-    let userDetails = JSON.parse(localStorage.getItem("userDetails"));
 
-    let userId = userDetails._id;
+    let userId = userDetails && userDetails._id;
 
     fetch(`https://chroma-commerce.herokuapp.com/cart/add/${productId}`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.

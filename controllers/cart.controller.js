@@ -3,29 +3,34 @@ import Product from "../models/product.model.js";
 
 /**
  * @purpose get all products from cart
- * @route   GET /cart/
+ * @route   GET /cart/:id
  * @access  Public
  */
 
 export const getAllProductsFromCart = async (req, res, next) => {
   // TODO: get userId and fetch particular cart of that user
-  const products = await Cart.find().populate("products");
-  console.log(products[0]);
-  res.status(200).render("cart", { cartItems: products[0].products });
+  const userId = req.params.id;
+
+  const products = await Cart.findOne({ user: userId }).populate("products");
+  console.log(products);
+  res.status(200).render("cart", { cartItems: products.products });
   //res.status(200).send(products);
 };
 
 /**
  * @purpose insert product to cart
- * @route   PUT /cart/:id
+ * @route   PUT /cart/add/:id/
+ * @params {userId}
  * @access  Public
  */
 
 export const InsertProductIntoCart = async (req, res, next) => {
   // TODO: get userId from query
+  const { userId } = req.body;
   const productId = req.params.id;
+
   // TODO: fetch cart by userId
-  const cartItem = await Cart.findOne();
+  const cartItem = await Cart.findOne({ user: userId });
   let newCartItem;
 
   if (cartItem) {
@@ -41,6 +46,7 @@ export const InsertProductIntoCart = async (req, res, next) => {
     newCartItem = new Cart({
       // TODO: add userId to new cart
       products: [productId],
+      user: userId,
     });
     const cart = await newCartItem.save();
     res.status(200).send(cart);
@@ -57,8 +63,10 @@ export const InsertProductIntoCart = async (req, res, next) => {
 
 export const DeleteProductFromCart = async (req, res, next) => {
   const productId = req.params.id;
+  const { userId } = req.body;
+
   // TODO find cart by user and update
-  const cartItem = await Cart.findOne();
+  const cartItem = await Cart.findOne({ user: userId });
 
   const modifiedCart = cartItem.products.filter(
     (value, index, arr) => value != productId

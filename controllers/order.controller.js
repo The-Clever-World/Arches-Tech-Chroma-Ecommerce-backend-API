@@ -15,41 +15,60 @@ export const orderList = async (req, res, next) => {
 /**
  * @purpose add cart products to order
  * @route   POST /order/new
- * @params {userId, productId, products}
+ * @params {userId, products}
  * @params products --> list of products id
  * @access  Public
  */
 
 export const createOrder = async (req, res, next) => {
-  // TODO: get userId from body
-  const { /* userId , */ products, shippingAddress } = req.body;
+  const { userId, products } = req.body;
 
   const newOrder = new Order({
-    // userId: userId,
+    userId: userId,
     products: products,
-    shippingAddress: shippingAddress,
   });
   await newOrder.save();
   // res.status(204).render("order.ejs", { order: newOrder });
   res.status(200).send(newOrder);
 };
 
-// TODO: add myOrders features when auth done
 /**
- * @purpose get list of orders of particular userId
- * @route   GET /order/:userId
+ * @purpose update particular order and add shipping address
+ * @route   POST /order/update
+ * @params { orderId, shippingAddress }
+ * @params products --> list of products id
  * @access  Public
  */
 
-export const myOrderList = async (req, res, next) => {
-  // get userId from parameters
-  const userId = req.params.id;
+export const addShippingToOrder = async (req, res, next) => {
+  const { orderId, shippingAddress } = req.body;
 
-  const orders = await Order.find({ user: userId })
+  const order = await Order.findById(orderId);
+
+  // add shippingAddress to particular order
+  order.shippingAddress = shippingAddress;
+
+  await order.save();
+  // res.status(204).render("order.ejs", { order: newOrder });
+  res.status(200).send(order);
+};
+
+/**
+ * @purpose get order details of particular orderId
+ * @route   GET /order/:orderId
+ * @access  Public
+ */
+
+export const orderDetails = async (req, res, next) => {
+  // get orderId from parameters
+  const orderId = req.params.id;
+
+  const order = await Order.findOne({ _id: orderId })
     .populate("products")
     .populate("user");
-  // res.status(200).render("cart", { orders: orders});
-  res.status(200).send(orders);
+
+  res.status(200).render("order.ejs", { order: order });
+  // res.status(200).send(order);
 };
 
 // ADMIN //

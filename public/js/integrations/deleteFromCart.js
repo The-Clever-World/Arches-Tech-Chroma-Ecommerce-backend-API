@@ -3,6 +3,10 @@ const allCartDeleteButtons = document.querySelectorAll(".cart-delete");
 allCartDeleteButtons.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     productId = this.value;
+    let userDetails = JSON.parse(localStorage.getItem("userDetails"));
+
+    let userId = userDetails._id;
+
     fetch(`https://chroma-commerce.herokuapp.com/cart/${productId}`, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
@@ -10,7 +14,9 @@ allCartDeleteButtons.forEach((btn) => {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: {
+        userId: userId,
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url

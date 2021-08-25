@@ -62,8 +62,10 @@ export const InsertProductIntoCart = async (req, res, next) => {
  */
 
 export const DeleteProductFromCart = async (req, res, next) => {
-  const productId = req.params.productId;
+  const productId = String(req.params.productId);
   const userId = req.params.userId;
+
+  console.log(productId, userId);
 
   // TODO find cart by user and update
   const cartItem = await Cart.findOne({ user: userId });

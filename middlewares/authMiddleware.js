@@ -3,16 +3,11 @@ import UserModel from "../models/userModel.js";
 
 // verify with access token
 const authProtect = async (req, res, next) => {
-  let token;
+  let token = req.query.token;
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
+  if (token) {
     try {
-      token = req.headers.authorization.split(" ")[1];
       const decoded = jwt.verify(token, process.env.JWT_ACCESS_TOKEN_KEY);
-      console.log(decoded);
 
       // store UserModel (- password) to req.user
       req.user = await UserModel.findById(decoded.id).select("-password");

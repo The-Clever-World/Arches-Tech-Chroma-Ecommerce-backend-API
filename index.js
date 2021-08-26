@@ -49,9 +49,9 @@ app.set("view engine", "ejs");
 //   res.render("order.ejs")
 // });
 
+app.use("/order", orderRouter);
 app.use("/cart", CartRouter);
 app.use("/admin", adminRouter);
-app.use("/order", orderRouter);
 app.use("/products", productRouter);
 app.use("/user", userRouter);
 app.use("/", categoryRouter);

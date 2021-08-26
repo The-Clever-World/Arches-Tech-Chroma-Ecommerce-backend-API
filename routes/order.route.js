@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.post("/new", createOrder);
 router.post("/add-shipping", addShippingToOrder);
-router.post("/:id", orderDetails);
+router.get("/:id", orderDetails);
 
 export { router as orderRouter };

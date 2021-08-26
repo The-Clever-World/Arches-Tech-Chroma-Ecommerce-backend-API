@@ -22,11 +22,12 @@ export const orderList = async (req, res, next) => {
 
 export const createOrder = async (req, res, next) => {
   const { userId, products } = req.body;
-
+  console.log(userId);
   const newOrder = new Order({
-    userId: userId,
+    user: userId,
     products: products,
   });
+  console.log(newOrder);
   await newOrder.save();
   // res.status(204).render("order.ejs", { order: newOrder });
   res.status(200).send(newOrder);
@@ -66,6 +67,8 @@ export const orderDetails = async (req, res, next) => {
   const order = await Order.findOne({ _id: orderId })
     .populate("products")
     .populate("user");
+
+  console.log(order);
 
   res.status(200).render("order.ejs", { order: order });
   // res.status(200).send(order);

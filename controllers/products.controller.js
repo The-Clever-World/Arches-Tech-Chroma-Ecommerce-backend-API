@@ -53,6 +53,16 @@ export const getProductsFromId = async (req, res, next) => {
 export const getAllProducts = async (req, res, next) => {
   try {
     const products = await Product.find();
+    const leanProducts = JSON.parse(JSON.stringify(products));
+
+    for (const product of leanProducts) {
+      const categories = await Category.find({
+        products: { $in: product._id },
+      }).select("name");
+
+      product.category = categories[0].name;
+    }
+
     if (!products) {
       res.status(404);
       const error = new Error("No product found");
@@ -61,7 +71,7 @@ export const getAllProducts = async (req, res, next) => {
 
     res
       .status(200)
-      .render("dashboard.productlist.ejs", { productlist: products });
+      .render("dashboard.productlist.ejs", { productlist: leanProducts });
   } catch (error) {
     console.log(error);
   }

@@ -13,4 +13,4 @@
 
 // DELETE  particular product from cart of particular user
 
-DELETE http://localhost:5000/cart/611ec41d3a06813e10332361
+# DELETE http://localhost:5000/cart/611ec41d3a06813e10332361

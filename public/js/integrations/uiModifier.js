@@ -20,3 +20,8 @@ if (userDetails) {
   loginContainer.appendChild(avatarDiv);
   loginContainer.appendChild(logoutDiv);
 }
+
+if (userDetails && userDetails.isAdmin) {
+  const dashboardLinkBtn = document.querySelector(".admin__ref");
+  dashboardLinkBtn.href += `?token=${userDetails.token}`;
+}

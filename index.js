@@ -45,6 +45,10 @@ app.set("view engine", "ejs");
 
 ///    Routes      ///
 
+// app.get("/order/show", (req, res) => {
+//   res.render("order.ejs")
+// });
+
 app.use("/cart", CartRouter);
 app.use("/admin", adminRouter);
 app.use("/order", orderRouter);

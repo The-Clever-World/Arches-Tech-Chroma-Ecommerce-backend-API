@@ -8,8 +8,8 @@ import {
 
 const router = express.Router();
 
-router.get("/", getAllProductsFromCart);
-router.put("/:id", InsertProductIntoCart);
-router.delete("/:id", DeleteProductFromCart);
+router.get("/:id", getAllProductsFromCart);
+router.put("/add/:id/", InsertProductIntoCart);
+router.delete("/delete/:productId/:userId", DeleteProductFromCart);
 
 export { router as CartRouter };

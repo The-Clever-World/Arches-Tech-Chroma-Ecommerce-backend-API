@@ -76,3 +76,17 @@ export const getAllProducts = async (req, res, next) => {
     console.log(error);
   }
 };
+
+/**
+ * @purpose get new product page
+ * @route GET /admin/product/new
+ * @access ADMIN
+ */
+
+export const addNewProductPage = async (req, res, next) => {
+  try {
+    res.status(200).render("dashboard.addproduct.ejs");
+  } catch (error) {
+    console.log(error);
+  }
+};

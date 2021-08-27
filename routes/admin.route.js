@@ -7,6 +7,7 @@ import {
   orderList,
   updateOrderToDelivered,
   updateOrderToPaid,
+  addNewProductPage,
 } from "../controllers/admin.controller.js";
 
 import { adminCheck, authProtect } from "../middlewares/authMiddleware.js";
@@ -15,6 +16,7 @@ const router = express.Router();
 
 router.get("/", getUserList);
 router.post("/product/new", addProductWithCategory);
+router.get("/product/new", addNewProductPage);
 router.get("/product/productlist", getAllProducts);
 router.get("/order/orderlist", orderList);
 router.put("/order/:id/update/paid", updateOrderToPaid);

@@ -5,4 +5,4 @@ export {
   updateOrderToPaid,
 } from "./order.controller.js";
 export { getUserList } from "./user.controller.js";
-export { getAllProducts } from "./products.controller.js";
+export { getAllProducts, addNewProductPage } from "./products.controller.js";

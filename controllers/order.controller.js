@@ -21,11 +21,12 @@ export const orderList = async (req, res, next) => {
  */
 
 export const createOrder = async (req, res, next) => {
-  const { userId, products } = req.body;
-  console.log(userId);
+  const { userId, products, totalPrice } = req.body;
+  console.log(totalPrice);
   const newOrder = new Order({
     user: userId,
     products: products,
+    totalPrice: totalPrice,
   });
   console.log(newOrder);
   await newOrder.save();
@@ -54,8 +55,6 @@ export const addShippingToOrder = async (req, res, next) => {
   res.status(200).send(order);
 };
 
-
-
 /**
  * @purpose update particular order and add billing address
  * @route   POST /order/update
@@ -64,7 +63,7 @@ export const addShippingToOrder = async (req, res, next) => {
  * @access  Public
  */
 
- export const addBillingToOrder = async (req, res, next) => {
+export const addBillingToOrder = async (req, res, next) => {
   const { orderId, billingAddress } = req.body;
 
   const order = await Order.findById(orderId);
@@ -76,8 +75,6 @@ export const addShippingToOrder = async (req, res, next) => {
   // res.status(204).render("order.ejs", { order: newOrder });
   res.status(200).send(order);
 };
-
-
 
 /**
  * @purpose get order details of particular orderId

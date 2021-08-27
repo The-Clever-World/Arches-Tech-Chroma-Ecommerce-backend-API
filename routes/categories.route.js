@@ -9,6 +9,7 @@ import {
 const router = express.Router();
 
 router.get("/", getAllCategories);
+router.get("/add", addProductWithCategory);
 router.get("/:id", getProductsFromCategory);
 
 export { router as categoryRouter };

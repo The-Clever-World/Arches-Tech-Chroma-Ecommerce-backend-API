@@ -15,7 +15,7 @@ import { adminCheck, authProtect } from "../middlewares/authMiddleware.js";
 const router = express.Router();
 
 router.get("/", getUserList);
-router.post("/product/new", addProductWithCategory);
+router.post("/product/add", addProductWithCategory);
 router.get("/product/new", addNewProductPage);
 router.get("/product/productlist", getAllProducts);
 router.get("/order/orderlist", orderList);

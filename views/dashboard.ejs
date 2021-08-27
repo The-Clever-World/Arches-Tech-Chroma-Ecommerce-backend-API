@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Mirrored from codedthemes.com/demos/admin-templates/datta-able/bootstrap/default/dashboard-ecommerce.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 May 2021 11:54:24 GMT -->
 
-
-<!-- Mirrored from codedthemes.com/demos/admin-templates/datta-able/bootstrap/default/dashboard-ecommerce.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 May 2021 11:54:24 GMT -->
-
-<head>
+  <head>
     <title>Ecommerce dashboard</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Datta Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords"
-        content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, datta able, datta able bootstrap admin template">
+    <meta
+      name="description"
+      content="Datta Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs."
+    />
+    <meta
+      name="keywords"
+      content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, datta able, datta able bootstrap admin template"
+    />
     <meta name="author" content="Codedthemes" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="https://codedthemes.com/demos/admin-templates/datta-able/bootstrap/assets/images/favicon.ico"
-        type="image/x-icon">
+    <link
+      rel="icon"
+      href="https://codedthemes.com/demos/admin-templates/datta-able/bootstrap/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
     <!-- fontawesome icon -->
-    <link rel="stylesheet" href="/public/dashboard/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <link
+      rel="stylesheet"
+      href="/public/dashboard/assets/fonts/fontawesome/css/fontawesome-all.min.css"
+    />
     <!-- animation css -->
-    <link rel="stylesheet" href="/public/dashboard/assets/plugins/animation/css/animate.min.css">
+    <link
+      rel="stylesheet"
+      href="/public/dashboard/assets/plugins/animation/css/animate.min.css"
+    />
     <!-- vendor css -->
-    <link rel="stylesheet" href="/public/dashboard/assets/css/style.css">
+    <link rel="stylesheet" href="/public/dashboard/assets/css/style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- [ Pre-loader ] start -->
     <!-- <div class="loader-bg">
         <div class="loader-track">
@@ -45,410 +58,562 @@
 
     <!-- [ navigation menu ] start -->
     <nav class="pcoded-navbar">
-        <div class="navbar-wrapper">
-            <div class="navbar-brand header-logo">
-                <a href="index.html" class="b-brand">
-                    <div class="b-bg">
-                        <i class="feather icon-trending-up"></i>
-                    </div>
-                    <span class="b-title">Dashboard</span>
-                </a>
-                <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+      <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+          <a href="/admin" class="b-brand">
+            <div class="b-bg">
+              <i class="feather icon-trending-up"></i>
             </div>
-            <div class="navbar-content scroll-div">
-                <ul class="nav pcoded-inner-navbar">
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Navigation</label>
-                    </li>
-                    <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
-                        class="nav-item pcoded-hasmenu active pcoded-trigger">
-                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
-                                    class="feather icon-home"></i></span><span class="pcoded-mtext">Control
-                                Center</span></a>
-                        <ul class="pcoded-submenu">
-                            <li class="active"><a href="#" class="">Statistics</a></li>
-                            <li class=""><a href="#" class="">Add new Product</a></li>
-                            <li class=""><a href="/admin/product/productlist" class="">Product List</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav pcoded-inner-navbar">
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Orders</label>
-                    </li>
-                    <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
-                        class="nav-item pcoded-hasmenu active pcoded-trigger">
-                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
-                                    class="feather icon-package"></i></span><span class="pcoded-mtext">Orders</span></a>
-                        <ul class="pcoded-submenu">
-                            <li class=""><a href="/admin/order/orderlist/" class="">Order List</a></li>
-                            <li class=""><a href="#" class="">Confirm Orders</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <span class="b-title">Dashboard</span>
+          </a>
+          <a class="mobile-menu" id="mobile-collapse" href="#!"
+            ><span></span
+          ></a>
         </div>
+        <div class="navbar-content scroll-div">
+          <ul class="nav pcoded-inner-navbar">
+            <li class="nav-item pcoded-menu-caption">
+              <label>Products</label>
+            </li>
+            <li
+              data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
+              class="nav-item pcoded-hasmenu active pcoded-trigger"
+            >
+              <a href="#!" class="nav-link"
+                ><span class="pcoded-micon"
+                  ><i class="feather icon-home"></i></span
+                ><span class="pcoded-mtext">Products</span></a
+              >
+              <ul class="pcoded-submenu">
+                <li class="">
+                  <a href="/admin/product/new" class="">Add new Product</a>
+                </li>
+                <li class="">
+                  <a href="/admin/product/productlist" class="">Product List</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav pcoded-inner-navbar">
+            <li class="nav-item pcoded-menu-caption">
+              <label>Orders</label>
+            </li>
+            <li
+              data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
+              class="nav-item pcoded-hasmenu active pcoded-trigger"
+            >
+              <a href="#!" class="nav-link"
+                ><span class="pcoded-micon"
+                  ><i class="feather icon-package"></i></span
+                ><span class="pcoded-mtext">Orders</span></a
+              >
+              <ul class="pcoded-submenu">
+                <li class="">
+                  <a href="/admin/order/orderlist/" class="">Order List</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <!-- [ navigation menu ] end -->
 
     <!-- [ Header ] start -->
     <header class="navbar pcoded-header navbar-expand-lg navbar-light">
-        <div class="m-header">
-            <a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
-            <a href="index.html" class="b-brand">
-                <div class="b-bg">
-                    <i class="feather icon-trending-up"></i>
-                </div>
-                <span class="b-title">Datta Able</span>
-            </a>
-        </div>
-        <a class="mobile-menu" id="mobile-header" href="#!">
-            <i class="feather icon-more-horizontal"></i>
+      <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
+        <a href="/admin" class="b-brand">
+          <div class="b-bg">
+            <i class="feather icon-trending-up"></i>
+          </div>
+          <span class="b-title">Dashboard</span>
         </a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li><a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()"><i
-                            class="feather icon-maximize"></i></a></li>
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#!">Action</a></li>
-                        <li><a class="dropdown-item" href="#!">Another action</a></li>
-                        <li><a class="dropdown-item" href="#!">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <div class="main-search">
-                        <div class="input-group">
-                            <input type="text" id="m-search" class="form-control" placeholder="Search . . .">
-                            <a href="#!" class="input-group-append search-close">
-                                <i class="feather icon-x input-group-text"></i>
-                            </a>
-                            <span class="input-group-append search-btn btn btn-primary">
-                                <i class="feather icon-search input-group-text"></i>
-                            </span>
-                        </div>
+      </div>
+      <a class="mobile-menu" id="mobile-header" href="#!">
+        <i class="feather icon-more-horizontal"></i>
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li>
+            <a
+              href="#!"
+              class="full-screen"
+              onclick="javascript:toggleFullScreen()"
+              ><i class="feather icon-maximize"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <div class="main-search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="m-search"
+                  class="form-control"
+                  placeholder="Search . . ."
+                />
+                <a href="#!" class="input-group-append search-close">
+                  <i class="feather icon-x input-group-text"></i>
+                </a>
+                <span class="input-group-append search-btn btn btn-primary">
+                  <i class="feather icon-search input-group-text"></i>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <div class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown"
+                ><i class="icon feather icon-bell"></i
+              ></a>
+              <div class="dropdown-menu dropdown-menu-right notification">
+                <div class="noti-head">
+                  <h6 class="d-inline-block m-b-0">Notifications</h6>
+                  <div class="float-right">
+                    <a href="#!" class="m-r-10">mark as read</a>
+                    <a href="#!">clear all</a>
+                  </div>
+                </div>
+                <ul class="noti-body">
+                  <li class="n-title">
+                    <p class="m-b-0">NEW</p>
+                  </li>
+                  <li class="notification">
+                    <div class="media">
+                      <img
+                        class="img-radius"
+                        src="/public/dashboard/assets/images/user/avatar-1.jpg"
+                        alt="Generic placeholder image"
+                      />
+                      <div class="media-body">
+                        <p>
+                          <strong>John Doe</strong
+                          ><span class="n-time text-muted"
+                            ><i class="icon feather icon-clock m-r-10"></i>30
+                            min</span
+                          >
+                        </p>
+                        <p>New ticket Added</p>
+                      </div>
                     </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li>
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i
-                                class="icon feather icon-bell"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right notification">
-                            <div class="noti-head">
-                                <h6 class="d-inline-block m-b-0">Notifications</h6>
-                                <div class="float-right">
-                                    <a href="#!" class="m-r-10">mark as read</a>
-                                    <a href="#!">clear all</a>
-                                </div>
-                            </div>
-                            <ul class="noti-body">
-                                <li class="n-title">
-                                    <p class="m-b-0">NEW</p>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="/public/dashboard/assets/images/user/avatar-1.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>John Doe</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>30 min</span></p>
-                                            <p>New ticket Added</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="n-title">
-                                    <p class="m-b-0">EARLIER</p>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="/public/dashboard/assets/images/user/avatar-2.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>30 min</span></p>
-                                            <p>Prchace New Theme and make payment</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="/public/dashboard/assets/images/user/avatar-3.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>30 min</span></p>
-                                            <p>currently login</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="noti-footer">
-                                <a href="#!">show all</a>
-                            </div>
-                        </div>
+                  </li>
+                  <li class="n-title">
+                    <p class="m-b-0">EARLIER</p>
+                  </li>
+                  <li class="notification">
+                    <div class="media">
+                      <img
+                        class="img-radius"
+                        src="/public/dashboard/assets/images/user/avatar-2.jpg"
+                        alt="Generic placeholder image"
+                      />
+                      <div class="media-body">
+                        <p>
+                          <strong>Joseph William</strong
+                          ><span class="n-time text-muted"
+                            ><i class="icon feather icon-clock m-r-10"></i>30
+                            min</span
+                          >
+                        </p>
+                        <p>Prchace New Theme and make payment</p>
+                      </div>
                     </div>
-                </li>
-                <li><a href="#!" class="displayChatbox"><i class="icon feather icon-mail"></i></a></li>
-                <li>
-                    <div class="dropdown drp-user">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon feather icon-settings"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-notification">
-                            <div class="pro-head">
-                                <img src="/public/dashboard/assets/images/user/avatar-1.jpg" class="img-radius"
-                                    alt="User-Profile-Image">
-                                <span>John Doe</span>
-                                <a href="auth-signin.html" class="dud-logout" title="Logout">
-                                    <i class="feather icon-log-out"></i>
-                                </a>
-                            </div>
-                            <ul class="pro-body">
-                                <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i>
-                                        Settings</a></li>
-                                <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a>
-                                </li>
-                                <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My
-                                        Messages</a></li>
-                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i>
-                                        Lock Screen</a></li>
-                            </ul>
-                        </div>
+                  </li>
+                  <li class="notification">
+                    <div class="media">
+                      <img
+                        class="img-radius"
+                        src="/public/dashboard/assets/images/user/avatar-3.jpg"
+                        alt="Generic placeholder image"
+                      />
+                      <div class="media-body">
+                        <p>
+                          <strong>Sara Soudein</strong
+                          ><span class="n-time text-muted"
+                            ><i class="icon feather icon-clock m-r-10"></i>30
+                            min</span
+                          >
+                        </p>
+                        <p>currently login</p>
+                      </div>
                     </div>
-                </li>
-            </ul>
-        </div>
+                  </li>
+                </ul>
+                <div class="noti-footer">
+                  <a href="#!">show all</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#!" class="displayChatbox"
+              ><i class="icon feather icon-mail"></i
+            ></a>
+          </li>
+          <li>
+            <div class="dropdown drp-user">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon feather icon-settings"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right profile-notification"
+              >
+                <div class="pro-head">
+                  <img
+                    src="/public/dashboard/assets/images/user/avatar-1.jpg"
+                    class="img-radius"
+                    alt="User-Profile-Image"
+                  />
+                  <span>John Doe</span>
+                  <a href="auth-signin.html" class="dud-logout" title="Logout">
+                    <i class="feather icon-log-out"></i>
+                  </a>
+                </div>
+                <ul class="pro-body">
+                  <li>
+                    <a href="#!" class="dropdown-item"
+                      ><i class="feather icon-settings"></i> Settings</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#!" class="dropdown-item"
+                      ><i class="feather icon-user"></i> Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a href="message.html" class="dropdown-item"
+                      ><i class="feather icon-mail"></i> My Messages</a
+                    >
+                  </li>
+                  <li>
+                    <a href="auth-signin.html" class="dropdown-item"
+                      ><i class="feather icon-lock"></i> Lock Screen</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </header>
     <!-- [ Header ] end -->
 
     <!-- [ Main Content ] start -->
     <div class="pcoded-main-container">
-        <div class="pcoded-wrapper">
-            <div class="pcoded-content">
-                <div class="pcoded-inner-content">
-                    <!-- [ breadcrumb ] start -->
-                    <div class="page-header">
-                        <div class="page-block">
-                            <div class="row align-items-center">
-                                <div class="col-md-12">
-                                    <div class="page-header-title">
-                                        <h5 class="m-b-10">Dashboard</h5>
-                                    </div>
-                                    <ul class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html"><i
-                                                    class="feather icon-home"></i></a></li>
-                                        <li class="breadcrumb-item"><a href="#!">Dashboard Ecommerce</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+      <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+          <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+              <div class="page-block">
+                <div class="row align-items-center">
+                  <div class="col-md-12">
+                    <div class="page-header-title">
+                      <h5 class="m-b-10">Dashboard</h5>
                     </div>
-                    <!-- [ breadcrumb ] end -->
-                    <div class="main-body">
-                        <div class="page-wrapper">
-                            <!-- [ Main Content ] start -->
-                            <div class="row">
-                                <!-- [ online-order section ] start -->
-                                <div class="col-md-6 col-xl-4">
-                                    <div class="card Online-Order">
-                                        <div class="card-block">
-                                            <h5>Online Orders</h5>
-                                            <h6
-                                                class="text-muted d-flex align-items-center justify-content-between m-t-30">
-                                                Delivery Orders<span class="float-right f-18 text-c-green">237 /
-                                                    400</span></h6>
-                                            <div class="progress mt-3">
-                                                <div class="progress-bar progress-c-theme" role="progressbar"
-                                                    style="width:65%;height:6px;" aria-valuenow="65" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="text-muted mt-2 d-block">37% Done</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-xl-4">
-                                    <div class="card Online-Order">
-                                        <div class="card-block">
-                                            <h5>Pending Orders</h5>
-                                            <h6
-                                                class="text-muted d-flex align-items-center justify-content-between m-t-30">
-                                                Pending Orders<span class="float-right f-18 text-c-purple">100 /
-                                                    500</span></h6>
-                                            <div class="progress mt-3">
-                                                <div class="progress-bar progress-c-theme2" role="progressbar"
-                                                    style="width:50%;height:6px;" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="text-muted mt-2 d-block">20% Pending</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-xl-4">
-                                    <div class="card Online-Order">
-                                        <div class="card-block">
-                                            <h5>Return Orders</h5>
-                                            <h6
-                                                class="text-muted d-flex align-items-center justify-content-between m-t-30">
-                                                Return Orders<span class="float-right f-18 text-c-blue">50 / 400</span>
-                                            </h6>
-                                            <div class="progress mt-3">
-                                                <div class="progress-bar progress-c-blue" role="progressbar"
-                                                    style="width:40%;height:6px;" aria-valuenow="40" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="text-muted mt-2 d-block">10% Return</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- [ online-order section ] end -->
-
-                                <!-- [ full width-table ] start -->
-                                <div class="col-xl-12 col-md-12">
-                                    <div class="card code-table">
-                                        <div class="card-header">
-                                            <h5>E-Commerce</h5>
-                                            <div class="card-header-right">
-                                                <div class="btn-group card-option">
-                                                    <button type="button" class="btn dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <i class="feather icon-more-horizontal"></i>
-                                                    </button>
-                                                    <ul
-                                                        class="list-unstyled card-option dropdown-menu dropdown-menu-right">
-                                                        <li class="dropdown-item full-card"><a href="#!"><span><i
-                                                                        class="feather icon-maximize"></i>
-                                                                    maximize</span><span style="display:none"><i
-                                                                        class="feather icon-minimize"></i>
-                                                                    Restore</span></a></li>
-                                                        <li class="dropdown-item minimize-card"><a href="#!"><span><i
-                                                                        class="feather icon-minus"></i>
-                                                                    collapse</span><span style="display:none"><i
-                                                                        class="feather icon-plus"></i> expand</span></a>
-                                                        </li>
-                                                        <li class="dropdown-item reload-card"><a href="#!"><i
-                                                                    class="feather icon-refresh-cw"></i> reload</a></li>
-                                                        <li class="dropdown-item close-card"><a href="#!"><i
-                                                                    class="feather icon-trash"></i> remove</a></li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-block pb-0">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Id Number</th>
-                                                            <th>Name</th>
-                                                            <th>Email</th>
-                                                            <th>Admin</th>
-                                                    </thead>
-                                                    <tbody>
-                                                        <% userList.forEach(user=> { %>
-                                                            <tr>
-                                                                <td>
-                                                                    <h6 class="mb-1">
-                                                                        <%= user._id %>
-                                                                    </h6>
-                                                                </td>
-                                                                <td>
-                                                                    <h6 class="mb-1">
-                                                                        <%= user.name %>
-                                                                    </h6>
-                                                                </td>
-                                                                <td>
-                                                                    <h6 class="m-b-1">
-                                                                        <a href="mailto:<%= user.email %>">
-                                                                            <%= user.email %>
-                                                                        </a>
-                                                                    </h6>
-                                                                </td>
-                                                                <td>
-
-                                                                    <% if (user.isAdmin) { %>
-                                                                        <h6
-                                                                            class=" d-inline label theme-bg text-white ">
-                                                                            Admin
-                                                                        </h6>
-                                                                        <% } %>
-                                                                            <% if (!user.isAdmin) { %>
-                                                                                <h6
-                                                                                    class=" d-inline label theme-bg text-white ">
-                                                                                    Not Admin
-                                                                                </h6>
-                                                                                <% } %>
-
-                                                                </td>
-                                                            </tr>
-                                                            <% }) %>
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- [ full width-table ] end -->
-                                <!-- [ earning chart ] end -->
-                            </div>
-                            <!-- [ Main Content ] end -->
-                        </div>
-                    </div>
+                    <ul class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="index.html"
+                          ><i class="feather icon-home"></i
+                        ></a>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <a href="#!">Dashboard Ecommerce</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
             </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+              <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                  <!-- [ online-order section ] start -->
+                  <div class="col-md-6 col-xl-4">
+                    <div class="card Online-Order">
+                      <div class="card-block">
+                        <h5>Online Orders</h5>
+                        <h6
+                          class="
+                            text-muted
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                            m-t-30
+                          "
+                        >
+                          Delivery Orders<span
+                            class="float-right f-18 text-c-green"
+                            >237 / 400</span
+                          >
+                        </h6>
+                        <div class="progress mt-3">
+                          <div
+                            class="progress-bar progress-c-theme"
+                            role="progressbar"
+                            style="width: 65%; height: 6px"
+                            aria-valuenow="65"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                        <span class="text-muted mt-2 d-block">37% Done</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4">
+                    <div class="card Online-Order">
+                      <div class="card-block">
+                        <h5>Pending Orders</h5>
+                        <h6
+                          class="
+                            text-muted
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                            m-t-30
+                          "
+                        >
+                          Pending Orders<span
+                            class="float-right f-18 text-c-purple"
+                            >100 / 500</span
+                          >
+                        </h6>
+                        <div class="progress mt-3">
+                          <div
+                            class="progress-bar progress-c-theme2"
+                            role="progressbar"
+                            style="width: 50%; height: 6px"
+                            aria-valuenow="50"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                        <span class="text-muted mt-2 d-block">20% Pending</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-xl-4">
+                    <div class="card Online-Order">
+                      <div class="card-block">
+                        <h5>Return Orders</h5>
+                        <h6
+                          class="
+                            text-muted
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                            m-t-30
+                          "
+                        >
+                          Return Orders<span
+                            class="float-right f-18 text-c-blue"
+                            >50 / 400</span
+                          >
+                        </h6>
+                        <div class="progress mt-3">
+                          <div
+                            class="progress-bar progress-c-blue"
+                            role="progressbar"
+                            style="width: 40%; height: 6px"
+                            aria-valuenow="40"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                        <span class="text-muted mt-2 d-block">10% Return</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [ online-order section ] end -->
+
+                  <!-- [ full width-table ] start -->
+                  <div class="col-xl-12 col-md-12">
+                    <div class="card code-table">
+                      <div class="card-header">
+                        <h5>E-Commerce</h5>
+                        <div class="card-header-right">
+                          <div class="btn-group card-option">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="feather icon-more-horizontal"></i>
+                            </button>
+                            <ul
+                              class="
+                                list-unstyled
+                                card-option
+                                dropdown-menu dropdown-menu-right
+                              "
+                            >
+                              <li class="dropdown-item full-card">
+                                <a href="#!"
+                                  ><span
+                                    ><i class="feather icon-maximize"></i>
+                                    maximize</span
+                                  ><span style="display: none"
+                                    ><i class="feather icon-minimize"></i>
+                                    Restore</span
+                                  ></a
+                                >
+                              </li>
+                              <li class="dropdown-item minimize-card">
+                                <a href="#!"
+                                  ><span
+                                    ><i class="feather icon-minus"></i>
+                                    collapse</span
+                                  ><span style="display: none"
+                                    ><i class="feather icon-plus"></i>
+                                    expand</span
+                                  ></a
+                                >
+                              </li>
+                              <li class="dropdown-item reload-card">
+                                <a href="#!"
+                                  ><i class="feather icon-refresh-cw"></i>
+                                  reload</a
+                                >
+                              </li>
+                              <li class="dropdown-item close-card">
+                                <a href="#!"
+                                  ><i class="feather icon-trash"></i> remove</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-block pb-0">
+                        <div class="table-responsive">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Id Number</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Admin</th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <% userList.forEach(user=> { %>
+                              <tr>
+                                <td>
+                                  <h6 class="mb-1"><%= user._id %></h6>
+                                </td>
+                                <td>
+                                  <h6 class="mb-1"><%= user.name %></h6>
+                                </td>
+                                <td>
+                                  <h6 class="m-b-1">
+                                    <a href="mailto:<%= user.email %>">
+                                      <%= user.email %>
+                                    </a>
+                                  </h6>
+                                </td>
+                                <td>
+                                  <% if (user.isAdmin) { %>
+                                  <h6
+                                    class="d-inline label theme-bg text-white"
+                                  >
+                                    Admin
+                                  </h6>
+                                  <% } %> <% if (!user.isAdmin) { %>
+                                  <h6
+                                    class="d-inline label theme-bg text-white"
+                                  >
+                                    Not Admin
+                                  </h6>
+                                  <% } %>
+                                </td>
+                              </tr>
+                              <% }) %>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [ full width-table ] end -->
+                  <!-- [ earning chart ] end -->
+                </div>
+                <!-- [ Main Content ] end -->
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- [ Main Content ] end -->
 
     <!-- Warning Section start -->
     <!-- Older IE warning message -->
     <!--[if lt IE 11]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade
-               <br/>to any of the following web browsers to access this website.
-            </p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="/public/dashboard/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="/public/dashboard/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="/public/dashboard/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="/public/dashboard/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="/public/dashboard/images/browser/ie.png" alt="">
-                            <div>IE (11 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
+      <div class="ie-warning">
+        <h1>Warning!!</h1>
+        <p>
+          You are using an outdated version of Internet Explorer, please upgrade
+          <br />to any of the following web browsers to access this website.
+        </p>
+        <div class="iew-container">
+          <ul class="iew-download">
+            <li>
+              <a href="http://www.google.com/chrome/">
+                <img
+                  src="/public/dashboard/images/browser/chrome.png"
+                  alt="Chrome"
+                />
+                <div>Chrome</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.mozilla.org/en-US/firefox/new/">
+                <img
+                  src="/public/dashboard/images/browser/firefox.png"
+                  alt="Firefox"
+                />
+                <div>Firefox</div>
+              </a>
+            </li>
+            <li>
+              <a href="http://www.opera.com">
+                <img
+                  src="/public/dashboard/images/browser/opera.png"
+                  alt="Opera"
+                />
+                <div>Opera</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.apple.com/safari/">
+                <img
+                  src="/public/dashboard/images/browser/safari.png"
+                  alt="Safari"
+                />
+                <div>Safari</div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"
+              >
+                <img src="/public/dashboard/images/browser/ie.png" alt="" />
+                <div>IE (11 & above)</div>
+              </a>
+            </li>
+          </ul>
         </div>
+        <p>Sorry for the inconvenience!</p>
+      </div>
     <![endif]-->
     <!-- Warning Section Ends -->
 
@@ -471,7 +636,5 @@
 
     <!-- dashboard-custom js -->
     <script src="/public/dashboard/assets/js/pages/dashboard-ecommerce.js"></script>
-
-</body>
-
+  </body>
 </html>

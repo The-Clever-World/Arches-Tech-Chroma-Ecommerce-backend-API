@@ -25,7 +25,7 @@ PayToggles.forEach((toggle) =>
 deliverToggles.forEach((toggle) =>
   toggle.addEventListener("click", (e) => {
     let rowId = e.target.dataset.id;
-    fetch(`http://localhost:5000/admin/order/${rowId}/update/delivered`, {
+    fetch(`https://chroma-commerce.herokuapp.com/admin/order/${rowId}/update/delivered`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

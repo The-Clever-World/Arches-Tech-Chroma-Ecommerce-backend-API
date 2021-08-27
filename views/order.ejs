@@ -262,7 +262,7 @@
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
                     <b> Billing Address</b>
-                    <button type="button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
+                    <button type="button" id="billing_button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal2"
                         style="color: black;">
                         &plus; Add
                     </button>
@@ -282,7 +282,7 @@
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
                     <b> Shipping Address</b>
-                    <button type="button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
+                    <button type="button" id="shipping_address" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
                         style="color: black;">
                         &plus; Add
                     </button>
@@ -300,13 +300,13 @@
             </div>
 
             <div class="card col-md-7 mt-4">
-                <div class="d-flex justify-content-between mt-4">
+                <div class="d-flex justify-between mt-4">
                     <b> Delivery Schedule</b>
                 </div>
                 <div class="row d-flex justify-content-between">
-                    <div class="card mb-5 col-md-4 mt-4">
+                    <div class="card mb-5 col-md-12 mt-4">
                         <div class="card-body">
-                            <div class="card-body">
+                            <b>Shipping Address</b>
                                 <p class="card-text">
                                     <%= order.shippingAddress && order.shippingAddress.address %> ,
                                         <%= order.shippingAddress && order.shippingAddress.state %> ,
@@ -314,7 +314,16 @@
                                                 <%= order.shippingAddress && order.shippingAddress.zip %>
                                 </p>
                             </div>
-                        </div>
+                            <div class="card-body">
+                            <b>Billing Address</b>
+                                <p class="card-text">
+                                    <%= order.billingAddress && order.billingAddress.address %> ,
+                                        <%= order.billingAddress && order.billingAddress.state %> ,
+                                            <%= order.billingAddress && order.billingAddress.country %> ,
+                                                <%= order.billingAddress && order.billingAddress.zip %>
+                                </p>
+                            </div>
+
                     </div>
                 </div>
             </div>
@@ -358,7 +367,7 @@
     </div>
     <!-- Button trigger modal -->
 
-    <!-- Modal -->
+    <!-- Modal for Shipping -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -372,58 +381,82 @@
                 <div class="modal-body d-flex justify-content-center">
                     <form>
                         <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label>Type</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio1" value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">Billing</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio2" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">Shipping</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group col-md-12">
-                                <label>Title</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="">
-                            </div>
                             <div class="form-group col-md-6">
                                 <label for="">Country</label>
-                                <input type="" class="form-control" id="" placeholder="Country">
+                                <input type="" class="form-control" id="inputCountry" placeholder="Country">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">City</label>
-                                <input type="" class="form-control" id="" placeholder="City">
+                                <input type="text" class="form-control" id="inputCity" placeholder=" Your City">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State</label>
-                                <select id="inputState" class="form-control" style="height:4rem;">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
+                                <input id="inputState" class="form-control" style="height:4rem;" type="text" class="form-control" placeholder="Your State">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Zip</label>
-                                <input type="" class="form-control" id="" placeholder="City">
+                                <input type="" class="form-control" id="inputZip" placeholder="Zip Code">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Address</label>
                             <input type="textarea" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
-
-
-
-
                     </form>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="saveShipping" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <!-- Modal for Billing -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add New Address</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">Country</label>
+                                <input type="" class="form-control" id="inputCountry2" placeholder="Country">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">City</label>
+                                <input type="text" class="form-control" id="inputCity2" placeholder=" Your City">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State</label>
+                                <input id="inputState2" class="form-control" style="height:4rem;" type="text" class="form-control" placeholder="Your State">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Zip</label>
+                                <input type="" class="form-control" id="inputZip2" placeholder="Zip Code">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="textarea" class="form-control" id="inputAddress2" placeholder="1234 Main St">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveBilling" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -539,6 +572,7 @@
     <script src="/public/js/integrations/uiModifier.js"></script>
     <script src="/public/js/integrations/logout.js"></script>
     <script src="/public/js/integrations/cartRedirect.js"></script>
+    <script src="/public/js/integrations/order.js"></script>
 
 
 </body>

@@ -36,7 +36,7 @@ export const createOrder = async (req, res, next) => {
 
 /**
  * @purpose update particular order and add shipping address
- * @route   POST /order/update
+ * @route   POST /order/add-shipping
  * @params { orderId, shippingAddress }
  * @params products --> list of products id
  * @access  Public
@@ -57,7 +57,7 @@ export const addShippingToOrder = async (req, res, next) => {
 
 /**
  * @purpose update particular order and add billing address
- * @route   POST /order/update
+ * @route   POST /order/add-billing
  * @params { orderId, billingAddress }
  * @params products --> list of products id
  * @access  Public

@@ -54,6 +54,31 @@ export const addShippingToOrder = async (req, res, next) => {
   res.status(200).send(order);
 };
 
+
+
+/**
+ * @purpose update particular order and add billing address
+ * @route   POST /order/update
+ * @params { orderId, billingAddress }
+ * @params products --> list of products id
+ * @access  Public
+ */
+
+ export const addBillingToOrder = async (req, res, next) => {
+  const { orderId, billingAddress } = req.body;
+
+  const order = await Order.findById(orderId);
+
+  // add billingAddress to particular order
+  order.billingAddress = billingAddress;
+
+  await order.save();
+  // res.status(204).render("order.ejs", { order: newOrder });
+  res.status(200).send(order);
+};
+
+
+
 /**
  * @purpose get order details of particular orderId
  * @route   GET /order/:orderId

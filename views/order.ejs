@@ -41,7 +41,7 @@
             <div class="row align-center">
                 <div class="col-md-2" style=" top: -1.4rem; padding: 10px;">
                     <div class="logo common-logo">
-                        <a href="index.html"><img src="/public/images/logo_1.png" alt="Logo"></a>
+                        <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
                     </div>
                     <!----- for fixed header logo--->
 
@@ -245,134 +245,111 @@
         <div class="row">
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
-                    <b><span class="red">1</span> Contact Number</b>
-                    <button class="bg-light" style="color: black;">&plus; Update</button>
+                    <b> User Details</b>
+
                 </div>
                 <div class="col-md-5 mt-5 mb-5">
-                    <input type="text" class="form-control" placeholder="123345778">
+                    <h4 class="card-title mb-5"><b>Name: </b> <span>
+                            <%= order.user.name %>
+                        </span></h4>
+                    <h4 class="card-title mb-5"><b>Email: </b> <span>
+                            <%= order.user.email %>
+                        </span></h4>
                 </div>
             </div>
 
 
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
-                    <b><span class="red">2</span> Billing Address</b>
-                    <button class="bg-light mb-5" style="color: black;">&plus; Add</button>
-                </div>
-                <div class="row d-flex align-content-md-around">
-                    <div class="card mb-5 col-md-4">
-                        <div class="card-body">
-                            <h4 class="card-title mb-5"><b>Shipping Address</b></h4>
-
-                            <p class="card-text">Salt Lake Sector-V Bidhannagar Kolkata 700102 </p>
-                        </div>
-                    </div>
-                    <div class="card mb-5 col-md-4 bg-light">
-                        <div class="card-body">
-                            <h4 class="card-title mb-5"><b>Billing Address</b></h4>
-
-                            <p class="card-text">Salt Lake Sector-V Bidhannagar Kolkata 700102 </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card col-md-7 mt-4">
-                <div class="d-flex justify-content-between mt-4">
-                    <b><span class="red">3</span> Shipping Address</b>
+                    <b> Billing Address</b>
                     <button type="button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
-                        style="color: black;">&plus; Add</button>
+                        style="color: black;">
+                        &plus; Add
+                    </button>
                 </div>
                 <div class="card mb-5 col-md-4 bg-light">
                     <div class="card-body">
-                        <h4 class="card-title mb-5"><b>Billing Address</b></h4>
-
-                        <p class="card-text">Salt Lake Sector-V Bidhannagar Kolkata 700102 </p>
+                        <p class="card-text">
+                            <%= order.billingAddress && order.billingAddress.address %> ,
+                                <%= order.billingAddress && order.billingAddress.state %> ,
+                                    <%= order.billingAddress && order.billingAddress.country %> ,
+                                        <%= order.billingAddress && order.billingAddress.zip %>
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
-                    <b> <span class="red">4</span> Delivery Schedule</b>
-                    <button class="bg-light" style="color: black;">&plus; Add</button>
+                    <b> Shipping Address</b>
+                    <button type="button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
+                        style="color: black;">
+                        &plus; Add
+                    </button>
+                </div>
+                <div class="card mb-5 col-md-4 bg-light">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <%= order.shippingAddress && order.shippingAddress.address %> ,
+                                <%= order.shippingAddress && order.shippingAddress.state %> ,
+                                    <%= order.shippingAddress && order.shippingAddress.country %> ,
+                                        <%= order.shippingAddress && order.shippingAddress.zip %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card col-md-7 mt-4">
+                <div class="d-flex justify-content-between mt-4">
+                    <b> Delivery Schedule</b>
                 </div>
                 <div class="row d-flex justify-content-between">
                     <div class="card mb-5 col-md-4 mt-4">
                         <div class="card-body">
-                            <h4 class="card-title mb-1"><b>Exprress Delivery</b></h4>
-
-                            <p class="card-text" style="height:4rem; width: 25rem;">90 min express delivery</p>
-                        </div>
-                    </div>
-                    <div class="card mb-5 col-md-4 " style="border: none;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1"><b>Morning</b></h4>
-
-                            <p class="card-text" style="height:4rem; width: 25rem;">8:00AM - 11:00AM</p>
-                        </div>
-                    </div>
-                    <div class="card mb-5 col-md-4 bg-light" style="border: none;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1"><b>Noon</b></h4>
-
-                            <p class="card-text" style="height:4rem; width: 25rem;">11:00AM - 2:00PM</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card mb-5 col-md-4 bg-light" style="border: none;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1"><b>Afternoon</b></h4>
-
-                            <p class="card-text" style="height:4rem; width: 25rem;">11:00AM - 2:00PM</p>
-                        </div>
-                    </div>
-                    <div class="card mb-5 col-md-4 bg-light" style="border: none;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1"><b>Evening</b></h4>
-
-                            <p class="card-text" style="height:4rem; width: 25rem;">11:00AM - 2:00PM</p>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <%= order.shippingAddress && order.shippingAddress.address %> ,
+                                        <%= order.shippingAddress && order.shippingAddress.state %> ,
+                                            <%= order.shippingAddress && order.shippingAddress.country %> ,
+                                                <%= order.shippingAddress && order.shippingAddress.zip %>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-text  col-md-5" style="top: -70rem;">
+            <div class="card-text  col-md-5" style="top: -50rem;">
                 <div class="card-body ">
                     <h3 class="card-title mb-5 d-flex justify-content-center mt-5"><b>Your Oder</b></h3>
+                    <% order.products.forEach((product)=> { %>
+                        <div class="category-price-div d-flex justify-content-between mt-3">
+                            <span class="category-count">
+                                <%= product.name %>
+                            </span>
+                            <span class="old-price"> <b id="p-price">₹<%= product.price %></b></span>
+                        </div>
+                        <br />
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>1 X Computer Keyboard | 1 pes</span></span>
-                        <span class="old-price"> <b>₹2,999.00</b></span>
-                    </div>
+                        <% }) %>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>1 X Computer Keyboard | 1 pes</span></span>
-                        <span class="old-price"> <b>₹2,999.00</b></span>
-                    </div>
+                            <hr>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>1 X Computer Keyboard | 1 pes</span></span>
-                        <span class="old-price"> <b>₹2,999.00</b></span>
-                    </div>
-                    <hr>
+                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                                    class="category-count"><span>Sub Total</span></span>
+                                <span class="old-price"> <b>₹<%= order.totalPrice %></b></span>
+                            </div>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>Sub Total</span></span>
-                        <span class="old-price"> <b>₹8,997.00</b></span>
-                    </div>
+                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                                    class="category-count"><span>Tax</span></span>
+                                <span class="old-price"> <span>Calculate at checkOut</span></span>
+                            </div>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>Tax</span></span>
-                        <span class="old-price"> <span>Calculate at checkOut</span></span>
-                    </div>
+                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                                    class="category-count"><span>Estimated Shiping</span></span>
+                                <span class="old-price"> <span>Calculate at checkout</span></span>
+                            </div>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>Estimated Shiping</span></span>
-                        <span class="old-price"> <span>Calculate at checkout</span></span>
-                    </div>
-
-                    <button class="col mt-3">Check Avilability</button>
+                            <button class="col mt-3">Check Avilability</button>
                 </div>
             </div>
 

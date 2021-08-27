@@ -79,7 +79,7 @@ if (addToShippingBtn) {
     const orderId = location.pathname.split("/")[2];
     console.log(orderId);
 
-    fetch(`http://localhost:5000/order/add-shipping`, {
+    fetch(`https://chroma-commerce.herokuapp.com/order/add-shipping`, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       headers: {
@@ -129,7 +129,7 @@ if (addToBillingBtn) {
     const orderId = location.pathname.split("/")[2];
     console.log(orderId);
 
-    fetch(`http://localhost:5000/order/add-billing`, {
+    fetch(`https://chroma-commerce.herokuapp.com/order/add-billing`, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       headers: {

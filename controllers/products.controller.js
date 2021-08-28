@@ -85,7 +85,9 @@ export const getAllProducts = async (req, res, next) => {
 
 export const addNewProductPage = async (req, res, next) => {
   try {
-    res.status(200).render("dashboard.addproduct.ejs");
+    const categories = await Category.find();
+    console.log(categories);
+    res.status(200).render("dashboard.addproduct.ejs", { categories: categories });
   } catch (error) {
     console.log(error);
   }

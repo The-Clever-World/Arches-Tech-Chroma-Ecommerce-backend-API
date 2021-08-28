@@ -1,4 +1,4 @@
-export { addProductWithCategory } from "./categories.controller.js";
+export { addProductWithCategory, addCategory } from "./categories.controller.js";
 export {
   orderList,
   updateOrderToDelivered,

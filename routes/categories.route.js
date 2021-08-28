@@ -3,7 +3,6 @@ import express from "express";
 import {
   getAllCategories,
   getProductsFromCategory,
-  addProductWithCategory,
 } from "../controllers/categories.controller.js";
 
 const router = express.Router();

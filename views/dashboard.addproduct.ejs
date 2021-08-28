@@ -285,102 +285,113 @@
                       <hr>
                       <div class="row">
                         <div class="col-md-12">
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <input type="text" class="form-control" id="productName" placeholder="Enter product name">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Specifications</label>
-                            <textarea class="form-control" id="specification" rows="3"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Overview</label>
-                            <textarea class="form-control" id="overview" rows="2"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Highlights</label>
-                            <textarea class="form-control" id="Highlight" rows="2"></textarea>
-                          </div>
+                          <form id="addProductForm">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Name</label>
+                              <input name="name" type="text" class="form-control" id="productName"
+                                placeholder="Enter product name">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Specifications</label>
+                              <textarea name="specification" class="form-control" id="specification"
+                                rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Overview</label>
+                              <textarea name="overview" class="form-control" id="overview" rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Highlights</label>
+                              <textarea name="Highlight" class="form-control" id="Highlight" rows="2"></textarea>
+                            </div>
 
-                          <h5>Key Features</h5>
-                          <hr>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Key Feature 1</label>
-                            <input type="text" class="form-control" id="Key-Feature-1"
-                              placeholder="Enter key feature of product">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Key Feature 2</label>
-                            <input type="text" class="form-control" id="Key-Feature-2"
-                              placeholder="Enter key feature of product">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Key Feature 3</label>
-                            <input type="text" class="form-control" id="Key-Feature-3"
-                              placeholder="Enter key feature of product">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Key Feature 4</label>
-                            <input type="text" class="form-control" id="Key-Feature-4"
-                              placeholder="Enter key feature of product">
-                          </div>
-                          <h5>Images</h5>
-                          <hr>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Image 1</label>
-                            <input type="text" class="form-control" id="Image-1" placeholder="Enter product image">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Image 2</label>
-                            <input type="text" class="form-control" id="Image-2" placeholder="Enter product image">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Image 3</label>
-                            <input type="text" class="form-control" id="Image-3" placeholder="Enter product image">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Image 4</label>
-                            <input type="text" class="form-control" id="Image-4" placeholder="Enter product image">
-                          </div>
-                          <h5>Price and Stocks</h5>
-                          <hr>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Price in rupees</label>
-                            <input type="text" class="form-control" id="price" placeholder="Enter price">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Stock count</label>
-                            <input type="number" class="form-control" id="stock"
-                              placeholder="Enter total number of items available">
-                          </div>
+                            <h5>Key Features</h5>
+                            <hr>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Key Feature 1</label>
+                              <input name="keyFeature1" type="text" class="form-control" id="Key-Feature-1"
+                                placeholder="Enter key feature of product">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Key Feature 2</label>
+                              <input name="keyFeature2" type="text" class="form-control" id="Key-Feature-2"
+                                placeholder="Enter key feature of product">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Key Feature 3</label>
+                              <input name="keyFeature3" type="text" class="form-control" id="Key-Feature-3"
+                                placeholder="Enter key feature of product">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Key Feature 4</label>
+                              <input name="keyFeature4" type="text" class="form-control" id="Key-Feature-4"
+                                placeholder="Enter key feature of product">
+                            </div>
+                            <h5>Images</h5>
+                            <hr>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Image 1</label>
+                              <input name="Image1" type="text" class="form-control" id="Image-1"
+                                placeholder="Enter product image">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Image 2</label>
+                              <input name="Image2" type="text" class="form-control" id="Image-2"
+                                placeholder="Enter product image">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Image 3</label>
+                              <input name="Image3" type="text" class="form-control" id="Image-3"
+                                placeholder="Enter product image">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Image 4</label>
+                              <input name="Image4" type="text" class="form-control" id="Image-4"
+                                placeholder="Enter product image">
+                            </div>
+                            <h5>Price and Stocks</h5>
+                            <hr>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Price in rupees</label>
+                              <input name="price" type="text" class="form-control" id="price" placeholder="Enter price">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Stock count</label>
+                              <input name="stock" type="number" class="form-control" id="stock"
+                                placeholder="Enter total number of items available">
+                            </div>
 
-                          <br />
+                            <br />
 
-                          <!-- Category dropdown -->
-                          <h5>Category</h5>
-                          <hr />
-                          <h6>Choose category from dropdown</h6>
-                          <div class="form-group">
-                            <select class="mb-3 form-control form-control-lg">
-                              <% categories.forEach((category) => { %>
-                              <option value="<%= category.name %>"><%= category.name %></option>
-                              <% }) %>
-                            </select>
-                          </div>
+                            <!-- Category dropdown -->
+                            <h5>Category</h5>
+                            <hr />
+                            <h6>Choose category from dropdown</h6>
+                            <div class="form-group">
+                              <select name="category" class="mb-3 form-control form-control-lg">
+                                <% categories.forEach((category)=> { %>
+                                  <option value="<%= category.name %>">
+                                    <%= category.name %>
+                                  </option>
+                                  <% }) %>
+                              </select>
+                            </div>
 
-                          <h5 class="text-center"><b>OR</b></h5>
-                          <hr />
-                          <h6>Add New Category</h6>
-                          <div class="form-group d-flex">
-                            <input type="text" class="form-control w-75" id="categoryName"
-                              placeholder="Enter new Category Name">
-                            <input type="text" class="form-control w-75" id="categoryImage"
-                              placeholder="Enter new Category Image URL">
-                            <button type="submit" id="categorySubmit" class="btn btn-primary w-25">Submit</button>
-                          </div>
-                          <br />
-                          <br />
-                          <button type="submit" id="productSubmit" class="btn btn-primary w-100">ADD PRODUCT</button>
+                            <h5 class="text-center"><b>OR</b></h5>
+                            <hr />
+                            <h6>Add New Category</h6>
+                            <div class="form-group d-flex">
+                              <input type="text" class="form-control w-75" id="categoryName"
+                                placeholder="Enter new Category Name">
+                              <input type="text" class="form-control w-75" id="categoryImage"
+                                placeholder="Enter new Category Image URL">
+                              <button id="categorySubmit" class="btn btn-primary w-25">Submit</button>
+                            </div>
+                            <br />
+                            <br />
+                            <button type="submit" id="productSubmit" class="btn btn-primary w-100">ADD PRODUCT</button>
+                          </form>
+
                         </div>
                         <!-- <div class="col-md-6"> -->
                         <!-- <form> -->

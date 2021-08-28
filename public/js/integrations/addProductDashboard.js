@@ -11,7 +11,7 @@ if (addCategory) {
         console.log(categoryName);
         console.log(categoryImage);
 
-        fetch(`http://localhost:5000/admin/categories/add`, {
+        fetch(`https://chroma-commerce.herokuapp.com/admin/categories/add`, {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin
             headers: {

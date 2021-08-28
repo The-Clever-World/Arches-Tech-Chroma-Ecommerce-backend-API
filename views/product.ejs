@@ -276,12 +276,12 @@
                   <div class="product col-md-2">
                      <ul>
                         <% product.images.forEach(image=> { %>
-                        <li><img src="/public<%= image %>" alt="" onclick="clickme(this)"></li>
+                        <li><img src="<%= image %>" alt="" onclick="clickme(this)"></li>
                         <% }) %>
                      </ul>
                   </div>
                   <div class=" zoom preview col-md-10">
-                     <img src="/public<%= product.images[0] %>" id="imagebox" alt="">
+                     <img src="<%= product.images[0] %>" id="imagebox" alt="">
                   </div>
                </div>
             </div>
@@ -681,7 +681,7 @@
             <a href="<%= category._id %>">
                <div class="item">
                   <figure>
-                     <img src="/public/<%= category.image %>" />
+                     <img src="<%= category.image %>" />
                   </figure>
                   <div class="slider-content">
                      <h3 class="category-title">
@@ -755,7 +755,7 @@
                <div class="item">
                   <div class="home-product-image-slider">
                      <figure>
-                        <img src="/public/<%= product.images[0] %>" />
+                        <img src="<%= product.images[0] %>" />
                      </figure>
                   </div>
                   <div class="item-cart">

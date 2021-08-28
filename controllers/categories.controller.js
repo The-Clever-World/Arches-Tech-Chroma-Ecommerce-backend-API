@@ -1,5 +1,7 @@
 import Category from "../models/categories.model.js";
 import Product from "../models/product.model.js";
+
+
 /**
  * @purpose get all categories
  * @route  GET /categories/
@@ -42,6 +44,30 @@ export const getProductsFromCategory = async (req, res, next) => {
 
 // ADMIN //
 
+
+/**
+ * @purpose add category (name, image)
+ * @route  POST /admin/categories/add
+ * @access  ADMIN
+ */
+
+export const addCategory = async (req, res, next) => {
+  const { categoryName, categoryImage, } = req.body;
+
+  try {
+    const category = new Category({
+      name: categoryName,
+      image: categoryImage,
+    });
+    await category.save()
+    res.status(200).json(category);
+  } catch (error) {
+    res.status(404);
+    next(error);
+  }
+};
+
+
 /**
  * @purpose add product with category
  * @route POST /products/add
@@ -51,7 +77,6 @@ export const getProductsFromCategory = async (req, res, next) => {
 export const addProductWithCategory = async (req, res, next) => {
   const {
     categoryName,
-    categoryImage,
     productName,
     productPrice,
     productImages, // array
@@ -87,7 +112,6 @@ export const addProductWithCategory = async (req, res, next) => {
     const category = await Category.findOne({ name: categoryName });
     if (category) {
       // update category
-      category.image = categoryImage;
       category.products.push(product._id);
       await category.save();
       res.status(200).json({ category: category, product: product });
@@ -95,7 +119,6 @@ export const addProductWithCategory = async (req, res, next) => {
     } else {
       const category = new Category({
         name: categoryName,
-        image: categoryImage,
         product: [product._id]
       });
       await category.save();

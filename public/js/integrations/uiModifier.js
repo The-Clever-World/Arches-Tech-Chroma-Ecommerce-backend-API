@@ -21,7 +21,12 @@ if (userDetails) {
   loginContainer.appendChild(logoutDiv);
 }
 
+console.log(userDetails.isAdmin);
 if (userDetails && userDetails.isAdmin) {
-  const dashboardLinkBtn = document.querySelector(".admin__ref");
-  dashboardLinkBtn.href += `?token=${userDetails.token}`;
+  const dashboardLinkBtn = document.querySelector("#admin_ref");
+  console.log(dashboardLinkBtn);
+  const avatarDiv = document.createElement("a");
+  avatarDiv.innerHTML = `<a href="/admin">A</a >`;
+
+  dashboardLinkBtn.appendChild(avatarDiv);
 }

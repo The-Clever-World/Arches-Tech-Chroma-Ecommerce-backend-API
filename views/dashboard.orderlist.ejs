@@ -449,14 +449,18 @@
                                   <h6 class="mb-1"><%= order._id %></h6>
                                 </td>
                                 <td>
-                                  <h6 class="mb-1">Add later</h6>
+                                  <h6 class="mb-1"><%= order.user._id %></h6>
                                 </td>
 
                                 <td>
                                   <h6 class="m-b-1">
-                                    <%= order.shippingAddress.address %>, <%=
+                                    <%= order.shippingAddress &&
+                                    order.shippingAddress.address %>, <%=
+                                    order.shippingAddress &&
                                     order.shippingAddress.city %>, <%=
+                                    order.shippingAddress &&
                                     order.shippingAddress.country %>, <%=
+                                    order.shippingAddress &&
                                     order.shippingAddress.postalCode %>
                                   </h6>
                                 </td>

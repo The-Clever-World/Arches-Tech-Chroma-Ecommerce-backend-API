@@ -21,7 +21,7 @@ if (userDetails) {
   loginContainer.appendChild(logoutDiv);
 }
 
-console.log(userDetails.isAdmin);
+
 if (userDetails && userDetails.isAdmin) {
   const dashboardLinkBtn = document.querySelector("#admin_ref");
   console.log(dashboardLinkBtn);

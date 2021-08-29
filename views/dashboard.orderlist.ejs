@@ -436,6 +436,7 @@
                                 <th>Order ID</th>
                                 <th>User ID</th>
                                 <th>Shipping Address</th>
+                                <th>Billing Address</th>
                                 <th>Price</th>
                                 <th>Paid</th>
                                 <th>Delivered</th>
@@ -464,6 +465,19 @@
                                     order.shippingAddress.postalCode %>
                                   </h6>
                                 </td>
+                                <td>
+                                  <h6 class="m-b-1">
+                                    <%= order.billingAddress &&
+                                    order.billingAddress.address %>, <%=
+                                    order.billingAddress &&
+                                    order.billingAddress.city %>, <%=
+                                    order.billingAddress &&
+                                    order.billingAddress.country %>, <%=
+                                    order.billingAddress &&
+                                    order.billingAddress.postalCode %>
+                                  </h6>
+                                </td>
+
                                 <td>
                                   <h6 class="mb-1"><%= order.totalPrice %></h6>
                                 </td>

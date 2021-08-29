@@ -1,4 +1,5 @@
 import Order from "../models/order.model.js";
+import Category from "../models/categories.model.js";
 
 /**
  * @purpose get list of orders
@@ -86,13 +87,15 @@ export const orderDetails = async (req, res, next) => {
   // get orderId from parameters
   const orderId = req.params.id;
 
+  const categories = await Category.find().populate("products");
+
   const order = await Order.findOne({ _id: orderId })
     .populate("products")
     .populate("user");
 
   console.log(order);
 
-  res.status(200).render("order.ejs", { order: order });
+  res.status(200).render("order.ejs", { order: order, categories: categories });
   // res.status(200).send(order);
 };
 

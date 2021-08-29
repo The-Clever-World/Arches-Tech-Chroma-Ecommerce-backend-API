@@ -262,8 +262,8 @@
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
                     <b> Billing Address</b>
-                    <button type="button" id="billing_button" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal2"
-                        style="color: black;">
+                    <button type="button" id="billing_button" class="btn btn-light bg-light" data-toggle="modal"
+                        data-target="#exampleModal2" style="color: black;">
                         &plus; Add
                     </button>
                 </div>
@@ -271,9 +271,9 @@
                     <div class="card-body">
                         <p class="card-text">
                             <%= order.billingAddress && order.billingAddress.address %> ,
-                                <%= order.billingAddress && order.billingAddress.state %> ,
-                                    <%= order.billingAddress && order.billingAddress.country %> ,
-                                        <%= order.billingAddress && order.billingAddress.zip %>
+                            <%= order.billingAddress && order.billingAddress.state %> ,
+                            <%= order.billingAddress && order.billingAddress.country %> ,
+                            <%= order.billingAddress && order.billingAddress.zip %>
                         </p>
                     </div>
                 </div>
@@ -282,8 +282,8 @@
             <div class="card col-md-7 mt-4">
                 <div class="d-flex justify-content-between mt-4">
                     <b> Shipping Address</b>
-                    <button type="button" id="shipping_address" class="btn btn-light bg-light" data-toggle="modal" data-target="#exampleModal"
-                        style="color: black;">
+                    <button type="button" id="shipping_address" class="btn btn-light bg-light" data-toggle="modal"
+                        data-target="#exampleModal" style="color: black;">
                         &plus; Add
                     </button>
                 </div>
@@ -291,15 +291,15 @@
                     <div class="card-body">
                         <p class="card-text">
                             <%= order.shippingAddress && order.shippingAddress.address %> ,
-                                <%= order.shippingAddress && order.shippingAddress.state %> ,
-                                    <%= order.shippingAddress && order.shippingAddress.country %> ,
-                                        <%= order.shippingAddress && order.shippingAddress.zip %>
+                            <%= order.shippingAddress && order.shippingAddress.state %> ,
+                            <%= order.shippingAddress && order.shippingAddress.country %> ,
+                            <%= order.shippingAddress && order.shippingAddress.zip %>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="card col-md-7 mt-4">
+            <div class="card col-md-7">
                 <div class="d-flex justify-between mt-4">
                     <b> Delivery Schedule</b>
                 </div>
@@ -307,58 +307,70 @@
                     <div class="card mb-5 col-md-12 mt-4">
                         <div class="card-body">
                             <b>Shipping Address</b>
-                                <p class="card-text">
-                                    <%= order.shippingAddress && order.shippingAddress.address %> ,
-                                        <%= order.shippingAddress && order.shippingAddress.state %> ,
-                                            <%= order.shippingAddress && order.shippingAddress.country %> ,
-                                                <%= order.shippingAddress && order.shippingAddress.zip %>
-                                </p>
-                            </div>
-                            <div class="card-body">
+                            <p class="card-text">
+                                <%= order.shippingAddress && order.shippingAddress.address %> ,
+                                <%= order.shippingAddress && order.shippingAddress.state %> ,
+                                <%= order.shippingAddress && order.shippingAddress.country %> ,
+                                <%= order.shippingAddress && order.shippingAddress.zip %>
+                            </p>
+                        </div>
+                        <div class="card-body">
                             <b>Billing Address</b>
-                                <p class="card-text">
-                                    <%= order.billingAddress && order.billingAddress.address %> ,
-                                        <%= order.billingAddress && order.billingAddress.state %> ,
-                                            <%= order.billingAddress && order.billingAddress.country %> ,
-                                                <%= order.billingAddress && order.billingAddress.zip %>
-                                </p>
-                            </div>
+                            <p class="card-text">
+                                <%= order.billingAddress && order.billingAddress.address %> ,
+                                <%= order.billingAddress && order.billingAddress.state %> ,
+                                <%= order.billingAddress && order.billingAddress.country %> ,
+                                <%= order.billingAddress && order.billingAddress.zip %>
+                            </p>
+                        </div>
 
                     </div>
                 </div>
             </div>
-            <div class="card-text  col-md-5" style="top: -50rem;">
+            <div class="card-text  col-md-5" style="top: -65rem;">
                 <div class="card-body ">
                     <h3 class="card-title mb-5 d-flex justify-content-center mt-5"><b>Your Oder</b></h3>
                     <% order.products.forEach((product)=> { %>
-                        <div class="category-price-div d-flex justify-content-between mt-3">
-                            <span class="category-count">
-                                <%= product.name %>
-                            </span>
-                            <span class="old-price"> <b id="p-price">₹<%= product.price %></b></span>
-                        </div>
-                        <br />
+                    <div class="category-price-div d-flex justify-content-between mt-3">
+                        <span class="category-count">
+                            <%= product.name %>
+                        </span>
+                        <span class="old-price"> <b id="p-price">₹<%= product.price %></b></span>
+                    </div>
+                    <br />
 
-                        <% }) %>
+                    <% }) %>
 
-                            <hr>
+                    <hr>
 
-                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                                    class="category-count"><span>Sub Total</span></span>
-                                <span class="old-price">₹<%= order.totalPrice %></span>
-                            </div>
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>Sub Total</span></span>
+                        <span class="old-price">₹<%= order.totalPrice %></span>
+                    </div>
 
-                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                                    class="category-count"><span>Tax</span></span>
-                                <span class="old-price"> <span>Calculate at checkOut</span></span>
-                            </div>
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>Tax</span></span>
+                        <span class="old-price"> <span>Calculate at checkOut</span></span>
+                    </div>
 
-                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                                    class="category-count"><span>Estimated Shiping</span></span>
-                                <span class="old-price"> <span>Calculate at checkout</span></span>
-                            </div>
+                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                            class="category-count"><span>Estimated Shiping</span></span>
+                        <span class="old-price"> <span>Calculate at checkout</span></span>
+                    </div>
 
-                            <button class="col mt-3">Check Avilability</button>
+                    <!-- Place Order -->
+
+                    <% if(order && order.shippingAddress) { %>
+                        <a href="/orderPlaced/<%= order._id %>" style="text-decoration: none; color: white;">
+                            <button class="col mt-3">
+                                Place Order
+                            </button>
+                        </a>
+                    <% } else { %>
+                        <button class="col mt-3" style="background-color: red;">
+                            Cannot Place Order
+                        </button>
+                    <% } %>
                 </div>
             </div>
 
@@ -391,7 +403,8 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State</label>
-                                <input id="inputState" class="form-control" style="height:4rem;" type="text" class="form-control" placeholder="Your State">
+                                <input id="inputState" class="form-control" style="height:4rem;" type="text"
+                                    class="form-control" placeholder="Your State">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Zip</label>
@@ -415,7 +428,7 @@
 
 
 
-    
+
     <!-- Modal for Billing -->
     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -440,7 +453,8 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State</label>
-                                <input id="inputState2" class="form-control" style="height:4rem;" type="text" class="form-control" placeholder="Your State">
+                                <input id="inputState2" class="form-control" style="height:4rem;" type="text"
+                                    class="form-control" placeholder="Your State">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Zip</label>
@@ -468,6 +482,9 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="logo common-logo" style="max-width:100px; margin-top: -7rem; margin-left: -10rem;">
+                <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
+            </div>
             <div class="row">
                 <div class="footer-col col-md-3">
                     <h4>CONNECT WITH US</h4>
@@ -485,10 +502,11 @@
 
 
                             <div class="social-links">
+                                <a href="#"><i style="color:red;" class="fa fa-youtube-play"></i></a>
                                 <a href="#"><i class="fa fa-google"></i></a>
                                 <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i style="color:red;" class="fa fa-instagram"></i></a>
+                                <a href="#"><i style="color:blue;" class="fa fa-twitter"></i></a>
                             </div>
                         </div>
                         <div class="container mt-5">
@@ -504,8 +522,6 @@
                         <li><a href="#">Help And Support</a></li>
                         <li><a href="#">FAQs</a></li>
                         <li><a href="#">Order Support</a></li>
-                        <li><a href="#">Bulk Enquiry</a></li>
-                        <li><a href="#">Store Locator</a></li>
                         <li><a href="#">Delightful Programmes</a></li>
                     </ul>
                 </div>
@@ -514,8 +530,6 @@
                     <ul class="mt-4">
                         <li><a href="#">E-Care</a></li>
                         <li><a href="#">Franchise Opportunity</a></li>
-                        <li><a href="#">Site Map</a></li>
-                        <li><a href="#">Careers At Croma</a></li>
                         <li><a href="#">Terms Of Use</a></li>
                         <li><a href="#">Disclaimer</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -525,28 +539,11 @@
                 <div class="vl footer-col col">
                     <h4>PRODUCT</h4>
                     <ul>
-                        <li><a href="#">Televisions & Accessories</a></li>
-                        <li><a href="#">Home Appliances</a></li>
-                        <li><a href="#">Phones & Wearables</a></li>
-                        <li><a href="#">Computers & Tablets</a></li>
-                        <li><a href="#">Kitchen Appliances</a></li>
-                        <li><a href="#">Audio & Video</a></li>
-                        <li><a href="#">Health & Fitness</a></li>
+                        <% categories.forEach((category) => { %>
+                        <li><a href="/<%= category._id %>"><%= category.name %></a></li>
+                        <% }) %>
                     </ul>
                 </div>
-                <div class="footer-col mt-4 col">
-                    <h4></h4>
-                    <ul class="mt-4">
-                        <li><a href="#">Grooming & Personal Care</a></li>
-                        <li><a href="#">Cameras & Accessories</a></li>
-                        <li><a href="#">Smart Devices</a></li>
-                        <li><a href="#">Gaming</a></li>
-                        <li><a href="#">Zip Services</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Top Brands</a></li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </footer>

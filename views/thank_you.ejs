@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thank you page</title>
+    <link rel="stylesheet" href="/public/css/thanks.css" type="text/css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="content">
+      <div class="wrapper-1">
+        <div class="wrapper-2">
+          <h1>Thank you !</h1>
+          <p>Your order has been registered</p>
+
+          <a
+            href="/order/<%= order._id %>"
+            style="cursor: pointer; color: white; text-decoration: none"
+          >
+            <button class="go-home">Go Back To Order Place Screen</button>
+          </a>
+
+          <a href="/"> <button class="go-home">BACK TO SITE</button></a>
+        </div>
+        <div class="footer-like">
+          <!-- <p>
+            Email not received?
+            <a href="#">Click here to send again</a>
+          </p> -->
+          <p>You will get your order very soon</p>
+        </div>
+      </div>
+    </div>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <!-- partial -->
+  </body>
+</html>

@@ -1,5 +1,6 @@
 import Cart from "../models/cart.model.js";
 import Product from "../models/product.model.js";
+import Category from "../models/categories.model.js";
 
 /**
  * @purpose get all products from cart
@@ -11,9 +12,11 @@ export const getAllProductsFromCart = async (req, res, next) => {
   // TODO: get userId and fetch particular cart of that user
   const userId = req.params.id;
 
+  const categories = await Category.find().populate("products");
+
   const products = await Cart.findOne({ user: userId }).populate("products");
   console.log(products);
-  res.status(200).render("cart", { cartItems: products && products.products });
+  res.status(200).render("cart", { cartItems: products && products.products, categories: categories });
   //res.status(200).send(products);
 };
 

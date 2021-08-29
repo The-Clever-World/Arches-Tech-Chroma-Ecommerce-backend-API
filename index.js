@@ -13,6 +13,7 @@ import {
   CartRouter,
   orderRouter,
   adminRouter,
+  orderPlacedRouter
 } from "./routes/index.js";
 
 import path from "path";
@@ -55,6 +56,7 @@ app.use("/admin", adminRouter);
 app.use("/products", productRouter);
 app.use("/user", userRouter);
 app.use("/", categoryRouter);
+app.use("/orderPlaced", orderPlacedRouter);
 
 ///    For error handling   ///
 app.use(NotFound);

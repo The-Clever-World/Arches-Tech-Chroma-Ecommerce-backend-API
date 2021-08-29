@@ -1,0 +1,18 @@
+.custom-select,
+.form-control {
+  font-size: 15px;
+  background-color: whitesmoke;
+}
+.hello {
+  color: gray;
+}
+.form-check-label {
+  color: gray;
+}
+
+.col .btn {
+  height: 3rem;
+  border-radius: 18px;
+  font-size: 12px;
+  text-align: center;
+}

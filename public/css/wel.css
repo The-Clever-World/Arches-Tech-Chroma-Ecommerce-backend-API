@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #EA2E49;
+  background-color: gray;
 }
 
 h1 {

@@ -26,6 +26,8 @@ export const getAllCategories = async (req, res, next) => {
  */
 
 export const getProductsFromCategory = async (req, res, next) => {
+  const categories = await Category.find().populate("products");
+
   const categoryProducts = await Category.findById(req.params.id).populate(
     "products"
   );
@@ -38,7 +40,7 @@ export const getProductsFromCategory = async (req, res, next) => {
 
   res
     .status(200)
-    .render("category.ejs", { categoryProducts: categoryProducts });
+    .render("category.ejs", { categoryProducts: categoryProducts, categories: categories });
 };
 
 

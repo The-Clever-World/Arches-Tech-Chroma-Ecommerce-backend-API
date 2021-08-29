@@ -96,11 +96,6 @@
                         <i class="fa fa-user"></i>
                      </a>
                   </li>
-                  <li>
-                     <a class="admin__ref" href="/admin/">
-                        A
-                     </a>
-                  </li>
                   <li class="cart-page">
 
                   </li>
@@ -109,6 +104,9 @@
                         data-target="#staticBackdrop_1">
                         Login / Register
                      </a>
+                  </li>
+                  <li id="admin_ref">
+
                   </li>
                </ul>
             </div>
@@ -734,8 +732,8 @@
    <footer class="footer">
       <div class="container">
          <div class="logo common-logo" style="max-width:100px; margin-top: -7rem; margin-left: -10rem;">
-               <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
-            </div>
+            <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
+         </div>
          <div class="row">
             <div class="footer-col col-md-3">
                <h4>CONNECT WITH US</h4>
@@ -791,7 +789,7 @@
                <h4>PRODUCT</h4>
                <ul>
                   <% categories.forEach((category) => { %>
-                     <li><a href="/<%= category._id %>"><%= category.name %></a></li>
+                  <li><a href="/<%= category._id %>"><%= category.name %></a></li>
                   <% }) %>
                </ul>
             </div>

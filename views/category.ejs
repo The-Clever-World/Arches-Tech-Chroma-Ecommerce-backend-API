@@ -230,7 +230,10 @@
 
   <div class="container mt-3">
     <div class="row">
-      <div class=" card col-md-3">
+
+      <!-- Sorting of Products -->
+      <!-- 
+        <div class=" card col-md-3">
         <div class="row mt-4">
           <span class="mx-4">Exclude out of stock items</span>
           <label class="switch mt-2 mx-2">
@@ -728,9 +731,10 @@
         </div>
         <hr>
       </div>
+    -->
 
 
-      <div class="col-md-9">
+      <div class="col-md-12">
         <div class="row mx-2">
           <!-- partial:index.partial.html -->
           <div class="mt-1" id="slider">
@@ -786,7 +790,7 @@
 
           <div class="container mb-4">
             <div class="row">
-              <div class="card mx-4" style="max-width: 100%; border-radius: 10px;">
+              <div class="card mx-4 col-12" style="max-width: 100%; border-radius: 10px;">
                 <div class="row g-0">
                   <div class="zoom col-md-4">
                     <a href="/products/<%= categoryProduct._id %>">
@@ -816,29 +820,6 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                         <span>(<%= categoryProduct.numReviews %> review)</span>
-                      </div>
-                      <div class="card" style="background-color:whitesmoke; height: 66px;">
-                        <div class="p-4 d-flex justify-content-around">
-                          <input class="mt-2" type="checkbox" id="checkbox-1" />
-                          <label class="mt-2" for="checkbox-1">
-                            <h5>COMAPRE</h5>
-                          </label>
-                          <input type="button" id="checkbox-1" />
-                          <label class="">
-                            <h5>
-                              <h5>VIEW<br>OFFERS(1)</h5>
-                          </label>
-                          <input type="button" id="checkbox-1" />
-                          <label class="">
-                            <h5>
-                              <h5>SHOP<br>WITH<br>VIDEO</h5>
-                          </label>
-                          <input type="button" id="checkbox-1" />
-                          <label class="">
-                            <h5>
-                              <h5>CONNECT <br> TO <br> STORE</h5>
-                          </label>
-                        </div>
                       </div>
                     </div>
                     <div class="">

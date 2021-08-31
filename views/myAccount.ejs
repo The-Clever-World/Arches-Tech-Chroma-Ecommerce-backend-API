@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Now</title>
+  <!----- LINKS ------->
+  <link rel="stylesheet" href="/public/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="/public/css/owl.carousel_.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/tel.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/head.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/index.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/index_1.css" type="text/css" />
+  <link rel="stylesheet" href="/public/css/my-account.css" type="text/css" />
+</head>
+
+<body class="">
+
+  <!---HEADER --->
+  <header class="navbar navbar sticky-top" style="background-color:#49a5a2; height:10rem;">
+    <div class="container">
+      <div class="row align-center">
+        <div class="col-sm-2" style=" top: -1.4rem; padding: 10px;">
+          <div class="logo common-logo">
+            <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
+          </div>
+          <!----- for fixed header logo--->
+
+        </div>
+        <!--LOGO--->
+        <div class="col-md-6 search-row">
+          <div class="top-search-bar">
+            <form>
+              <div class="input-group">
+                <input type="text_1" class="form-control" style="color:black;" placeholder="Search this blog">
+                <div class="input-group-append">
+                  <button class="btn btn-warning bg-warning" type="button">
+                    <i style="color:black;" class="fa fa-search"></i>
+                  </button>
+                </div>
+            </form>
+            <div class="container" style="font-size:15px;">
+              <div class="col-md-4 d-flex justify-content-center" style="left: -6rem;">
+                <div class="dropdown">
+                  <span class="dropbtn"><b>Products</b></span>
+                  <div class="dropdown-content">
+
+                    <!--  List of categories  -->
+
+                    <% categories.forEach(function(category){ %>
+                    <a href="/<%= category._id %>">
+                      <%= category.name %>
+                    </a>
+                    <% }); %>
+                  </div>
+                  <i class="fa fa-angle-down" aria-hidden="true" style="color: white;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--SEARCH--->
+
+      <div class="col-md-4" style=" top: -2rem;">
+        <div class="header-right">
+          <ul id="login__container">
+            <li class="my-account">
+                     
+            </li>
+            <li class="cart-page">
+
+            </li>
+            <li id="admin_ref">
+
+            </li>
+            <li id="login__link">
+              <a href="#" style="color:white;" class="think-link login__link__ref" data-toggle="modal"
+                data-target="#staticBackdrop_1">
+                Login / Register
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <!--RIGHT HEADER--->
+
+
+    </div>
+    </div>
+  </header>
+
+  <!---END HEADER --->
+
+
+
+  <!-- Modal -->
+  <div class="">
+    <div class="modal fade bd-example-modal-lg" id="staticBackdrop_1" data-backdrop="static" data-keyboard="false"
+      tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color: LightGray;">
+          <div class="modal-header">
+            <h2 class="modal-title" id="staticBackdropLabel">Sign in to Cart.com</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <br>
+
+          <div class="form">
+            <h1 class="text-center">Registration Form</h1>
+            <!-- Progress bar -->
+            <div class="progressbar">
+              <div class="progress" id="progress"></div>
+
+              <div class="progress-step progress-step-active" data-title="Intro"></div>
+              <div class="progress-step" data-title="Contact"></div>
+              <div class="progress-step" data-title="ID"></div>
+              <div class="progress-step" data-title="Password"></div>
+            </div>
+
+            <!-- Steps -->
+            <div class="form-step form-step-active">
+              <div class="input-group">
+                <label for="username">Full Name</label>
+                <input type="text" name="username" id="username" />
+              </div>
+              <div class="input-group">
+                <label for="position"> Username</label>
+                <input type="text" name="position" id="position" />
+              </div>
+              <div class="">
+                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" />
+              </div>
+              <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <a href="#" class="btn btn-next">Next</a>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" />
+              </div>
+              <div class="input-group">
+                <label for="ID">National ID</label>
+                <input type="number" name="ID" id="ID" />
+              </div>
+              <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <a href="#" class="btn btn-next">Next</a>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" />
+              </div>
+              <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" />
+              </div>
+              <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <button class="btn btn-primary" id="register">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="text-center think-link" data-toggle="modal" data-target="#staticBackdrop_2">Click here
+            for all ready Login User <a href="#" style="color:blue;">Login</a></div>
+
+          <div class="modal-footer d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="">
+    <div class="modal fade bd-example-modal-lg" id="staticBackdrop_2" data-backdrop="static" data-keyboard="false"
+      tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color: LightGray;">
+          <div class="modal-header">
+            <h2 class="modal-title" id="staticBackdropLabel">Sign in to Cart.com</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <br>
+
+          <div class="signup-form">
+            <h2>Login</h2>
+            <p class="hint-text">WelCome To Cart.com</p>
+
+            <div class="form-group">
+              <input type="email" id="loginEmail" class="form-control" name="username" placeholder="Enter your Email"
+                required="true" />
+            </div>
+            <div class="form-group">
+              <input type="password" id="loginPass" class="form-control" name="contactno"
+                placeholder="Enter your Password" required="true" maxlength="10" />
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-lg btn-block" id="login" name="submit">Submit</button>
+            </div>
+            <div class="text-center think-link" data-toggle="modal" data-target="#staticBackdrop_1">Click
+              here for New User<a href="#" style="color:blue;">Registration</a>Click Close Button</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!---TOP CATEGORY NEW --->
+  <div></div>
+  <div class="container mb-4 mt-4">
+    <h2>My Account</h2><br>
+    <div class="row" style="height:10rem;">
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-2" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <a href="my_profile.html"> <i class="far fa-user-circle text-info"></i></a>
+              </div>
+            </div>
+            <div class="col-md-5" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Profile</b></h4>
+                <h5>Edit your basic detail's</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-2" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <i class="fas fa-map-marker-alt text-info"></i>
+              </div>
+            </div>
+            <div class="col" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Address</b></h4>
+                <h5>Manage your saved addresses</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-3" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <a href="/myOrders"> <i class="fas fa-business-time text-info"></i></a>
+              </div>
+            </div>
+            <div class="col" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Orders</b></h4>
+                <h5>View, track, cancel order and buy again</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row" style="height:10rem;">
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-2" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <i class="fas fa-award text-info"></i>
+              </div>
+            </div>
+            <div class="col" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Privilage Offers</b></h4>
+                <h5>Exclusive offers for you</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-2" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <i class="fa fa-shopping-cart text-info"></i>
+              </div>
+            </div>
+            <div class="col-md-8" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Wishlist</b></h4>
+                <h5>Have a look at your favourite product</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-3" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <i class="fas fa-laptop-house text-info"></i>
+              </div>
+            </div>
+            <div class="col-md-8" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Devices</b></h4>
+                <h5>Manage your devices and plan</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row" style="height:10rem;">
+      <div class="col-sm-4">
+        <div class="card" style="border-radius: 10px;">
+          <div class="row">
+            <div class="col-md-2" style="top:2rem;">
+              <div class="card-text mx-4" style="font-size:4rem;">
+                <i class="far fa-question-circle text-info"></i>
+              </div>
+            </div>
+            <div class="col-md-8" style="top:3rem;">
+              <div class="card-text" style="font-size:4rem; text-align: left;">
+                <h4><b>My Services Requests</b></h4>
+                <h5>Manage Complaints, feedback, service requests</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="logo common-logo" style="max-width:100px; margin-top: -7rem; margin-left: -10rem;">
+        <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
+      </div>
+      <div class="row">
+        <div class="footer-col col-md-3">
+          <h4>CONNECT WITH US</h4>
+          <ul>
+            <div class="input-group-lg input-group">
+              <input type="text_1" class="form-control mb-5" style="height:5rem; width: 20rem;"
+                placeholder="Enter your e-mail address" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-light think-link" style="height:5rem; font-family: Nunito,sans-serif;"
+                  type="button" id="button-addon2">
+                  <span>&#8594;</span>
+                </button>
+              </div>
+
+
+              <div class="social-links">
+                <a href="#"><i style="color:red;" class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-google"></i></a>
+                <a href="#"><i class="fa fa-facebook-f"></i></a>
+                <a href="#"><i style="color:red;" class="fa fa-instagram"></i></a>
+                <a href="#"><i style="color:blue;" class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="container mt-5">
+              <p>© Copyright 2021 Croma. All rights reserved</p>
+            </div>
+
+          </ul>
+        </div>
+        <div class="vl footer-col col">
+          <h4>USEFUL LINKS</h4>
+          <ul>
+            <li><a href="#">About Croma</a></li>
+            <li><a href="#">Help And Support</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Order Support</a></li>
+            <li><a href="#">Delightful Programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col mt-4 col">
+          <h4></h4>
+          <ul class="mt-4">
+            <li><a href="#">E-Care</a></li>
+            <li><a href="#">Franchise Opportunity</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="vl footer-col col">
+          <h4>PRODUCT</h4>
+          <ul>
+            <% categories.forEach((category) => { %>
+            <li><a href="/<%= category._id %>"><%= category.name %></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!---- END CONTENT THREE---->
+  <!---END  CONTENT MODULE ONE  --->
+  <script src="/public/js/jquery.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+  <script src="/public/js/bootstrap.min.js"></script>
+  <script src="/public/js/owl.carousel.min.js"></script>
+  <script src="/public/js/custom.js"></script>
+  <script src="/public/js/head.js"></script>
+  <script src="/public/js/tel.js"></script>
+  <script src="/public/js/index.js"></script>
+
+  <script src="/public/js/integrations/login.js"></script>
+  <script src="/public/js/integrations/register.js"></script>
+  <script src="/public/js/integrations/uiModifier.js"></script>
+  <script src="/public/js/integrations/logout.js"></script>
+  <script src="/public/js/integrations/cartRedirect.js"></script>
+</body>
+
+</html>

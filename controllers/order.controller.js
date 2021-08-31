@@ -13,6 +13,25 @@ export const orderList = async (req, res, next) => {
   // res.status(200).send(orders);
 };
 
+
+/**
+ * @purpose get list of my orders
+ * @route   GET my-account/order/:userId
+ * @access  Private
+ */
+
+export const myOrders = async (req, res, next) => {
+  const { userId } = req.params;
+
+  const categories = await Category.find().populate("products");
+
+  const orders = await Order.find({ user: userId }).populate("products").populate("user");
+  res.status(200).render("myOrders.ejs", { categories: categories, orders: orders });
+  // res.status(200).send(orders);
+};
+
+
+
 /**
  * @purpose add cart products to order
  * @route   POST /order/new

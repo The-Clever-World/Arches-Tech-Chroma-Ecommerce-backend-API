@@ -67,13 +67,11 @@
             <div class="col-md-4" style=" top: -2rem;">
                 <div class="header-right">
                     <ul id="login__container">
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-user"></i>
-                            </a>
+                        <li class="my-account">
+
                         </li>
                         <li id="admin__ref">
-                            
+
                         </li>
                         <li class="cart-page">
 
@@ -359,15 +357,15 @@
                     <!-- Place Order -->
 
                     <% if(order && order.shippingAddress) { %>
-                        <a href="/orderPlaced/<%= order._id %>" style="text-decoration: none; color: white;">
-                            <button class="col mt-3">
-                                Place Order
-                            </button>
-                        </a>
-                    <% } else { %>
-                        <button class="col mt-3" style="background-color: red;">
-                            Cannot Place Order
+                    <a href="/orderPlaced/<%= order._id %>" style="text-decoration: none; color: white;">
+                        <button class="col mt-3">
+                            Place Order
                         </button>
+                    </a>
+                    <% } else { %>
+                    <button class="col mt-3" style="background-color: red;">
+                        Cannot Place Order
+                    </button>
                     <% } %>
                 </div>
             </div>

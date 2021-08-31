@@ -13,7 +13,8 @@ import {
   CartRouter,
   orderRouter,
   adminRouter,
-  orderPlacedRouter
+  orderPlacedRouter,
+  myAccountRouter,
 } from "./routes/index.js";
 
 import path from "path";
@@ -46,10 +47,7 @@ app.set("view engine", "ejs");
 
 ///    Routes      ///
 
-// app.get("/order/show", (req, res) => {
-//   res.render("order.ejs")
-// });
-
+app.use("/my-account", myAccountRouter);
 app.use("/order", orderRouter);
 app.use("/cart", CartRouter);
 app.use("/admin", adminRouter);

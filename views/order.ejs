@@ -41,7 +41,8 @@
             <div class="row align-center">
                 <div class="col-md-2" style=" top: -1.4rem; padding: 10px;">
                     <div class="logo common-logo">
-                        <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
+                        <a href="/"><img src="/public/images/cartTrayLogo.png" alt="Logo"></a>
+                        <!-- <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a> -->
                     </div>
                     <!----- for fixed header logo--->
 
@@ -267,9 +268,9 @@
                     <div class="card-body">
                         <p class="card-text">
                             <%= order.billingAddress && order.billingAddress.address %> ,
-                            <%= order.billingAddress && order.billingAddress.state %> ,
-                            <%= order.billingAddress && order.billingAddress.country %> ,
-                            <%= order.billingAddress && order.billingAddress.zip %>
+                                <%= order.billingAddress && order.billingAddress.state %> ,
+                                    <%= order.billingAddress && order.billingAddress.country %> ,
+                                        <%= order.billingAddress && order.billingAddress.zip %>
                         </p>
                     </div>
                 </div>
@@ -287,9 +288,9 @@
                     <div class="card-body">
                         <p class="card-text">
                             <%= order.shippingAddress && order.shippingAddress.address %> ,
-                            <%= order.shippingAddress && order.shippingAddress.state %> ,
-                            <%= order.shippingAddress && order.shippingAddress.country %> ,
-                            <%= order.shippingAddress && order.shippingAddress.zip %>
+                                <%= order.shippingAddress && order.shippingAddress.state %> ,
+                                    <%= order.shippingAddress && order.shippingAddress.country %> ,
+                                        <%= order.shippingAddress && order.shippingAddress.zip %>
                         </p>
                     </div>
                 </div>
@@ -305,18 +306,18 @@
                             <b>Shipping Address</b>
                             <p class="card-text">
                                 <%= order.shippingAddress && order.shippingAddress.address %> ,
-                                <%= order.shippingAddress && order.shippingAddress.state %> ,
-                                <%= order.shippingAddress && order.shippingAddress.country %> ,
-                                <%= order.shippingAddress && order.shippingAddress.zip %>
+                                    <%= order.shippingAddress && order.shippingAddress.state %> ,
+                                        <%= order.shippingAddress && order.shippingAddress.country %> ,
+                                            <%= order.shippingAddress && order.shippingAddress.zip %>
                             </p>
                         </div>
                         <div class="card-body">
                             <b>Billing Address</b>
                             <p class="card-text">
                                 <%= order.billingAddress && order.billingAddress.address %> ,
-                                <%= order.billingAddress && order.billingAddress.state %> ,
-                                <%= order.billingAddress && order.billingAddress.country %> ,
-                                <%= order.billingAddress && order.billingAddress.zip %>
+                                    <%= order.billingAddress && order.billingAddress.state %> ,
+                                        <%= order.billingAddress && order.billingAddress.country %> ,
+                                            <%= order.billingAddress && order.billingAddress.zip %>
                             </p>
                         </div>
 
@@ -327,46 +328,46 @@
                 <div class="card-body ">
                     <h3 class="card-title mb-5 d-flex justify-content-center mt-5"><b>Your Oder</b></h3>
                     <% order.products.forEach((product)=> { %>
-                    <div class="category-price-div d-flex justify-content-between mt-3">
-                        <span class="category-count">
-                            <%= product.name %>
-                        </span>
-                        <span class="old-price"> <b id="p-price">₹<%= product.price %></b></span>
-                    </div>
-                    <br />
+                        <div class="category-price-div d-flex justify-content-between mt-3">
+                            <span class="category-count">
+                                <%= product.name %>
+                            </span>
+                            <span class="old-price"> <b id="p-price">₹<%= product.price %></b></span>
+                        </div>
+                        <br />
 
-                    <% }) %>
+                        <% }) %>
 
-                    <hr>
+                            <hr>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>Sub Total</span></span>
-                        <span class="old-price">₹<%= order.totalPrice %></span>
-                    </div>
+                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                                    class="category-count"><span>Sub Total</span></span>
+                                <span class="old-price">₹<%= order.totalPrice %></span>
+                            </div>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>Tax</span></span>
-                        <span class="old-price"> <span>Calculate at checkOut</span></span>
-                    </div>
+                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                                    class="category-count"><span>Tax</span></span>
+                                <span class="old-price"> <span>Calculate at checkOut</span></span>
+                            </div>
 
-                    <div class="category-price-div d-flex justify-content-between mt-3"> <span
-                            class="category-count"><span>Estimated Shiping</span></span>
-                        <span class="old-price"> <span>Calculate at checkout</span></span>
-                    </div>
+                            <div class="category-price-div d-flex justify-content-between mt-3"> <span
+                                    class="category-count"><span>Estimated Shiping</span></span>
+                                <span class="old-price"> <span>Calculate at checkout</span></span>
+                            </div>
 
-                    <!-- Place Order -->
+                            <!-- Place Order -->
 
-                    <% if(order && order.shippingAddress) { %>
-                    <a href="/orderPlaced/<%= order._id %>" style="text-decoration: none; color: white;">
-                        <button class="col mt-3">
-                            Place Order
-                        </button>
-                    </a>
-                    <% } else { %>
-                    <button class="col mt-3" style="background-color: red;">
-                        Cannot Place Order
-                    </button>
-                    <% } %>
+                            <% if(order && order.shippingAddress) { %>
+                                <a href="/orderPlaced/<%= order._id %>" style="text-decoration: none; color: white;">
+                                    <button class="col mt-3">
+                                        Place Order
+                                    </button>
+                                </a>
+                                <% } else { %>
+                                    <button class="col mt-3" style="background-color: red;">
+                                        Cannot Place Order
+                                    </button>
+                                    <% } %>
                 </div>
             </div>
 
@@ -535,9 +536,11 @@
                 <div class="vl footer-col col">
                     <h4>PRODUCT</h4>
                     <ul>
-                        <% categories.forEach((category) => { %>
-                        <li><a href="/<%= category._id %>"><%= category.name %></a></li>
-                        <% }) %>
+                        <% categories.forEach((category)=> { %>
+                            <li><a href="/<%= category._id %>">
+                                    <%= category.name %>
+                                </a></li>
+                            <% }) %>
                     </ul>
                 </div>
             </div>

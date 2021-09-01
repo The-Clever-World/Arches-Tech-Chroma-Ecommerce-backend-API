@@ -29,80 +29,81 @@
    <!---HEADER --->
    <header class="navbar navbar sticky-top" style="background-color:#49a5a2; height:10rem;">
       <div class="container">
-        <div class="row align-center">
-          <div class="col-sm-2" style=" top: -1.4rem; padding: 10px;">
-            <div class="logo common-logo">
-              <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a>
+         <div class="row align-center">
+            <div class="col-sm-2" style=" top: -1.4rem; padding: 10px;">
+               <div class="logo common-logo">
+                  <a href="/"><img src="/public/images/cartTrayLogo.png" alt="Logo"></a>
+                  <!-- <a href="/"><img src="/public/images/logo_1.png" alt="Logo"></a> -->
+               </div>
+               <!----- for fixed header logo--->
+
             </div>
-            <!----- for fixed header logo--->
-  
-          </div>
-          <!--LOGO--->
-          <div class="col-md-6 search-row">
-            <div class="top-search-bar">
-              <form>
-                <div class="input-group">
-                  <input type="text_1" class="form-control" style="color:black;" placeholder="Search this blog">
-                  <div class="input-group-append">
-                    <button class="btn btn-warning bg-warning" type="button">
-                      <i style="color:black;" class="fa fa-search"></i>
-                    </button>
+            <!--LOGO--->
+            <div class="col-md-6 search-row">
+               <div class="top-search-bar">
+                  <form>
+                     <div class="input-group">
+                        <input type="text_1" class="form-control" style="color:black;" placeholder="Search this blog">
+                        <div class="input-group-append">
+                           <button class="btn btn-warning bg-warning" type="button">
+                              <i style="color:black;" class="fa fa-search"></i>
+                           </button>
+                        </div>
+                  </form>
+                  <div class="container" style="font-size:15px;">
+                     <div class="col-md-4 d-flex justify-content-center" style="left: -6rem;">
+                        <div class="dropdown">
+                           <span class="dropbtn"><b>Products</b></span>
+                           <div class="dropdown-content">
+
+                              <!--  List of categories  -->
+
+                              <% categories.forEach(function(category){ %>
+                                 <a href="/<%= category._id %>">
+                                    <%= category.name %>
+                                 </a>
+                                 <% }); %>
+                           </div>
+                           <i class="fa fa-angle-down" aria-hidden="true" style="color: white;"></i>
+                        </div>
+                     </div>
                   </div>
-              </form>
-              <div class="container" style="font-size:15px;">
-                <div class="col-md-4 d-flex justify-content-center" style="left: -6rem;">
-                  <div class="dropdown">
-                    <span class="dropbtn"><b>Products</b></span>
-                    <div class="dropdown-content">
-  
-                      <!--  List of categories  -->
-  
-                      <% categories.forEach(function(category){ %>
-                      <a href="/<%= category._id %>">
-                        <%= category.name %>
-                      </a>
-                      <% }); %>
-                    </div>
-                    <i class="fa fa-angle-down" aria-hidden="true" style="color: white;"></i>
-                  </div>
-                </div>
-              </div>
+               </div>
             </div>
-          </div>
-        </div>
-        <!--SEARCH--->
-  
-        <div class="col-md-4" style=" top: -2rem;">
-          <div class="header-right">
-            <ul id="login__container">
-              <li class="my-account">
-  
-              </li>
-              <li class="cart-page">
-  
-              </li>
-              <li id="admin_ref">
-  
-              </li>
-              <li id="login__link">
-                <a href="#" style="color:white;" class="think-link login__link__ref" data-toggle="modal"
-                  data-target="#staticBackdrop_1">
-                  Login / Register
-                </a>
-              </li>
-  
-            </ul>
-          </div>
-  
-        </div>
-  
-        <!--RIGHT HEADER--->
-  
-  
+         </div>
+         <!--SEARCH--->
+
+         <div class="col-md-4" style=" top: -2rem;">
+            <div class="header-right">
+               <ul id="login__container">
+                  <li class="my-account">
+
+                  </li>
+                  <li class="cart-page">
+
+                  </li>
+                  <li id="admin_ref">
+
+                  </li>
+                  <li id="login__link">
+                     <a href="#" style="color:white;" class="think-link login__link__ref" data-toggle="modal"
+                        data-target="#staticBackdrop_1">
+                        Login / Register
+                     </a>
+                  </li>
+
+               </ul>
+            </div>
+
+         </div>
+
+         <!--RIGHT HEADER--->
+
+
       </div>
       </div>
-    </header>
-  
+   </header>
+
    <!---END HEADER --->
 
 
@@ -416,9 +417,11 @@
             <div class="vl footer-col col">
                <h4>PRODUCT</h4>
                <ul>
-                  <% categories.forEach((category) => { %>
-                  <li><a href="/<%= category._id %>"><%= category.name %></a></li>
-                  <% }) %>
+                  <% categories.forEach((category)=> { %>
+                     <li><a href="/<%= category._id %>">
+                           <%= category.name %>
+                        </a></li>
+                     <% }) %>
                </ul>
             </div>
          </div>

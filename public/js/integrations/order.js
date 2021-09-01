@@ -22,6 +22,7 @@ if (checkoutBtns) {
       });
 
       // totalPrice
+      console.log(productList);
       console.log(productPrice);
       productPrice.forEach((prodP) => {
         totalPrice += Number(prodP.innerHTML);
@@ -33,6 +34,7 @@ if (checkoutBtns) {
         mode: "cors", // no-cors, *cors, same-origin
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
         },
         body: JSON.stringify({
           userId: userId,

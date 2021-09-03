@@ -54,6 +54,8 @@ const authUser = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         email: user.email,
+        gender: user.gender,
+        mobileNumber: user.mobileNumber,
         isAdmin: user.isAdmin,
         token: generateAccessToken(user._id),
       });
@@ -82,16 +84,18 @@ const getUserProfile = async (req, res, next) => {
   }
 };
 
-// @purpose:   UPDATE User Profile
-// @route:  UPDATE /user/profile
+// @purpose:   update User Profile
+// @route:  PUT /user/profile
 // @access  Private
 
 const updateUserProfile = async (req, res, next) => {
   try {
-    const user = await UserModel.findById(req.user._id);
+    const user = await UserModel.findById(req.body._id);
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
+      user.mobileNumber = req.body.mobileNumber || user.mobileNumber;
+      user.gender = req.body.gender || user.gender;
       if (req.body.password) {
         user.password = req.body.password;
       }
@@ -100,6 +104,8 @@ const updateUserProfile = async (req, res, next) => {
         _id: updatedUser._id,
         name: updatedUser.name,
         email: updatedUser.email,
+        mobileNumber: updatedUser.mobileNumber,
+        gender: updatedUser.gender,
         isAdmin: updatedUser.isAdmin,
         access_token: generateAccessToken(updatedUser._id),
       });

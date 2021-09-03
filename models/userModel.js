@@ -14,9 +14,17 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  gender: {
+    type: String,
+    default: "Prefer not to say",
+  },
   isAdmin: {
     type: Boolean,
     default: false,
+  },
+  mobileNumber: {
+    type: String,
+    unique: true,
   },
 });
 

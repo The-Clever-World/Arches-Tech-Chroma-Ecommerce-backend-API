@@ -6,14 +6,10 @@ import Category from "../models/categories.model.js";
  * @access  Private
  */
 
-const myAccountController = async (req, res) => {
-    const categories = await Category.find().populate("products");
-    res.render("myAccount.ejs", { categories: categories })
-}
-
-export { myAccountController }
-
-
+export const myAccountController = async (req, res) => {
+  const categories = await Category.find().populate("products");
+  res.render("myAccount.ejs", { categories: categories });
+};
 
 /**
  * @purpose get list of my orders
@@ -21,9 +17,7 @@ export { myAccountController }
  * @access  Private
  */
 
-export { myOrders } from "./order.controller.js"
-
-
+export { myOrders } from "./order.controller.js";
 
 /**
  * @purpose get userDetails
@@ -32,6 +26,6 @@ export { myOrders } from "./order.controller.js"
  */
 
 export const myProfile = async (req, res) => {
-    const categories = await Category.find().populate("products");
-    res.render("myProfile.ejs", { categories: categories })
-}
+  const categories = await Category.find().populate("products");
+  res.render("myProfile.ejs", { categories: categories });
+};
